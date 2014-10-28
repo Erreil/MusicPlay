@@ -1,12 +1,9 @@
 MusicPlay
 =========
 
-Homepage to play music
+# Homepage to play music
 
-
-
-
-functional requirements:
+## functional requirements:
 
 - Der Benutzer kann sich eine Playlist erstellen
 
@@ -24,7 +21,7 @@ functional requirements:
 
 
 
-non functional requirements:
+## non functional requirements:
 
 - Song muss nach Auswahl sofort abgespielt werden, ohne warten
 
