@@ -1,0 +1,86 @@
+@(artists: List[Artist])
+@main("Artist hinzufügen"){
+
+@aphead("Inan", "Ödunc")
+<div class="row">
+
+    @apleftcategory()
+    <div class="span8">
+        <div class="navbar-left container">
+		
+			<!-- Panel -->
+            <div class="panel panel-default">
+                <div class="panel-body">
+				
+				
+					<!-- Erstellen -->
+						<div class="panel panel-success">
+							<div class="panel-heading">Erstellen</div>
+							<div class="panel-body">
+								<form class="navbar-form" role="search">
+									<div class="form-group">
+										<input type="text" class="form-control" placeholder="Vorname" id="Firstname" />
+										<input type="text" class="form-control" placeholder="Lastname" id="Lastname" />
+										<input type="text" class="form-control" placeholder="Alias" id="Alias" />
+										<button type="submit" class="btn btn-success">Hinzufügen</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					<!-- Erstellen -->
+										
+					<!-- Progressbar -->
+					<p>
+						<div class="progress">
+							<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;>
+								<span class="sr-only">60% abgeschlossen</span>
+							</div>
+						</div>
+					</p>
+					<!-- Progressbar -->
+                    		
+					<!-- Table -->
+					<div class="panel panel-info">
+						<div class="panel-heading">Verfügbare Künstler</div>
+						<div class="panel-body">								
+							<table class="table">
+								<thead>
+									<tr>
+										<th> Id </th>
+										<th> Alias </th>
+										<th> Vorname </th>
+										<th> Nachname </th>
+									</tr>
+								</thead>
+								<tbody>
+									@for(artist <- artists){
+										<tr>
+											<td>@artist.Id</td>
+											<td>@artist.Alias</td>
+											<td>@artist.Firstname</td>
+											<td>@artist.Lastname</td>
+											<td>
+												<input type="checkbox">
+											</td>
+										</tr>
+									}
+								</tbody>
+							</table>				
+						</div>
+					</div>
+					<!-- Table -->
+					
+					<!-- Delete -->
+						<form class="navbar-form navbar-right" role="search">
+								<button type="button" class="btn btn-primary">Ausgewählte löschen</button>
+						</form>
+					<!-- Delete -->
+
+				</div>
+			</div>			
+			<!-- Panel -->
+			
+		</div>
+	</div>
+</div>
+}

@@ -1,0 +1,84 @@
+@(country: String, musicTypes: List[MusicType], artists: List[Artist], topSongsList: List[Song], newsList: List[NewsEntry])
+
+@main("Startseite"){
+
+@headlogin(false, "erreil", "Erik", "Reil")
+
+<div class="container-fluid">
+<div class="row">
+
+@leftCategory(musicTypes, artists)
+	<div class="col-md-8">
+		<div class="navbar-left">
+
+				<!-- panel -->
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<div class="container">
+							
+							<!-- tabs -->
+							<ul class="nav nav-tabs" role="tablist">
+							
+							@if(country == "europe"){
+								<li role="presentation" class="active"><a href="@routes.Application.showTopTen("europe")">TOP 10 Europe</a></li>
+								<li role="presentation"><a href="@routes.Application.showTopTen("usa")">TOP 10 USA</a></li>
+								<li role="presentation"><a href="@routes.Application.showTopTen("uk")">TOP 10 UK</a></li>
+							}
+							
+							@if(country == "usa"){
+								<li role="presentation"><a href="@routes.Application.showTopTen("europe")">TOP 10 Europe</a></li>
+								<li role="presentation" class="active"><a href="@routes.Application.showTopTen("usa")">TOP 10 USA</a></li>
+								<li role="presentation"><a href="@routes.Application.showTopTen("uk")">TOP 10 UK</a></li>
+							}
+							
+							@if(country == "uk"){
+								<li role="presentation"><a href="@routes.Application.showTopTen("europe")">TOP 10 Europe</a></li>
+								<li role="presentation"><a href="@routes.Application.showTopTen("usa")">TOP 10 USA</a></li>
+								<li role="presentation" class="active"><a href="@routes.Application.showTopTen("uk")">TOP 10 UK</a></li>
+							}
+							
+							</ul>
+							<!-- tabs -->
+							
+							<!-- table -->
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th> Pos </th>
+										<th> Künstler </th>
+										<th> Songtitel </th>
+									</tr>
+								</thead>
+								<tbody>
+									
+									@if(topSongsList.size() <= 0){
+										<tr>
+											<td>Es sind keine Songs vorhanden!</td>
+										</tr>
+									}else{
+										@for(topSong <- topSongsList){
+											<tr>
+												<td>@topSong.Rank</td>
+												<td>@topSong.Artist.Alias</td>
+												<td>@topSong.Titel</td>
+											</tr>
+										}
+									}
+								</tbody>
+							</table>
+							<!-- table -->
+							
+						</div>
+					</div>
+				</div>
+				<!-- panel -->
+
+		</div>
+	</div>
+	
+	@news(newsList)
+</div>
+</div>
+	
+	@footerPlayer()	
+}
