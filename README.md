@@ -28,6 +28,7 @@ Die Zielerreichung und Qualität der Ergebnisse wurden dann in den Übungen sich
 - Auf der Homepage kann man sich die News der Musikwelt zeigen lassen
 - Der Benutzer kann sich eine Playlist erstellen
 
+
  non functional requirements:
 
 - Song muss nach Auswahl sofort abgespielt werden, ohne warten
