@@ -3,7 +3,7 @@ MusicPlay
 
 # Homepage to play music
 
-## functional requirements:
+# functional requirements:
 
 - Der Benutzer kann sich eine Playlist erstellen
 
