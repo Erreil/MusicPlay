@@ -28,7 +28,7 @@ Die Zielerreichung und Qualität der Ergebnisse wurden dann in den Übungen sich
 - Auf der Homepage kann man sich die News der Musikwelt zeigen lassen
 - Der Benutzer kann sich eine Playlist erstellen
 
-2. Bar non functional requirements:
+2. non functional requirements:
 
 - Song muss nach Auswahl sofort abgespielt werden, ohne warten
 - Der Benutzer soll bis zu 20 Playlists anlegen können
