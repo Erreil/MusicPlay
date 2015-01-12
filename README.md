@@ -18,7 +18,8 @@ Die Zielerreichung und Qualität der Ergebnisse wurden dann in den Übungen sich
 
 ## Anforderungsanalyse ##
 
-- functional requirements:
+functional requirements:
+
 - Ein Benutzerkonto kann erstellt werde.
 - Nach Artist oder Songs kann gesucht werden
 - Jedes einzelne Lied kann angehört werden
@@ -27,7 +28,7 @@ Die Zielerreichung und Qualität der Ergebnisse wurden dann in den Übungen sich
 - Auf der Homepage kann man sich die News der Musikwelt zeigen lassen
 - Der Benutzer kann sich eine Playlist erstellen
 
-Non functional requirements:
+non functional requirements:
 
 - Song muss nach Auswahl sofort abgespielt werden, ohne warten
 - Der Benutzer soll bis zu 20 Playlists anlegen können
