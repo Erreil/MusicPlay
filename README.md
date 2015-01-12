@@ -34,7 +34,6 @@ MusicPlay
 - es dürfen keine Benutzer mit dem selben Namen existieren
 
 - Passwörter bei der Benutzeranmeldung müssen verschlüsselt übertragen werden
-- 
 
 
 
