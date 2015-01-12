@@ -47,7 +47,44 @@ Im Nachhinein haben wir uns erste Schritte wie z.B. was unbedingt in das Projekt
 
 #### Architektur ####
 
+
+
 ##### verwendete Technologien #####
+
+Web:
+- JavaScript/JQuery
+
+Allen Html-Setein steht ein allgemeiner JavaScript zu verfügung. Dieser wird zu beginn in der main.scala.html eingebunden. Das Script unterstützt diese bei folgenden Funktionen:
+
+# Abhandeln der AJAX Abfragen
+# Aktualisieren der Progressladebalken
+# Einblenden oder Ausblenden von Elementen
+# 
+
+- Scala
+
+# Alle Parameter, die an die Html übergeben werden, werden durch Scala übergeben
+# Dynamische Inhalte werden durch Scala bereitgestellt
+
+CSS:
+- bootstrap
+
+
+
+Database:
+- SQLLite
+
+Entwicklung:
+- Java
+
+Sonstige Technologien:
+- Websocket
+- AJAX
+- JSON
+- 
+
+- Playframework
+- 
 
 ###### Erfahrungen ######
 
