@@ -26,8 +26,7 @@ Die Zielerreichung und Qualität der Ergebnisse wurden dann in den Übungen sich
 - Das Logo wird auf jeder Seite erscheinen
 - Es wird möglich sein, die Top 10 der USA, Europa  und UK als Übersicht aufzurufen
 - Auf der Homepage kann man sich die News der Musikwelt zeigen lassen
-- Der Benutzer kann sich eine Playlist erstellen
-
+-Der Benutzer kann sich eine Playlist erstellen
 
  non functional requirements:
 
