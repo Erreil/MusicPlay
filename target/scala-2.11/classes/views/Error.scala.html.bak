@@ -1,0 +1,10 @@
+@(error: String)
+
+@main("Ein Fehler ist aufgetreten!")
+
+<div class="panel panel-default">
+		div class="panel-heading">Fehler</div>
+		<div class="panel-body">
+			<p>@error</p>
+		</div>
+</div>

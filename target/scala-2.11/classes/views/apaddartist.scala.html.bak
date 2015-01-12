@@ -1,0 +1,100 @@
+@(artists: List[Artist], artistForm: Form[Artist])
+
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("Artist hinzufügen"){
+
+@aphead("Inan", "Ödunc")
+<div class="row">
+
+    @apleftcategory()
+    <div class="span8">
+        <div class="navbar-left container">
+		
+			<!-- Panel -->
+            <div class="panel panel-default">
+                <div class="panel-body">
+				
+				
+					<!-- Erstellen -->
+						<div class="panel panel-success">
+							<div class="panel-heading">Erstellen</div>
+							<div class="panel-body">
+			
+										@helper.form(action = routes.Application.newArtist(), 'id -> "artistForm"){
+											@helper.inputText(artistForm("Firstname"))
+											@helper.inputText(artistForm("Lastname"))
+											@helper.inputText(artistForm("Alias"))
+											@helper.inputText(artistForm("CountryId"))
+											
+											<input type="submit" value="Anlegen">							
+										}
+										
+										<br/>
+										
+										<p>Country Ids: Deutschland: 1 Amerika: 2 UK: 3</p>
+										<p></p>
+										<p></p>
+										<p></p>
+							</div>
+						</div>
+					<!-- Erstellen -->
+										
+					<!-- Progressbar -->
+					<p>
+						<div class="progress">
+							<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;>
+								<span class="sr-only"></span>
+							</div>
+						</div>
+					</p>
+					<!-- Progressbar -->
+                    		
+					<!-- Table -->
+					<div class="panel panel-info">
+						<div class="panel-heading">Verfügbare Künstler</div>
+						<div class="panel-body">								
+							<table class="table" id ="artistTable">
+								<thead>
+									<tr>
+										<th> Id </th>
+										<th> Alias </th>
+										<th> Vorname </th>
+										<th> Nachname </th>
+										<th> Land </th>
+									</tr>
+								</thead>
+								<tbody>
+									@for(artist <- artists){
+										<tr>
+											<td>@artist.getId()</td>
+											<td>@artist.getAlias()</td>
+											<td>@artist.getFirstname()</td>
+											<td>@artist.getLastname()</td>
+											<td>@artist.getCountry().getName()</td>
+											<td>
+												<input type="checkbox">
+											</td>
+										</tr>
+									}
+								</tbody>
+							</table>				
+						</div>
+					</div>
+					<!-- Table -->
+					
+					<!-- Delete -->
+						<form class="navbar-form navbar-right" role="search">
+								<button type="button" class="btn btn-primary" onclick="readSelectedArtists();">Ausgewählte löschen</button>
+						</form>
+					<!-- Delete -->
+
+				</div>
+			</div>			
+			<!-- Panel -->
+			
+		</div>
+	</div>
+</div>
+}

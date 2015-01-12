@@ -1,0 +1,212 @@
+package models;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+import play.data.validation.Constraints.Required;
+import play.db.DB;
+
+public class User{
+	public int Id;
+	@Required
+	public String Username;
+	@Required
+	public String Password;
+	@Required
+	public String Firstname;
+	@Required  
+	public String Lastname;
+	@Required
+	public String Zip;
+	@Required
+	public String Location;
+	@Required
+	public String Street;
+	@Required
+	public String StreetNumber;
+	@Required
+	public String Mail;
+	
+	
+	
+	
+	
+	public int getId() {
+		return Id;
+	}
+
+	public void setId(int id) {
+		Id = id;
+	}
+
+	public String getUsername() {
+		return Username;
+	}
+
+	public void setUsername(String username) {
+		Username = username;
+	}
+
+	public String getPassword() {
+		return Password;
+	}
+
+	public void setPassword(String password) {
+		Password = password;
+	}
+
+	public String getFirstname() {
+		return Firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		Firstname = firstname;
+	}
+
+	public String getLastname() {
+		return Lastname;
+	}
+
+	public void setLastname(String lastname) {
+		Lastname = lastname;
+	}
+
+	public String getZip() {
+		return Zip;
+	}
+
+	public void setZip(String zip) {
+		Zip = zip;
+	}
+
+	public String getLocation() {
+		return Location;
+	}
+
+	public void setLocation(String location) {
+		Location = location;
+	}
+
+	public String getStreet() {
+		return Street;
+	}
+
+	public void setStreet(String street) {
+		Street = street;
+	}
+
+	public String getStreetNumber() {
+		return StreetNumber;
+	}
+
+	public void setStreetNumber(String streetNumber) {
+		StreetNumber = streetNumber;
+	}
+
+	public String getMail() {
+		return Mail;
+	}
+
+	public void setMail(String mail) {
+		Mail = mail;
+	}
+
+	public static boolean create(User user){
+		
+		 Connection connection = null;
+		
+		 try {
+			connection = DB.getConnection();
+			
+			Statement statement = connection.createStatement();
+			int count = statement.executeUpdate("INSERT INTO User ("
+					+ "Username"
+					+ ", Password"
+					+ ", Firstname"
+					+ ", Lastname"
+					+ ", Zip"
+					+ ", Location"
+					+ ", Street"
+					+ ", StreetNumber"
+					+ ", Mail"
+					+ ", State"
+					+ ")"
+					+ " VALUES("
+					+ "'" + user.Username + "'"
+					+ ", '" + user.Password + "'"
+					+ ", '" + user.Firstname + "'"
+					+ ", '" + user.Lastname + "'"
+					+ ", '" + user.Zip + "'"
+					+ ", '" + user.Location + "'"
+					+ ", '" + user.Street + "'"
+					+ ", '" + user.StreetNumber + "'"
+					+ ", '" + user.Mail + "'"
+					+ "," + 1 + ")");
+			
+			connection.commit();
+			
+			return true;
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return false;
+			}
+			finally{
+				if(connection != null)
+					try {
+						connection.close();
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+			}
+	}
+	
+	public static ArrayList<User> getAll(){	
+		
+		Connection connection = null;
+		ArrayList<User> entities = new ArrayList<User>();
+		
+		try {
+			connection = DB.getConnection();
+			
+			Statement statement = connection.createStatement();
+			ResultSet rs = statement.executeQuery("SELECT * FROM User WHERE State <> 255;");
+			
+			while(rs.next()){
+				User entity = new User();
+				
+				entity.Id = rs.getInt("Id");
+				entity.Username = rs.getString("Username");
+				entity.Password = rs.getString("Password");
+				entity.Firstname = rs.getString("Firstname");
+				entity.Lastname = rs.getString("Lastname");
+				entity.Zip = rs.getString("Zip");
+				entity.Location = rs.getString("Location");
+				entity.Street = rs.getString("Street");
+				entity.StreetNumber = rs.getString("StreetNumber");
+				entity.Mail = rs.getString("Mail");
+				entities.add(entity);
+			}
+			
+			return entities;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return entities;
+		}
+		finally{
+			if(connection != null)
+				try {
+					connection.close();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+		}
+	}
+}
