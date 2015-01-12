@@ -7,8 +7,20 @@
 		revision="1.0-SNAPSHOT"
 		conf="compile-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool, echo-trace-compile, echo-trace-test, echo-weave, echo-sigar"
-		date="20141130142219"/>
+		date="20141209105916"/>
 	<dependencies>
+		<module organisation="org.xerial" name="sqlite-jdbc">
+			<revision name="3.7.15-M1" status="release" pubdate="20130622132252" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="67">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3249" time="0" location="C:\Users\erikr_000\.ivy2\cache\org.xerial\sqlite-jdbc\ivy-3.7.15-M1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.7.15-M1/sqlite-jdbc-3.7.15-M1.pom"/>
+				<caller organisation="musicplay" name="musicplay_2.11" conf="compile-internal, compile, provided, optional" rev="3.7.15-M1" rev-constraint-default="3.7.15-M1" rev-constraint-dynamic="3.7.15-M1" callerrev="1.0-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="sqlite-jdbc" type="jar" ext="jar" status="no" details="" size="3677896" time="0" location="C:\Users\erikr_000\.ivy2\cache\org.xerial\sqlite-jdbc\jars\sqlite-jdbc-3.7.15-M1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.7.15-M1/sqlite-jdbc-3.7.15-M1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
 		<module organisation="com.typesafe.play" name="play-java-ws_2.11">
 			<revision name="2.3.6" status="release" pubdate="20141125063034" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="59">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>

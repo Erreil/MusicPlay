@@ -1,8 +1,8 @@
-@(country: String, musicTypes: List[MusicType], artists: List[Artist], topSongsList: List[Song], newsList: List[NewsEntry])
+@(country: String, musicTypes: List[MusicType], artists: List[Artist], topSongsList: List[Song], loginForm: Form[Login])
 
 @main("Startseite"){
 
-@headlogin(false, "erreil", "Erik", "Reil")
+@headlogin(loginForm)
 
 <div class="container-fluid">
 <div class="row">
@@ -20,7 +20,7 @@
 							<ul class="nav nav-tabs" role="tablist">
 							
 							@if(country == "europe"){
-								<li role="presentation" class="active"><a href="@routes.Application.showTopTen("europe")">TOP 10 Europe</a></li>
+								<li role="presentation" class="active"><a href="@routes.Application.showTopTen("eu")">TOP 10 Europe</a></li>
 								<li role="presentation"><a href="@routes.Application.showTopTen("usa")">TOP 10 USA</a></li>
 								<li role="presentation"><a href="@routes.Application.showTopTen("uk")">TOP 10 UK</a></li>
 							}
@@ -47,6 +47,7 @@
 										<th> Pos </th>
 										<th> Künstler </th>
 										<th> Songtitel </th>
+										<th> </th>
 									</tr>
 								</thead>
 								<tbody>
@@ -58,9 +59,13 @@
 									}else{
 										@for(topSong <- topSongsList){
 											<tr>
-												<td>@topSong.Rank</td>
-												<td>@topSong.Artist.Alias</td>
-												<td>@topSong.Titel</td>
+												<td>@topSong.getRank()</td>
+												<td>@topSong.getArtist().getAlias()</td>
+												<td>@topSong.getTitel()</td>
+												
+												@defining("music/") { path =>												
+												<td><button type="button" class="btn btn-primary" onclick="playMusic('@routes.Assets.at(path + topSong.getFileName())', '@topSong.getTitel()');"> Play </button>	</td>
+												 }
 											</tr>
 										}
 									}
@@ -76,7 +81,7 @@
 		</div>
 	</div>
 	
-	@news(newsList)
+	
 </div>
 </div>
 	

@@ -37,7 +37,8 @@ Seq[Any](format.raw/*1.1*/("""<div class="span4">
 					<ul class="nav nav-pills nav-stacked" role="tablist">
 						<li role="presentation"><a href=""""),_display_(/*10.41*/routes/*10.47*/.Application.apaddsong()),format.raw/*10.71*/("""">Song hinzufügen </a></li>
 						<li role="presentation"><a href=""""),_display_(/*11.41*/routes/*11.47*/.Application.apaddartist()),format.raw/*11.73*/("""">Artist anlegen </a></li>
-						<li role="presentation"><a href=""""),_display_(/*12.41*/routes/*12.47*/.Application.apusermanagement()),format.raw/*12.78*/("""">Benutzer verwalten </a></li>					
+						<li role="presentation"><a href=""""),_display_(/*12.41*/routes/*12.47*/.Application.apusermanagement()),format.raw/*12.78*/("""">Benutzer verwalten </a></li>		
+						<li role="presentation"><a href=""""),_display_(/*13.41*/routes/*13.47*/.Application.aprankmanagement("eu")),format.raw/*13.82*/("""">Ranking verwalten </a></li>				
 					</ul>
 				</div>
 			</div>
@@ -55,11 +56,11 @@ Seq[Any](format.raw/*1.1*/("""<div class="span4">
 }
               /*
                   -- GENERATED --
-                  DATE: Sun Nov 30 22:01:23 CET 2014
+                  DATE: Sun Jan 11 11:44:02 CET 2015
                   SOURCE: C:/FH2/Web_Projekt/musicplay/app/views/apleftcategory.scala.html
-                  HASH: 1f33efa75e4d46f4e74e74d0d3b44c5eb920b355
-                  MATRIX: 807->0|1202->368|1217->374|1262->398|1358->467|1373->473|1420->499|1515->567|1530->573|1582->604
-                  LINES: 29->1|38->10|38->10|38->10|39->11|39->11|39->11|40->12|40->12|40->12
+                  HASH: 59473386519378053209afbf1cc761b03299052d
+                  MATRIX: 807->0|1202->368|1217->374|1262->398|1358->467|1373->473|1420->499|1515->567|1530->573|1582->604|1683->678|1698->684|1754->719
+                  LINES: 29->1|38->10|38->10|38->10|39->11|39->11|39->11|40->12|40->12|40->12|41->13|41->13|41->13
                   -- GENERATED --
               */
           

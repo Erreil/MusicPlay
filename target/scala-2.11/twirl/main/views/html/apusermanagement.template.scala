@@ -29,7 +29,7 @@ object apusermanagement extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appe
 Seq[Any](format.raw/*1.21*/("""
 """),_display_(/*2.2*/main("Benutzer verwalten")/*2.28*/{_display_(Seq[Any](format.raw/*2.29*/("""
 
-"""),_display_(/*4.2*/aphead("Inan", "Ödunc")),format.raw/*4.25*/("""
+"""),_display_(/*4.2*/aphead()),format.raw/*4.10*/("""
 	"""),format.raw/*5.2*/("""<div class="row">	
 	
 """),_display_(/*7.2*/apleftcategory()),format.raw/*7.18*/("""	
@@ -42,8 +42,8 @@ Seq[Any](format.raw/*1.21*/("""
 						<!-- Progressbar -->
 						<p>
 							<div class="progress">
-								<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;>
-									<span class="sr-only">60% abgeschlossen</span>
+								<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+									<span class="sr-only"></span>
 								</div>
 							</div>
 						</p>
@@ -53,7 +53,7 @@ Seq[Any](format.raw/*1.21*/("""
 						<div class="panel panel-info">
 							<div class="panel-heading">Verfügbare Benutzer</div>
 								<div class="panel-body">								
-									<table class="table">
+									<table class="table" id="userTable">
 										<thead>
 											<tr>
 												<th> Id </th>
@@ -66,13 +66,13 @@ Seq[Any](format.raw/*1.21*/("""
 										<tbody>
 											"""),_display_(/*39.13*/for(user <- users) yield /*39.31*/{_display_(Seq[Any](format.raw/*39.32*/("""
 												"""),format.raw/*40.13*/("""<tr>
-													<td>"""),_display_(/*41.19*/user/*41.23*/.Id),format.raw/*41.26*/("""</td>
-													<td>"""),_display_(/*42.19*/user/*42.23*/.Username),format.raw/*42.32*/("""</td>
-													<td>"""),_display_(/*43.19*/user/*43.23*/.Firstname),format.raw/*43.33*/("""</td>
-													<td>"""),_display_(/*44.19*/user/*44.23*/.Lastname),format.raw/*44.32*/("""</td>
-													<td>"""),_display_(/*45.19*/user/*45.23*/.Mail),format.raw/*45.28*/("""</td>
+													<td>"""),_display_(/*41.19*/user/*41.23*/.getId()),format.raw/*41.31*/("""</td>
+													<td>"""),_display_(/*42.19*/user/*42.23*/.getUsername()),format.raw/*42.37*/("""</td>
+													<td>"""),_display_(/*43.19*/user/*43.23*/.getFirstname()),format.raw/*43.38*/("""</td>
+													<td>"""),_display_(/*44.19*/user/*44.23*/.getLastname()),format.raw/*44.37*/("""</td>
+													<td>"""),_display_(/*45.19*/user/*45.23*/.getMail()),format.raw/*45.33*/("""</td>
 													<td>
-														<input type="checkbox">
+														<input type="checkbox" name="box">
 													</td>
 												</tr>
 											""")))}),format.raw/*50.13*/("""
@@ -84,7 +84,7 @@ Seq[Any](format.raw/*1.21*/("""
 							
 							<!-- Delete -->
 							<form class="navbar-form navbar-right" role="search">
-									<button type="button" class="btn btn-primary">Ausgewählte löschen</button>
+									<button type="button" class="btn btn-primary" onclick="readSelectedUsers();">Ausgewählte löschen</button>
 							</form>
 							<!-- Delete -->
 					</div>
@@ -107,10 +107,10 @@ Seq[Any](format.raw/*1.21*/("""
 }
               /*
                   -- GENERATED --
-                  DATE: Mon Dec 01 12:29:15 CET 2014
+                  DATE: Sun Jan 11 20:07:20 CET 2015
                   SOURCE: C:/FH2/Web_Projekt/musicplay/app/views/apusermanagement.scala.html
-                  HASH: afd9489f984680008a4e63c47f2a0003babf114b
-                  MATRIX: 738->1|845->20|873->23|907->49|945->50|975->55|1018->78|1047->81|1096->105|1132->121|1163->126|2149->1085|2183->1103|2222->1104|2264->1118|2315->1142|2328->1146|2352->1149|2404->1174|2417->1178|2447->1187|2499->1212|2512->1216|2543->1226|2595->1251|2608->1255|2638->1264|2690->1289|2703->1293|2729->1298|2876->1414|2916->1426|3337->1817
+                  HASH: 7b9cbb1ffa55f90e0687dc4bfd5185ebbd789ed9
+                  MATRIX: 738->1|845->20|873->23|907->49|945->50|975->55|1003->63|1032->66|1081->90|1117->106|1148->111|2131->1067|2165->1085|2204->1086|2246->1100|2297->1124|2310->1128|2339->1136|2391->1161|2404->1165|2439->1179|2491->1204|2504->1208|2540->1223|2592->1248|2605->1252|2640->1266|2692->1291|2705->1295|2736->1305|2894->1432|2934->1444|3386->1866
                   LINES: 26->1|29->1|30->2|30->2|30->2|32->4|32->4|33->5|35->7|35->7|36->8|67->39|67->39|67->39|68->40|69->41|69->41|69->41|70->42|70->42|70->42|71->43|71->43|71->43|72->44|72->44|72->44|73->45|73->45|73->45|78->50|79->51|97->69
                   -- GENERATED --
               */

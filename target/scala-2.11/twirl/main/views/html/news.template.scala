@@ -38,20 +38,17 @@ Seq[Any](format.raw/*1.29*/("""
 					"""),_display_(/*10.7*/for(news <- newsList) yield /*10.28*/{_display_(Seq[Any](format.raw/*10.29*/("""
 						"""),format.raw/*11.7*/("""<div class="panel panel-default">
 							<div class="panel-heading">
-								<span style="font-size:20px">"""),_display_(/*13.39*/news/*13.43*/.Headline),format.raw/*13.52*/(""" """),format.raw/*13.53*/("""</span>
+								<span style="font-size:20px">"""),_display_(/*13.39*/news/*13.43*/.getHeadline()),format.raw/*13.57*/(""" """),format.raw/*13.58*/("""</span>
 							</div>
 							<div class="panel-body">
 								<img src=""""),_display_(/*16.20*/routes/*16.26*/.Assets.at("images/busta.jpg")),format.raw/*16.56*/("""" alt="Kein Bild" class="img-responsive img-rounded">
 							</div>
 							<div class="panel-footer">
-								"""),_display_(/*19.10*/news/*19.14*/.ShortDescription),format.raw/*19.31*/("""
+								"""),_display_(/*19.10*/news/*19.14*/.getShortDescription()),format.raw/*19.36*/("""
 							"""),format.raw/*20.8*/("""</div>
 						</div>
 					""")))}),format.raw/*22.7*/("""				
 			"""),format.raw/*23.4*/("""</div>
-			
-			
-
 		</div>
 	</div>
 </div>
@@ -67,10 +64,10 @@ Seq[Any](format.raw/*1.29*/("""
 }
               /*
                   -- GENERATED --
-                  DATE: Mon Dec 01 16:37:43 CET 2014
+                  DATE: Sat Jan 10 11:29:58 CET 2015
                   SOURCE: C:/FH2/Web_Projekt/musicplay/app/views/news.scala.html
-                  HASH: a79990b040502fd7e784845522c90841473e376c
-                  MATRIX: 731->1|846->28|876->32|1077->207|1114->228|1153->229|1188->237|1324->346|1337->350|1367->359|1396->360|1499->436|1514->442|1565->472|1706->586|1719->590|1757->607|1793->616|1851->644|1887->653
+                  HASH: 045c32a35ee71fd520e9bb186c32032b9177b8ec
+                  MATRIX: 731->1|846->28|876->32|1077->207|1114->228|1153->229|1188->237|1324->346|1337->350|1372->364|1401->365|1504->441|1519->447|1570->477|1711->591|1724->595|1767->617|1803->626|1861->654|1897->663
                   LINES: 26->1|29->1|31->3|38->10|38->10|38->10|39->11|41->13|41->13|41->13|41->13|44->16|44->16|44->16|47->19|47->19|47->19|48->20|50->22|51->23
                   -- GENERATED --
               */

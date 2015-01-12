@@ -1,5 +1,9 @@
+@(userForm: Form[User])
 
-@main("SignIn"){
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("SignUp"){
 	<div>
 	
 		<!-- header -->
@@ -11,52 +15,33 @@
 		  </div>
 		</div>
 		<!-- header -->
-		
+				
 		<!-- Formular -->
 		<div class="panel panel-default">
 			<div class="panel-body">		
 				<div class="panel panel-success">
 					<div class="panel-heading">Bitte geben Sie folgenden Daten ein:</div>
 					<div class="panel-body">
-						<div class="input-group">
-							<span class="input-group-addon">Vorname:</span>
-							<input type="text" class="form-control">
-							<span class="input-group-addon">Nachname:</span>
-							<input type="text" class="form-control">
-						</div>
-						<div class="input-group">
-							<span class="input-group-addon">E-Mail:</span>
-							<input type="text" class="form-control">
-							<span class="input-group-addon">Telefon:</span>
-							<input type="text" class="form-control">
-						</div>
-						<div class="input-group">
-							<span class="input-group-addon">PLZ:</span>
-							<input type="text" class="form-control">
-							<span class="input-group-addon">Wohnort:</span>
-							<input type="text" class="form-control">
-						</div>
-						<div class="input-group">
-							<span class="input-group-addon">Straße:</span>
-							<input type="text" class="form-control">
-							<span class="input-group-addon">Straßennummer:</span>
-							<input type="text" class="form-control">
-						</div>
-						<div class="input-group">
-							<span class="input-group-addon">Passwort:</span>
-							<input type="text" class="form-control">
-							<span class="input-group-addon">Passwort wiederholen:</span>
-							<input type="text" class="form-control">
-						</div>
-					</div>
-				</div>
-				
-				<form class="navbar-form navbar-right" role="search">
-					<button type="submit" class="btn btn-success">Registrieren</button>
-				</form>
+						@helper.form(action = routes.Application.newUser(), 'id -> "userForm"){
+						
+						@helper.inputText(userForm("Username"))
+						@helper.inputText(userForm("Password"))
+						@helper.inputText(userForm("Firstname"))
+						@helper.inputText(userForm("Lastname"))
+						@helper.inputText(userForm("Zip"))
+						@helper.inputText(userForm("Location"))
+						@helper.inputText(userForm("Street"))
+						@helper.inputText(userForm("StreetNumber"))
+						@helper.inputText(userForm("Mail"))
+						
+						<input type="submit" value="Registrieren">
+						}
+			
+						
+					</div>		
+				</div>					
 			</div>
-				
 		</div>
-			<!-- Formular -->			
+		<!-- Formular -->
 	</div>
 }

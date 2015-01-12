@@ -1,3 +1,7 @@
 [0m[[0mdebug[0m] [0mCopy resource mappings: [0m
 [0m[[0mdebug[0m] [0m	(C:\FH2\Web_Projekt\musicplay\conf\application.conf,C:\FH2\Web_Projekt\musicplay\target\scala-2.11\classes\application.conf)[0m
+[0m[[0mdebug[0m] [0m	(C:\FH2\Web_Projekt\musicplay\conf\application.conf.bak,C:\FH2\Web_Projekt\musicplay\target\scala-2.11\classes\application.conf.bak)[0m
+[0m[[0mdebug[0m] [0m	(C:\FH2\Web_Projekt\musicplay\conf\dependencies.yml,C:\FH2\Web_Projekt\musicplay\target\scala-2.11\classes\dependencies.yml)[0m
+[0m[[0mdebug[0m] [0m	(C:\FH2\Web_Projekt\musicplay\conf\logger.xml,C:\FH2\Web_Projekt\musicplay\target\scala-2.11\classes\logger.xml)[0m
 [0m[[0mdebug[0m] [0m	(C:\FH2\Web_Projekt\musicplay\conf\routes,C:\FH2\Web_Projekt\musicplay\target\scala-2.11\classes\routes)[0m
+[0m[[0mdebug[0m] [0m	(C:\FH2\Web_Projekt\musicplay\conf\routes.bak,C:\FH2\Web_Projekt\musicplay\target\scala-2.11\classes\routes.bak)[0m

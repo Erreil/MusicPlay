@@ -4,7 +4,7 @@
 		module="musicplay_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20141130142219"
+		publication="20141209105916"
 	>
 		<description>
 		MusicPlay
@@ -49,5 +49,6 @@
 		<dependency org="com.typesafe.play" name="play-java-ebean_2.11" rev="2.3.6" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-cache_2.11" rev="2.3.6" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java-ws_2.11" rev="2.3.6" conf="compile->default(compile)"/>
+		<dependency org="org.xerial" name="sqlite-jdbc" rev="3.7.15-M1" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

@@ -20,13 +20,13 @@ import play.mvc.Http.Context.Implicit._
 import views.html._
 
 /**/
-object headlogin extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template4[Boolean,String,String,String,play.twirl.api.HtmlFormat.Appendable] {
+object headlogin extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template1[Form[Login],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(isLoggedIn: Boolean, Username: String, Firstname: String, Lastname: String):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(loginForm: Form[Login]):play.twirl.api.HtmlFormat.Appendable = {
       _display_ {
 
-Seq[Any](format.raw/*1.78*/("""
+Seq[Any](format.raw/*1.26*/("""
 
 """),format.raw/*3.1*/("""<div class="container-fluid">
 	<div class="row">
@@ -46,20 +46,19 @@ Seq[Any](format.raw/*1.78*/("""
 					<!-- search -->	
 
 					<!-- login -->
-					<form class="navbar-form navbar-right" role="search">
-						<div class="form-group">
-							"""),_display_(/*23.9*/if(isLoggedIn == false)/*23.32*/{_display_(Seq[Any](format.raw/*23.33*/("""
-								"""),format.raw/*24.9*/("""<input type="text" class="form-control" placeholder="Benutzer" id="Username" />
-								<input type="text" class="form-control" placeholder="Passwort" id="Password" />
-								<button type="submit" class="btn btn-default">Anmelden</button>
-								<button type="submit" class="btn btn-primary"><a style="color: white" href=""""),_display_(/*27.86*/routes/*27.92*/.Application.signup()),format.raw/*27.113*/(""""> Sign Up</a></button>
-							""")))}/*28.9*/else/*28.13*/{_display_(Seq[Any](format.raw/*28.14*/("""
-								"""),format.raw/*29.9*/("""<h3>Willkommen  <span class="label label-info"> """),_display_(/*29.58*/Firstname),format.raw/*29.67*/("""  """),_display_(/*29.70*/Lastname),format.raw/*29.78*/("""</span></h3>
-							""")))}),format.raw/*30.9*/("""
-
-						"""),format.raw/*32.7*/("""</div>
-					</form>	
-					<!-- login -->	
+							"""),_display_(/*21.9*/if(session.get("username") == null)/*21.44*/{_display_(Seq[Any](format.raw/*21.45*/("""
+								"""),_display_(/*22.10*/helper/*22.16*/.form(routes.Application.authenticateUser, 'class -> "navbar-form navbar-right")/*22.96*/ {_display_(Seq[Any](format.raw/*22.98*/("""
+									"""),format.raw/*23.10*/("""<div class="form-group">
+										<input type="text" class="form-control" placeholder="Benutzer" id="Username" />
+										<input type="text" class="form-control" placeholder="Passwort" id="Password" />
+										<button type="submit" class="btn btn-primary">Anmelden</button>
+									</div>
+								""")))}),format.raw/*28.10*/("""
+							""")))}/*29.9*/else/*29.13*/{_display_(Seq[Any](format.raw/*29.14*/("""
+								"""),format.raw/*30.9*/("""<h3>Willkommen <span class="label label-info">"""),_display_(/*30.56*/session/*30.63*/.get("username")),format.raw/*30.79*/("""</span></h3>
+								<button type="button" class="btn btn-primary"> <a href=""""),_display_(/*31.66*/routes/*31.72*/.Application.logoutUser()),format.raw/*31.97*/("""" style="color:white">Abmelden</a> </button>
+							""")))}),format.raw/*32.9*/("""
+					"""),format.raw/*33.6*/("""<!-- login -->	
 					
 				</div>
 			</div>
@@ -70,20 +69,20 @@ Seq[Any](format.raw/*1.78*/("""
 </div>"""))}
   }
 
-  def render(isLoggedIn:Boolean,Username:String,Firstname:String,Lastname:String): play.twirl.api.HtmlFormat.Appendable = apply(isLoggedIn,Username,Firstname,Lastname)
+  def render(loginForm:Form[Login]): play.twirl.api.HtmlFormat.Appendable = apply(loginForm)
 
-  def f:((Boolean,String,String,String) => play.twirl.api.HtmlFormat.Appendable) = (isLoggedIn,Username,Firstname,Lastname) => apply(isLoggedIn,Username,Firstname,Lastname)
+  def f:((Form[Login]) => play.twirl.api.HtmlFormat.Appendable) = (loginForm) => apply(loginForm)
 
   def ref: this.type = this
 
 }
               /*
                   -- GENERATED --
-                  DATE: Mon Dec 01 16:42:48 CET 2014
+                  DATE: Sun Jan 11 23:25:03 CET 2015
                   SOURCE: C:/FH2/Web_Projekt/musicplay/app/views/headlogin.scala.html
-                  HASH: 4cf58c6619045cf2f26571248dcac6790de86264
-                  MATRIX: 749->1|913->77|943->81|1589->701|1621->724|1660->725|1697->735|2052->1063|2067->1069|2110->1090|2161->1123|2174->1127|2213->1128|2250->1138|2326->1187|2356->1196|2386->1199|2415->1207|2467->1229|2504->1239
-                  LINES: 26->1|29->1|31->3|51->23|51->23|51->23|52->24|55->27|55->27|55->27|56->28|56->28|56->28|57->29|57->29|57->29|57->29|57->29|58->30|60->32
+                  HASH: 4d8c25855e228fc1e05b8a9757d301a35c327e39
+                  MATRIX: 732->1|844->25|874->29|1428->557|1472->592|1511->593|1549->604|1564->610|1653->690|1693->692|1732->703|2072->1012|2100->1022|2113->1026|2152->1027|2189->1037|2263->1084|2279->1091|2316->1107|2422->1186|2437->1192|2483->1217|2567->1271|2601->1278
+                  LINES: 26->1|29->1|31->3|49->21|49->21|49->21|50->22|50->22|50->22|50->22|51->23|56->28|57->29|57->29|57->29|58->30|58->30|58->30|58->30|59->31|59->31|59->31|60->32|61->33
                   -- GENERATED --
               */
           

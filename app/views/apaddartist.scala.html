@@ -1,7 +1,11 @@
-@(artists: List[Artist])
+@(artists: List[Artist], artistForm: Form[Artist])
+
+@import helper._
+@import helper.twitterBootstrap._
+
 @main("Artist hinzufügen"){
 
-@aphead("Inan", "Ödunc")
+@aphead()
 <div class="row">
 
     @apleftcategory()
@@ -17,14 +21,20 @@
 						<div class="panel panel-success">
 							<div class="panel-heading">Erstellen</div>
 							<div class="panel-body">
-								<form class="navbar-form" role="search">
-									<div class="form-group">
-										<input type="text" class="form-control" placeholder="Vorname" id="Firstname" />
-										<input type="text" class="form-control" placeholder="Lastname" id="Lastname" />
-										<input type="text" class="form-control" placeholder="Alias" id="Alias" />
-										<button type="submit" class="btn btn-success">Hinzufügen</button>
-									</div>
-								</form>
+			
+										@helper.form(action = routes.Application.newArtist(), 'id -> "artistForm"){
+											@helper.inputText(artistForm("Firstname"))
+											@helper.inputText(artistForm("Lastname"))
+											@helper.inputText(artistForm("Alias"))
+											@helper.inputText(artistForm("CountryId"))
+											
+											<input type="submit" value="Anlegen">							
+										}
+										
+										<br/>
+										
+										<p>Country Ids: Deutschland: 1 Amerika: 2 UK: 3</p>
+
 							</div>
 						</div>
 					<!-- Erstellen -->
@@ -32,8 +42,8 @@
 					<!-- Progressbar -->
 					<p>
 						<div class="progress">
-							<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;>
-								<span class="sr-only">60% abgeschlossen</span>
+							<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;>
+								<span class="sr-only"></span>
 							</div>
 						</div>
 					</p>
@@ -43,22 +53,24 @@
 					<div class="panel panel-info">
 						<div class="panel-heading">Verfügbare Künstler</div>
 						<div class="panel-body">								
-							<table class="table">
+							<table class="table" id ="artistTable">
 								<thead>
 									<tr>
 										<th> Id </th>
 										<th> Alias </th>
 										<th> Vorname </th>
 										<th> Nachname </th>
+										<th> Land </th>
 									</tr>
 								</thead>
 								<tbody>
 									@for(artist <- artists){
 										<tr>
-											<td>@artist.Id</td>
-											<td>@artist.Alias</td>
-											<td>@artist.Firstname</td>
-											<td>@artist.Lastname</td>
+											<td>@artist.getId()</td>
+											<td>@artist.getAlias()</td>
+											<td>@artist.getFirstname()</td>
+											<td>@artist.getLastname()</td>
+											<td>@artist.getCountry().getName()</td>
 											<td>
 												<input type="checkbox">
 											</td>
@@ -72,7 +84,7 @@
 					
 					<!-- Delete -->
 						<form class="navbar-form navbar-right" role="search">
-								<button type="button" class="btn btn-primary">Ausgewählte löschen</button>
+								<button type="button" class="btn btn-primary" onclick="readSelectedArtists();">Ausgewählte löschen</button>
 						</form>
 					<!-- Delete -->
 

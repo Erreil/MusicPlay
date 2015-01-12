@@ -10,20 +10,17 @@
 					@for(news <- newsList){
 						<div class="panel panel-default">
 							<div class="panel-heading">
-								<span style="font-size:20px">@news.Headline </span>
+								<span style="font-size:20px">@news.getHeadline() </span>
 							</div>
 							<div class="panel-body">
 								<img src="@routes.Assets.at("images/busta.jpg")" alt="Kein Bild" class="img-responsive img-rounded">
 							</div>
 							<div class="panel-footer">
-								@news.ShortDescription
+								@news.getShortDescription()
 							</div>
 						</div>
 					}				
 			</div>
-			
-			
-
 		</div>
 	</div>
 </div>

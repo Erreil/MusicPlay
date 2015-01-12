@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for musicplay#musicplay_2.11;1.0-SNAPSHOT [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.scala-lang#scala-library;2.11.1 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.11.1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@4f8914e8[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@25e9bafe[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.1[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.11.1[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.11.1 in sbt-chain[0m
@@ -1034,6 +1034,15 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ws_2.11;2.3.6->oauth.signpost#signpost-commonshttp4;1.2.1.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ws_2.11;2.3.6->oauth.signpost#signpost-commonshttp4;1.2.1.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-ws_2.11;2.3.6 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.xerial#sqlite-jdbc;3.7.15-M1 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.xerial#sqlite-jdbc;3.7.15-M1 {compile=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.xerial#sqlite-jdbc;3.7.15-M1[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.xerial#sqlite-jdbc;3.7.15-M1[0m
+[0m[[0mdebug[0m] [0m	found org.xerial#sqlite-jdbc;3.7.15-M1 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for musicplay#musicplay_2.11;1.0-SNAPSHOT [runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for musicplay#musicplay_2.11;1.0-SNAPSHOT [compile][0m
@@ -1635,6 +1644,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ws_2.11;2.3.6->oauth.signpost#signpost-commonshttp4;1.2.1.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ws_2.11;2.3.6->oauth.signpost#signpost-commonshttp4;1.2.1.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-ws_2.11;2.3.6 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for musicplay#musicplay_2.11;1.0-SNAPSHOT [test][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for musicplay#musicplay_2.11;1.0-SNAPSHOT [runtime][0m
@@ -2237,6 +2250,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ws_2.11;2.3.6->oauth.signpost#signpost-commonshttp4;1.2.1.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ws_2.11;2.3.6->oauth.signpost#signpost-commonshttp4;1.2.1.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-ws_2.11;2.3.6 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->com.typesafe.play#play-test_2.11;2.3.6 [test->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.typesafe.play#play-test_2.11;2.3.6 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.typesafe.play#play-test_2.11;2.3.6 {test=[default(compile)]}[0m
@@ -4187,6 +4204,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ws_2.11;2.3.6->oauth.signpost#signpost-commonshttp4;1.2.1.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ws_2.11;2.3.6->oauth.signpost#signpost-commonshttp4;1.2.1.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-ws_2.11;2.3.6 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for musicplay#musicplay_2.11;1.0-SNAPSHOT [optional][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for musicplay#musicplay_2.11;1.0-SNAPSHOT [provided][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime-internal'[0m
@@ -4791,6 +4812,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ws_2.11;2.3.6->oauth.signpost#signpost-commonshttp4;1.2.1.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ws_2.11;2.3.6->oauth.signpost#signpost-commonshttp4;1.2.1.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-ws_2.11;2.3.6 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for musicplay#musicplay_2.11;1.0-SNAPSHOT [optional][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test-internal'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for musicplay#musicplay_2.11;1.0-SNAPSHOT [test-internal][0m
@@ -5395,6 +5420,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ws_2.11;2.3.6->oauth.signpost#signpost-commonshttp4;1.2.1.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ws_2.11;2.3.6->oauth.signpost#signpost-commonshttp4;1.2.1.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-ws_2.11;2.3.6 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->com.typesafe.play#play-test_2.11;2.3.6 [test->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->com.typesafe.play#play-test_2.11;2.3.6 [test->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->com.typesafe.play#play-test_2.11;2.3.6 [test->compile][0m
@@ -7508,6 +7537,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ws_2.11;2.3.6->oauth.signpost#signpost-commonshttp4;1.2.1.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ws_2.11;2.3.6->oauth.signpost#signpost-commonshttp4;1.2.1.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-ws_2.11;2.3.6 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for musicplay#musicplay_2.11;1.0-SNAPSHOT [optional][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'echo-trace-test'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for musicplay#musicplay_2.11;1.0-SNAPSHOT [echo-trace-test][0m
@@ -8113,6 +8146,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ws_2.11;2.3.6->oauth.signpost#signpost-commonshttp4;1.2.1.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ws_2.11;2.3.6->oauth.signpost#signpost-commonshttp4;1.2.1.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-ws_2.11;2.3.6 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies musicplay#musicplay_2.11;1.0-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.15-M1 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for musicplay#musicplay_2.11;1.0-SNAPSHOT [optional][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for musicplay#musicplay_2.11;1.0-SNAPSHOT [test-internal][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for musicplay#musicplay_2.11;1.0-SNAPSHOT [test][0m
@@ -9197,6 +9234,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-java-ebean_2.11;2.3.6!play-java-ebean_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-cache_2.11;2.3.6!play-cache_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-java-ws_2.11;2.3.6!play-java-ws_2.11.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.xerial#sqlite-jdbc;3.7.15-M1!sqlite-jdbc.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.apache.commons#commons-lang3;3.1!commons-lang3.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.11;1.0.1!scala-xml_2.11.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#build-link;2.3.6!build-link.jar[0m
@@ -9331,7 +9369,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] jline#jline;2.11!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.aspectj#aspectjweaver;1.7.3!aspectjweaver.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.trace#trace-sigar-libs;0.1.6!trace-sigar-libs.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 2516ms :: artifacts dl 125ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 4344ms :: artifacts dl 141ms[0m
 [0m[[0mdebug[0m] [0m	report for musicplay#musicplay_2.11;1.0-SNAPSHOT compile produced in C:\FH2\Web_Projekt\musicplay\target\resolution-cache\reports\musicplay-musicplay_2.11-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for musicplay#musicplay_2.11;1.0-SNAPSHOT runtime produced in C:\FH2\Web_Projekt\musicplay\target\resolution-cache\reports\musicplay-musicplay_2.11-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for musicplay#musicplay_2.11;1.0-SNAPSHOT test produced in C:\FH2\Web_Projekt\musicplay\target\resolution-cache\reports\musicplay-musicplay_2.11-test.xml[0m
@@ -9349,5 +9387,5 @@
 [0m[[0mdebug[0m] [0m	report for musicplay#musicplay_2.11;1.0-SNAPSHOT echo-trace-test produced in C:\FH2\Web_Projekt\musicplay\target\resolution-cache\reports\musicplay-musicplay_2.11-echo-trace-test.xml[0m
 [0m[[0mdebug[0m] [0m	report for musicplay#musicplay_2.11;1.0-SNAPSHOT echo-weave produced in C:\FH2\Web_Projekt\musicplay\target\resolution-cache\reports\musicplay-musicplay_2.11-echo-weave.xml[0m
 [0m[[0mdebug[0m] [0m	report for musicplay#musicplay_2.11;1.0-SNAPSHOT echo-sigar produced in C:\FH2\Web_Projekt\musicplay\target\resolution-cache\reports\musicplay-musicplay_2.11-echo-sigar.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (2516ms resolve - 125ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (4344ms resolve - 141ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
