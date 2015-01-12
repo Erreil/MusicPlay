@@ -41,7 +41,7 @@ Die Zielerreichung und Qualität der Ergebnisse wurden dann in den Übungen sich
 ### Die ersten Ideen ###
 
 Die ersten Ideen haben wir als Skizze auf ein Blatt Papier skizziert und Meinungen ausgetauscht.
-Am Ende haben wir beschlossen eine Music-Load Seite zu programmieren.
+Am Ende haben wir beschlossen eine Music-Load Seite zu implementieren.
 Im Nachhinein haben wir uns erste Schritte notiert wie z.B. was unbedingt in das Projekt rein muss bzw. nicht fehlen darf.
 
 
