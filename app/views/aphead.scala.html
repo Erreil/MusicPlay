@@ -1,0 +1,18 @@
+ 
+<div class="row">
+	<div class="span12">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="navbar-form">
+					<h2><span class="label label-danger">Admin Panel</span></h2>
+				</div>
+				<br/>
+				<div class="navbar-form">
+				<p>Angemeldeter Benutzer:</p>
+				<h3><span class="label label-info">@session.get("username")</span></h3>	
+				<button type="button" class="btn btn-primary"> <a href="@routes.Application.logoutAdmin()" style="color:white">Abmelden</a> </button>	
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

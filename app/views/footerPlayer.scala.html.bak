@@ -1,0 +1,38 @@
+
+	<script type="text/javascript">
+	
+		$(document).ready(function(){
+		
+			$('#hideShow').click(function(){				
+				var name = $('#hideShow').text();
+				
+				if(name == "Verstecken"){
+					$('#hideShow').text("Anzeigen");
+					$('#songBarII').hide();
+				}else{
+					$('#hideShow').text("Verstecken");
+					$('#songBarII').show();
+				}
+
+			});
+
+		});
+	</script>
+
+	<div class="row">
+		<div class="span12">
+			<div class="panel panel-default navbar-fixed-bottom">
+				<div class="pull-right" id="songBarI">
+					<button type="button" class="btn btn-default btn-xs" id="hideShow">Verstecken</button>
+				</div> 
+				<div class="panel-body" id="songBarII">	
+					
+					<audio controls style="width:100%" id="audioPlayer">			
+					</audio>
+													
+					<div class="panel-footer" id="songTitel"></div>
+				</div>				
+			</div>
+		</div>
+	</div>
+	

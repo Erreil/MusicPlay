@@ -1,0 +1,31 @@
+@(artists: List[Artist])
+
+<div class="col-md-2">
+		<nav class="navbar navbar-default" role="navigation">			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Kategorien</h3>
+				</div>
+				<div class="panel-body">	
+					<div class="list-group" id="artistGroup">
+						
+						@if(session.get("username") != null){	
+						<a href="#" class="list-group-item">Meine Songs</a>
+						}
+															
+					@if(artists.size() <= 0){
+							<a href="#" class="list-group-item">Keine Kategorien vorhanden</a>
+						}else{
+							@if(artists.size() > 0){
+							<div class="list-group" id="artistGroup">
+								<a class="list-group-item active" id="artistActiveItem"> Artist </a>								
+									@for(artist <- artists){				
+									<a href="@routes.Application.songsByArtist(artist.getAlias())" class="list-group-item">@artist.getAlias()</a>
+									}
+								}
+							</div>
+						}
+				</div>
+			</div>
+		</nav>	
+</div>

@@ -1,0 +1,80 @@
+@(songList: List[Song], songForm: Form[Song])
+
+@main("Song hinzufügen"){
+
+@aphead()
+	<div class="row">		
+@apleftcategory()	
+		<div class="span8">
+			<div class="navbar-left container">
+				
+				<!-- Panel -->
+				<div class="panel panel-default">
+					<div class="panel-body">	
+
+						<!-- Erstellen -->
+						<div class="panel panel-success">
+							<div class="panel-heading">Erstellen</div>
+							<div class="panel-body">
+								@helper.form(action = routes.Application.newSong, 'enctype -> "multipart/form-data") {
+										<p>Titel: <input type="text" name="titel"></p>
+										<p>ArtistId: <input type="text" name="artistId"></p>
+										<input type="file" name="songFile">
+										<input type="submit" value="Anlegen">
+								}
+							</div>
+						</div>
+						<!-- Erstellen -->
+						
+						<!-- Progressbar -->
+						<p>
+							<div class="progress">
+								<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;>
+									<span class="sr-only"></span>
+								</div>
+							</div>
+						</p>
+						<!-- Progressbar -->
+						
+						<!-- Table -->
+						<div class="panel panel-info">
+							<div class="panel-heading">Verfügbare Songs</div>
+								<div class="panel-body">								
+									<table class="table" id="songTable">
+										<thead>
+											<tr>
+												<th> Id </th>
+												<th> Künstler </th>
+												<th> Songtitel </th>
+											</tr>
+										</thead>
+										<tbody>
+											@for(song <- songList){
+												<tr>
+													<td>@song.getId()</td>
+													<td>@song.getArtist().getAlias()</td>
+													<td>@song.getTitel()</td>
+													<td>
+														<input type="checkbox">
+													</td>
+												</tr>
+											}
+										</tbody>
+									</table>				
+								</div>
+							</div>
+							<!-- Table -->
+							
+							<!-- Delete -->
+							<form class="navbar-form navbar-right" role="search">
+									<button type="button" class="btn btn-primary" onclick="readSelectedSongs();">Ausgewählte löschen</button>
+							</form>
+							<!-- Delete -->
+					</div>							
+				</div>
+				<!-- Panel -->
+				
+			</div>
+		</div>
+	</div>
+}

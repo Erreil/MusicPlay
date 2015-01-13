@@ -1,0 +1,100 @@
+@(songList: List[Song], country: String)
+
+
+@main("Song Rank verwalten"){
+
+	@aphead()
+	
+		<div class="row">	
+			@apleftcategory()	
+			<div class="span8">
+				<div class="navbar-left container">
+				
+				<!-- Panel -->
+				<div class="panel panel-default">
+					<div class="panel-body">
+						
+						<!-- Progressbar -->
+						<p>
+							<div class="progress">
+								<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+									<span class="sr-only"></span>
+								</div>
+							</div>
+						</p>
+						<!-- Progressbar -->
+						
+						<!-- Panel -->
+						<div class="panel panel-info">
+							<div class="panel-heading">Verfügbare Songs</div>
+							<div class="panel-body">
+								
+								<!-- tabs -->
+								<ul class="nav nav-tabs" role="tablist">
+									
+									@if(country == "eu"){
+										<li role="presentation" class="active"><a href="@routes.Application.aprankmanagement("eu")">TOP 10 Europe</a></li>
+										<li role="presentation"><a href="@routes.Application.aprankmanagement("usa")">TOP 10 USA</a></li>
+										<li role="presentation"><a href="@routes.Application.aprankmanagement("uk")">TOP 10 UK</a></li>
+									}
+												
+									@if(country == "usa"){
+										<li role="presentation"><a href="@routes.Application.aprankmanagement("eu")">TOP 10 Europe</a></li>
+										<li role="presentation" class="active"><a href="@routes.Application.aprankmanagement("usa")">TOP 10 USA</a></li>
+										<li role="presentation"><a href="@routes.Application.aprankmanagement("uk")">TOP 10 UK</a></li>
+									}
+												
+									@if(country == "uk"){
+										<li role="presentation"><a href="@routes.Application.aprankmanagement("eu")">TOP 10 Europe</a></li>
+										<li role="presentation"><a href="@routes.Application.aprankmanagement("usa")">TOP 10 USA</a></li>
+										<li role="presentation" class="active"><a href="@routes.Application.aprankmanagement("uk")">TOP 10 UK</a></li>
+									}
+									
+								</ul>
+								<!-- tabs -->
+								
+								<!-- Table -->	
+								<table class="table" id="songRankingTable">	
+									<thead>
+										<tr>
+											<th> Id </th>
+											<th> Künstler </th>
+											<th> Songtitel </th>
+											<th> Rank </th>
+										</tr>
+									</thead>
+									<tbody>
+										@if(songList != null){
+																					@for(song <- songList){
+											<tr>
+												<td>@song.getId()</td>
+												<td>@song.getArtist().getAlias()</td>
+												<td>@song.getTitel()</td>	
+												<td><input id="input@song.getId()"   type="number" min="0" max="10" value=@song.getRank()></td>
+											</tr>
+										}
+										}
+										
+
+									</tbody>
+								</table>
+								<!-- Table -->		
+								
+							</div>
+						</div>
+						<!-- Panel -->
+						
+						<!-- Assign -->
+						<form class="navbar-form navbar-right" role="search">
+							<button type="button" class="btn btn-primary" onclick="readSongRanking();">Zuordnen</button>
+						</form>
+						<!-- Assign -->
+						
+					</div>
+				</div>
+				<!-- Panel -->
+						
+				</div>	
+			</div>			
+		</div>
+}
