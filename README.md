@@ -46,6 +46,44 @@ Im Nachhinein haben wir uns erste Schritte wie z.B. was unbedingt in das Projekt
 
 #### Architektur ####
 
+Die Seiten kann in folgende Bereich unterteilt werden:
+
+Benutzerbereich:
+
+Die Ansicht in Browser wird durch fünf Html-Datein bereitgestellt. Um redundanten Code zu vermeiden wurde diese Aufteilung durchgeführt.
+
+Dabei wird durch "main.scala.html" der Header der Seite definiert.
+Den oberen bereich des "body"-Tags ist in der "headlogin.scala.html" angegeben.
+Der linke Bereich in der "leftCategory.scala.html".
+Der unter Bereich ist definiert durch die "footerPlayer.scala.html".
+
+Diese Teile werden bei jedem Seitenaufbau eingebunden.
+
+Der wechselnde Inhalt ist in der vierten Html-Datei definiert. Dies könnten folgende Dateien sein:
+
+ - favoriteSongs.scala.html
+ - index.scala.html
+ - songs.scala.html
+
+Adminpanel:
+
+Das Adminpanel ist ähnlich dem Benutzerbereich aufgebaut. Hierbei erfolgt der Aufbau aus vier Teilen.
+
+Header-Definition: main.scala.html
+Oberer "body"-Bereich: aphead.scala.html
+Linker "body"-Bereich: apleftcategory.scala.html
+
+Inhalt:
+
+ - apaddartist.scala.html
+ - apaddsong.sala.html
+ - aprankmanagement.sala.html
+ - apusermanagement.sala.html
+
+Sonstige Bereiche:
+
+Ausnahmebereiche, die anders aufgebaut werden, ist der Login- und Signupbereich.Diese 
+
 
 
 ##### verwendete Technologien #####
@@ -66,6 +104,28 @@ Einsatz im Projekt:
 
 Im Projekt exisitiert eine selbstgeschriebe Script.js, welche wie bereits erwähnt in der main.scala.html eingebunden wird. Die Datei ist vordefiniertem Ordner von "PlayFramework"-"public/javascripts" hinterlegt. Diese enthält Funktion für folgende Aufgaben:
 
+Funktion --> Aufgabe
+readSelectedUsers() -->
+readSelectedSongs()
+readSelectedArtists()
+readSongRanking()
+
+deleteUser()
+deleteSong()
+deleteArtist()
+
+getUsers()
+getSongs()
+getArtists()
+getSongRankings()
+
+updateSongRanking()
+
+playMusic()
+
+getSearchValue()
+
+addToFavorites ()
 
  
 - Scala
