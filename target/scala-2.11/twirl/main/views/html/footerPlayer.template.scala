@@ -54,11 +54,10 @@ Seq[Any](format.raw/*2.2*/("""<script type="text/javascript">
 				</div> 
 				<div class="panel-body" id="songBarII">	
 					
-					<audio controls style="width:100%" id="audioPlayer">
-						<source src=""""),_display_(/*31.21*/routes/*31.27*/.Assets.at("music/Psycho Metal - Freestyle Skills.mp3")),format.raw/*31.82*/("""" type="audio/mpeg" />					
+					<audio controls autoplay style="width:100%" id="audioPlayer">			
 					</audio>
 													
-					<div class="panel-footer" id="songTitel">Songtitel</div>
+					<div class="panel-footer" id="songTitel"></div>
 				</div>				
 			</div>
 		</div>
@@ -76,11 +75,11 @@ Seq[Any](format.raw/*2.2*/("""<script type="text/javascript">
 }
               /*
                   -- GENERATED --
-                  DATE: Mon Jan 12 00:19:01 CET 2015
+                  DATE: Mon Jan 12 22:10:59 CET 2015
                   SOURCE: C:/FH2/Web_Projekt/musicplay/app/views/footerPlayer.scala.html
-                  HASH: e730893797692942a7949ad91b3c689b25bcdee1
-                  MATRIX: 805->3|898->69|926->70|961->79|1019->110|1047->111|1083->121|1179->190|1207->191|1241->198|1336->266|1364->267|1396->271|1425->272|1459->279|1556->349|1584->350|1618->357|1646->358|1681->366|1709->367|2138->769|2153->775|2229->830
-                  LINES: 29->2|31->4|31->4|33->6|33->6|33->6|34->7|36->9|36->9|37->10|39->12|39->12|39->12|39->12|40->13|42->15|42->15|44->17|44->17|46->19|46->19|58->31|58->31|58->31
+                  HASH: fbfa927ec1f876c05eb1dd89bab3af3b9049aa3a
+                  MATRIX: 805->3|898->69|926->70|961->79|1019->110|1047->111|1083->121|1179->190|1207->191|1241->198|1336->266|1364->267|1396->271|1425->272|1459->279|1556->349|1584->350|1618->357|1646->358|1681->366|1709->367
+                  LINES: 29->2|31->4|31->4|33->6|33->6|33->6|34->7|36->9|36->9|37->10|39->12|39->12|39->12|39->12|40->13|42->15|42->15|44->17|44->17|46->19|46->19
                   -- GENERATED --
               */
           

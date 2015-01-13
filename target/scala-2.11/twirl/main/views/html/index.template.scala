@@ -20,22 +20,22 @@ import play.mvc.Http.Context.Implicit._
 import views.html._
 
 /**/
-object index extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template5[String,List[MusicType],List[Artist],List[Song],Form[Login],play.twirl.api.HtmlFormat.Appendable] {
+object index extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template3[String,List[Artist],List[Song],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(country: String, musicTypes: List[MusicType], artists: List[Artist], topSongsList: List[Song], loginForm: Form[Login]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(country: String, artists: List[Artist], topSongsList: List[Song]):play.twirl.api.HtmlFormat.Appendable = {
       _display_ {
 
-Seq[Any](format.raw/*1.121*/("""
+Seq[Any](format.raw/*1.68*/("""
 
 """),_display_(/*3.2*/main("Startseite")/*3.20*/{_display_(Seq[Any](format.raw/*3.21*/("""
 
-"""),_display_(/*5.2*/headlogin(loginForm)),format.raw/*5.22*/("""
+"""),_display_(/*5.2*/headlogin()),format.raw/*5.13*/("""
 
 """),format.raw/*7.1*/("""<div class="container-fluid">
 <div class="row">
 
-"""),_display_(/*10.2*/leftCategory(musicTypes, artists)),format.raw/*10.35*/("""
+"""),_display_(/*10.2*/leftCategory(artists)),format.raw/*10.23*/("""
 	"""),format.raw/*11.2*/("""<div class="col-md-8">
 		<div class="navbar-left">
 
@@ -117,19 +117,19 @@ Seq[Any](format.raw/*1.121*/("""
 """)))}))}
   }
 
-  def render(country:String,musicTypes:List[MusicType],artists:List[Artist],topSongsList:List[Song],loginForm:Form[Login]): play.twirl.api.HtmlFormat.Appendable = apply(country,musicTypes,artists,topSongsList,loginForm)
+  def render(country:String,artists:List[Artist],topSongsList:List[Song]): play.twirl.api.HtmlFormat.Appendable = apply(country,artists,topSongsList)
 
-  def f:((String,List[MusicType],List[Artist],List[Song],Form[Login]) => play.twirl.api.HtmlFormat.Appendable) = (country,musicTypes,artists,topSongsList,loginForm) => apply(country,musicTypes,artists,topSongsList,loginForm)
+  def f:((String,List[Artist],List[Song]) => play.twirl.api.HtmlFormat.Appendable) = (country,artists,topSongsList) => apply(country,artists,topSongsList)
 
   def ref: this.type = this
 
 }
               /*
                   -- GENERATED --
-                  DATE: Mon Jan 12 00:39:17 CET 2015
+                  DATE: Mon Jan 12 12:42:03 CET 2015
                   SOURCE: C:/FH2/Web_Projekt/musicplay/app/views/index.scala.html
-                  HASH: 36249bb6467919326b4dde677ffbf82c0ec764ef
-                  MATRIX: 775->1|983->120|1013->125|1039->143|1077->144|1107->149|1147->169|1177->173|1256->226|1310->259|1340->262|1639->535|1671->558|1710->559|1747->569|1823->618|1838->624|1888->653|1983->721|1998->727|2049->757|2141->822|2156->828|2206->857|2266->887|2311->906|2340->926|2379->927|2416->937|2477->971|2492->977|2546->1010|2656->1093|2671->1099|2722->1129|2814->1194|2829->1200|2879->1229|2939->1259|2984->1278|3012->1297|3051->1298|3088->1308|3149->1342|3164->1348|3218->1381|3313->1449|3328->1455|3379->1485|3486->1565|3501->1571|3551->1600|3611->1630|3656->1648|4003->1968|4040->1996|4079->1997|4119->2009|4223->2094|4236->2098|4275->2099|4315->2112|4359->2140|4398->2141|4439->2154|4489->2177|4505->2184|4536->2194|4587->2218|4603->2225|4647->2248|4698->2272|4714->2279|4746->2290|4807->2324|4834->2342|4882->2352|4936->2378|5034->2449|5049->2455|5111->2495|5144->2500|5161->2507|5194->2518|5267->2560|5308->2573|5357->2591|5400->2603|5437->2613|5629->2779|5664->2793
+                  HASH: fbb9b5695d402bfba65d5538c01386f6ffb302fd
+                  MATRIX: 747->1|901->67|931->72|957->90|995->91|1025->96|1056->107|1086->111|1165->164|1207->185|1237->188|1536->461|1568->484|1607->485|1644->495|1720->544|1735->550|1785->579|1880->647|1895->653|1946->683|2038->748|2053->754|2103->783|2163->813|2208->832|2237->852|2276->853|2313->863|2374->897|2389->903|2443->936|2553->1019|2568->1025|2619->1055|2711->1120|2726->1126|2776->1155|2836->1185|2881->1204|2909->1223|2948->1224|2985->1234|3046->1268|3061->1274|3115->1307|3210->1375|3225->1381|3276->1411|3383->1491|3398->1497|3448->1526|3508->1556|3553->1574|3900->1894|3937->1922|3976->1923|4016->1935|4120->2020|4133->2024|4172->2025|4212->2038|4256->2066|4295->2067|4336->2080|4386->2103|4402->2110|4433->2120|4484->2144|4500->2151|4544->2174|4595->2198|4611->2205|4643->2216|4704->2250|4731->2268|4779->2278|4833->2304|4931->2375|4946->2381|5008->2421|5041->2426|5058->2433|5091->2444|5164->2486|5205->2499|5254->2517|5297->2529|5334->2539|5526->2705|5561->2719
                   LINES: 26->1|29->1|31->3|31->3|31->3|33->5|33->5|35->7|38->10|38->10|39->11|50->22|50->22|50->22|51->23|51->23|51->23|51->23|52->24|52->24|52->24|53->25|53->25|53->25|54->26|56->28|56->28|56->28|57->29|57->29|57->29|57->29|58->30|58->30|58->30|59->31|59->31|59->31|60->32|62->34|62->34|62->34|63->35|63->35|63->35|63->35|64->36|64->36|64->36|65->37|65->37|65->37|66->38|68->40|83->55|83->55|83->55|84->56|87->59|87->59|87->59|88->60|88->60|88->60|89->61|90->62|90->62|90->62|91->63|91->63|91->63|92->64|92->64|92->64|94->66|94->66|94->66|95->67|95->67|95->67|95->67|95->67|95->67|95->67|96->68|97->69|98->70|99->71|100->72|116->88|116->88
                   -- GENERATED --
               */

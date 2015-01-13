@@ -1,0 +1,63 @@
+@(artists: List[Artist], songsList: List[Song])
+
+@main("Songs"){
+
+@headlogin()
+
+<div class="container-fluid">
+<div class="row">
+
+@leftCategory(artists)
+	<div class="col-md-8">
+		<div class="navbar-left">
+
+				<!-- panel -->
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<div class="container">
+														
+							<!-- table -->
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th> Künstler </th>
+										<th> Songtitel </th>
+										<th> </th>
+									</tr>
+								</thead>
+								<tbody>
+									
+									@if(songsList == null || songsList.size() <= 0){
+										<tr>
+											<td>Es sind keine Songs vorhanden!</td>
+										</tr>
+									}else{
+										@for(topSong <- songsList){
+											<tr>
+												<td>@topSong.getArtist().getAlias()</td>
+												<td>@topSong.getTitel()</td>
+												
+												@defining("music/") { path =>												
+												<td><button type="button" class="btn btn-primary" onclick="playMusic('@routes.Assets.at(path + topSong.getFileName())', '@topSong.getTitel()');"> Play </button>	</td>
+												 }						 
+											</tr>
+										}
+									}
+								</tbody>
+							</table>
+							<!-- table -->
+							
+						</div>
+					</div>
+				</div>
+				<!-- panel -->
+
+		</div>
+	</div>
+	
+	
+</div>
+</div>
+	
+	@footerPlayer()	
+}

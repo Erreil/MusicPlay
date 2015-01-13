@@ -1,4 +1,4 @@
-@(musicTypes: List[MusicType], artists: List[Artist])
+@(artists: List[Artist])
 
 <div class="col-md-2">
 		<nav class="navbar navbar-default" role="navigation">			
@@ -6,27 +6,24 @@
 				<div class="panel-heading">
 					<h3 class="panel-title">Kategorien</h3>
 				</div>
-				<div class="panel-body">											
-					@if(artists.size() <= 0 && musicTypes.size() <= 0){
+				<div class="panel-body">	
+					<div class="list-group" id="artistGroup">
+						
+						@if(session.get("username") == null){	
+						<a href="#" class="list-group-item">Meine Songs</a>
+						}
+															
+					@if(artists.size() <= 0){
 							<a href="#" class="list-group-item">Keine Kategorien vorhanden</a>
 						}else{
 							@if(artists.size() > 0){
 							<div class="list-group" id="artistGroup">
-								<a href="#" class="list-group-item active" id="artistActiveItem"> Artist </a>								
+								<a class="list-group-item active" id="artistActiveItem"> Artist </a>								
 									@for(artist <- artists){				
-									<a href="#" class="list-group-item">@artist.Alias</a>
+									<a href="@routes.Application.songsByArtist(artist.getAlias())" class="list-group-item">@artist.getAlias()</a>
 									}
 								}
 							</div>
-												
-							@if(musicTypes.size() > 0){
-								<div class="list-group" id="musicTypeGroup">
-									<a href="#" class="list-group-item active"> Musikart </a>									
-									@for(musicType <- musicTypes){
-										<a href="#" class="list-group-item">@musicType.Type</a>
-									}
-								</div>
-							}
 						}
 				</div>
 			</div>

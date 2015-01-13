@@ -1,8 +1,9 @@
 @(songList: List[Song], country: String)
 
+
 @main("Song Rank verwalten"){
 
-	@aphead("Inan", "Ödunc")
+	@aphead()
 	
 		<div class="row">	
 			@apleftcategory()	
@@ -63,7 +64,8 @@
 										</tr>
 									</thead>
 									<tbody>
-										@for(song <- songList){
+										@if(songList != null){
+																					@for(song <- songList){
 											<tr>
 												<td>@song.getId()</td>
 												<td>@song.getArtist().getAlias()</td>
@@ -71,6 +73,9 @@
 												<td><input id="input@song.getId()"   type="number" min="0" max="10" value=@song.getRank()></td>
 											</tr>
 										}
+										}
+										
+
 									</tbody>
 								</table>
 								<!-- Table -->		
@@ -81,7 +86,7 @@
 						
 						<!-- Assign -->
 						<form class="navbar-form navbar-right" role="search">
-							<button type="button" class="btn btn-primary" onclick="readSongRanking('@country');">Zuordnen</button>
+							<button type="button" class="btn btn-primary" onclick="readSongRanking();">Zuordnen</button>
 						</form>
 						<!-- Assign -->
 						

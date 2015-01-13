@@ -9,6 +9,7 @@ POST	/signup/newUser								controllers.Application.newUser()
 GET 	/admin												controllers.Application.adminpanel()
 GET 	/aplogin											controllers.Application.aplogin()
 POST	/aplogin											controllers.Application.authenticateAdmin()
+GET   /aplogout                     controllers.Application.logoutAdmin()
 POST  /login												controllers.Application.authenticateUser()
 GET   /logout                     	controllers.Application.logoutUser()
 GET 	/apaddsong										controllers.Application.apaddsong()
@@ -28,6 +29,11 @@ POST 	/aprankmanagement/usa/updateRanking/:parameter		controllers.Application.up
 POST 	/aprankmanagement/uk/updateRanking/:parameter		controllers.Application.updateRankingUk(parameter: String)
 GET   /aprankmanagement/songRankings/:country      	controllers.Application.getSongRankings(country: String)
 GET   /topten/:country      				controllers.Application.showTopTen(country: String)
+GET 	/artist/:artist					controllers.Application.songsByArtist(artist: String)
+GET 	/search				  controllers.Application.songsBySearch()
+GET   /searchResult						controllers.Application.searchResult()
+POST	/addToFavorites/:id		  controllers.Application.addToFavorites(id: Integer)
+GET	/mySongs		  controllers.Application.getMySongs()
 
 
 

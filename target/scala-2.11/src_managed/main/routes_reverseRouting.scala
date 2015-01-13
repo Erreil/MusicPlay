@@ -1,6 +1,6 @@
 // @SOURCE:C:/FH2/Web_Projekt/musicplay/conf/routes
-// @HASH:849e0fd8a597ef4aceff73fb618ba22f8a91964c
-// @DATE:Sun Jan 11 22:38:39 CET 2015
+// @HASH:65a734f91af0f125ea26b642782e9b18f04f05c6
+// @DATE:Tue Jan 13 13:41:43 CET 2015
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -15,7 +15,12 @@ import _root_.play.libs.F
 import Router.queryString
 
 
+// @LINE:41
 // @LINE:36
+// @LINE:35
+// @LINE:34
+// @LINE:33
+// @LINE:32
 // @LINE:31
 // @LINE:30
 // @LINE:29
@@ -44,11 +49,11 @@ import Router.queryString
 // @LINE:6
 package controllers {
 
-// @LINE:36
+// @LINE:41
 class ReverseAssets {
 
 
-// @LINE:36
+// @LINE:41
 def at(file:String): Call = {
    implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
    Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
@@ -58,6 +63,11 @@ def at(file:String): Call = {
 }
                           
 
+// @LINE:36
+// @LINE:35
+// @LINE:34
+// @LINE:33
+// @LINE:32
 // @LINE:31
 // @LINE:30
 // @LINE:29
@@ -94,6 +104,13 @@ def aprankmanagement(country:String): Call = {
 }
                         
 
+// @LINE:35
+def addToFavorites(id:Integer): Call = {
+   import ReverseRouteContext.empty
+   Call("POST", _prefix + { _defaultPrefix } + "addToFavorites/" + implicitly[PathBindable[Integer]].unbind("id", id))
+}
+                        
+
 // @LINE:25
 def deleteArtist(id:Integer): Call = {
    import ReverseRouteContext.empty
@@ -119,6 +136,13 @@ def apaddartist(): Call = {
 def updateRankingUk(parameter:String): Call = {
    import ReverseRouteContext.empty
    Call("POST", _prefix + { _defaultPrefix } + "aprankmanagement/uk/updateRanking/" + implicitly[PathBindable[String]].unbind("parameter", dynamicString(parameter)))
+}
+                        
+
+// @LINE:36
+def getMySongs(): Call = {
+   import ReverseRouteContext.empty
+   Call("GET", _prefix + { _defaultPrefix } + "mySongs")
 }
                         
 
@@ -206,6 +230,20 @@ def getSongRankings(country:String): Call = {
 }
                         
 
+// @LINE:33
+def songsBySearch(): Call = {
+   import ReverseRouteContext.empty
+   Call("GET", _prefix + { _defaultPrefix } + "search")
+}
+                        
+
+// @LINE:32
+def songsByArtist(artist:String): Call = {
+   import ReverseRouteContext.empty
+   Call("GET", _prefix + { _defaultPrefix } + "artist/" + implicitly[PathBindable[String]].unbind("artist", dynamicString(artist)))
+}
+                        
+
 // @LINE:24
 def getArtists(): Call = {
    import ReverseRouteContext.empty
@@ -217,6 +255,13 @@ def getArtists(): Call = {
 def updateRankingEu(parameter:String): Call = {
    import ReverseRouteContext.empty
    Call("POST", _prefix + { _defaultPrefix } + "aprankmanagement/eu/updateRanking/" + implicitly[PathBindable[String]].unbind("parameter", dynamicString(parameter)))
+}
+                        
+
+// @LINE:34
+def searchResult(): Call = {
+   import ReverseRouteContext.empty
+   Call("GET", _prefix + { _defaultPrefix } + "searchResult")
 }
                         
 
@@ -275,7 +320,12 @@ def newArtist(): Call = {
                   
 
 
+// @LINE:41
 // @LINE:36
+// @LINE:35
+// @LINE:34
+// @LINE:33
+// @LINE:32
 // @LINE:31
 // @LINE:30
 // @LINE:29
@@ -305,11 +355,11 @@ def newArtist(): Call = {
 package controllers.javascript {
 import ReverseRouteContext.empty
 
-// @LINE:36
+// @LINE:41
 class ReverseAssets {
 
 
-// @LINE:36
+// @LINE:41
 def at : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Assets.at",
    """
@@ -323,6 +373,11 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
+// @LINE:36
+// @LINE:35
+// @LINE:34
+// @LINE:33
+// @LINE:32
 // @LINE:31
 // @LINE:30
 // @LINE:29
@@ -358,6 +413,17 @@ def aprankmanagement : JavascriptReverseRoute = JavascriptReverseRoute(
    """
       function(country) {
       return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "aprankmanagement/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("country", encodeURIComponent(country))})
+      }
+   """
+)
+                        
+
+// @LINE:35
+def addToFavorites : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.addToFavorites",
+   """
+      function(id) {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "addToFavorites/" + (""" + implicitly[PathBindable[Integer]].javascriptUnbind + """)("id", id)})
       }
    """
 )
@@ -402,6 +468,17 @@ def updateRankingUk : JavascriptReverseRoute = JavascriptReverseRoute(
    """
       function(parameter) {
       return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "aprankmanagement/uk/updateRanking/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("parameter", encodeURIComponent(parameter))})
+      }
+   """
+)
+                        
+
+// @LINE:36
+def getMySongs : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.getMySongs",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "mySongs"})
       }
    """
 )
@@ -539,6 +616,28 @@ def getSongRankings : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
+// @LINE:33
+def songsBySearch : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.songsBySearch",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "search"})
+      }
+   """
+)
+                        
+
+// @LINE:32
+def songsByArtist : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.songsByArtist",
+   """
+      function(artist) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "artist/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("artist", encodeURIComponent(artist))})
+      }
+   """
+)
+                        
+
 // @LINE:24
 def getArtists : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Application.getArtists",
@@ -556,6 +655,17 @@ def updateRankingEu : JavascriptReverseRoute = JavascriptReverseRoute(
    """
       function(parameter) {
       return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "aprankmanagement/eu/updateRanking/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("parameter", encodeURIComponent(parameter))})
+      }
+   """
+)
+                        
+
+// @LINE:34
+def searchResult : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.searchResult",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "searchResult"})
       }
    """
 )
@@ -644,7 +754,12 @@ def newArtist : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
+// @LINE:41
 // @LINE:36
+// @LINE:35
+// @LINE:34
+// @LINE:33
+// @LINE:32
 // @LINE:31
 // @LINE:30
 // @LINE:29
@@ -674,11 +789,11 @@ def newArtist : JavascriptReverseRoute = JavascriptReverseRoute(
 package controllers.ref {
 
 
-// @LINE:36
+// @LINE:41
 class ReverseAssets {
 
 
-// @LINE:36
+// @LINE:41
 def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Assets.at(path, file), HandlerDef(this.getClass.getClassLoader, "", "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/$file<.+>""")
 )
@@ -687,6 +802,11 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 }
                           
 
+// @LINE:36
+// @LINE:35
+// @LINE:34
+// @LINE:33
+// @LINE:32
 // @LINE:31
 // @LINE:30
 // @LINE:29
@@ -722,6 +842,12 @@ def aprankmanagement(country:String): play.api.mvc.HandlerRef[_] = new play.api.
 )
                       
 
+// @LINE:35
+def addToFavorites(id:Integer): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.addToFavorites(id), HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "addToFavorites", Seq(classOf[Integer]), "POST", """""", _prefix + """addToFavorites/$id<[^/]+>""")
+)
+                      
+
 // @LINE:25
 def deleteArtist(id:Integer): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.deleteArtist(id), HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "deleteArtist", Seq(classOf[Integer]), "POST", """""", _prefix + """apaddartist/deleteArtist/$id<[^/]+>""")
@@ -743,6 +869,12 @@ def apaddartist(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 // @LINE:29
 def updateRankingUk(parameter:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.updateRankingUk(parameter), HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "updateRankingUk", Seq(classOf[String]), "POST", """""", _prefix + """aprankmanagement/uk/updateRanking/$parameter<[^/]+>""")
+)
+                      
+
+// @LINE:36
+def getMySongs(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.getMySongs(), HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "getMySongs", Seq(), "GET", """""", _prefix + """mySongs""")
 )
                       
 
@@ -818,6 +950,18 @@ def getSongRankings(country:String): play.api.mvc.HandlerRef[_] = new play.api.m
 )
                       
 
+// @LINE:33
+def songsBySearch(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.songsBySearch(), HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "songsBySearch", Seq(), "GET", """""", _prefix + """search""")
+)
+                      
+
+// @LINE:32
+def songsByArtist(artist:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.songsByArtist(artist), HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "songsByArtist", Seq(classOf[String]), "GET", """""", _prefix + """artist/$artist<[^/]+>""")
+)
+                      
+
 // @LINE:24
 def getArtists(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.getArtists(), HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "getArtists", Seq(), "GET", """""", _prefix + """apaddartist/artists""")
@@ -827,6 +971,12 @@ def getArtists(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 // @LINE:27
 def updateRankingEu(parameter:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.updateRankingEu(parameter), HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "updateRankingEu", Seq(classOf[String]), "POST", """""", _prefix + """aprankmanagement/eu/updateRanking/$parameter<[^/]+>""")
+)
+                      
+
+// @LINE:34
+def searchResult(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.searchResult(), HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "searchResult", Seq(), "GET", """""", _prefix + """searchResult""")
 )
                       
 

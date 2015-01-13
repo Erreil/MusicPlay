@@ -1,8 +1,8 @@
-@(country: String, musicTypes: List[MusicType], artists: List[Artist], topSongsList: List[Song], loginForm: Form[Login])
+@(country: String, artists: List[Artist], topSongsList: List[Song])
 
 @main("Startseite"){
 
-@headlogin(loginForm)
+@headlogin()
 
 <div class="container-fluid">
 <div class="row">
@@ -63,9 +63,9 @@
 												<td>@topSong.getArtist().getAlias()</td>
 												<td>@topSong.getTitel()</td>
 												
-												@defining("music/")
-												
+												@defining("music/") { path =>												
 												<td><button type="button" class="btn btn-primary" onclick="playMusic('@routes.Assets.at(path + topSong.getFileName())', '@topSong.getTitel()');"> Play </button>	</td>
+												 }
 											</tr>
 										}
 									}

@@ -1,13 +1,13 @@
-@(country: String, musicTypes: List[MusicType], artists: List[Artist], topSongsList: List[Song], newsList: List[NewsEntry])
+@(country: String, artists: List[Artist], topSongsList: List[Song])
 
 @main("Startseite"){
 
-@headlogin(false, "erreil", "Erik", "Reil")
+@headlogin()
 
 <div class="container-fluid">
 <div class="row">
 
-@leftCategory(musicTypes, artists)
+@leftCategory(artists)
 	<div class="col-md-8">
 		<div class="navbar-left">
 
@@ -47,6 +47,7 @@
 										<th> Pos </th>
 										<th> Künstler </th>
 										<th> Songtitel </th>
+										<th> </th>
 									</tr>
 								</thead>
 								<tbody>
@@ -61,6 +62,10 @@
 												<td>@topSong.getRank()</td>
 												<td>@topSong.getArtist().getAlias()</td>
 												<td>@topSong.getTitel()</td>
+												
+												@defining("music/") { path =>												
+												<td><button type="button" class="btn btn-primary" onclick="playMusic('@routes.Assets.at(path + topSong.getFileName())', '@topSong.getTitel()');"> Play </button>	</td>
+												 }
 											</tr>
 										}
 									}
@@ -76,7 +81,7 @@
 		</div>
 	</div>
 	
-	@news(newsList)
+	
 </div>
 </div>
 	

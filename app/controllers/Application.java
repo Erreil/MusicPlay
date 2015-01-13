@@ -1,7 +1,7 @@
 package controllers;
 
+import play.data.DynamicForm;
 import play.data.Form;
-import play.data.validation.ValidationError;
 import play.mvc.*;
 import play.mvc.Http.MultipartFormData;
 import play.mvc.Http.MultipartFormData.FilePart;
@@ -12,7 +12,8 @@ import play.libs.Json;
 import java.io.File;
 import java.util.*;
 
-import jdk.nashorn.internal.runtime.Context;
+import play.libs.F.Callback;
+import play.libs.F.Callback0;
 
 public class Application extends Controller {
 	
@@ -24,21 +25,7 @@ public class Application extends Controller {
     public static Result index() {
     	return redirect(routes.Application.showTopTen("europe"));
     }
-    
-    private static Result index(Form<Login> login) {
-    	return showTopTen("europe", login);
-    }
-	
-    private static Result showTopTen(String country, Form<Login> login){
-		Service service = Service.getInstance();
-		
-		List<MusicType> musicTypes = service.getAllMusicTypes();     
-        List<Artist> artists = service.getAllArtists();       
-        List<Song> topSongsList = service.getTopSongs(country);
-        
-        return ok(index.render(country ,musicTypes, artists, topSongsList, login));
-    }
-    
+    	    
     public static Result logoutUser() {
         session().clear();
         return index();
@@ -51,19 +38,12 @@ public class Application extends Controller {
     
 	public static Result showTopTen(String country){
 		
-		return showTopTen(country, loginForm);
-		
-		//List<NewsEntry> news = new ArrayList<NewsEntry>();
-		//NewsEntry entry = new NewsEntry();
-		//entry.setHeadline("Neuer Album!");
-		//entry.setShortDescription("Ein neuer Album ist RAUS!");
-		//entry.setDescription("Busta Ryhmes hat wieder ein neues Album rausgebracht. Hört es euch an!");
-		
-		//List<String> pictures = new ArrayList<String>();
-		//pictures.add("busta.jpg");
-		//entry.setPichturePaths(pictures);		
-		//news.add(entry);
-             
+		Service service = Service.getInstance();
+		    
+        List<Artist> artists = service.getAllArtists();       
+        List<Song> topSongsList = service.getTopSongs(country);
+        
+        return ok(index.render(country, artists, topSongsList)); 
 
 	}
 	
@@ -188,15 +168,12 @@ public class Application extends Controller {
 		Form<Login> filledForm = loginForm.bindFromRequest();
 				
 		if(filledForm.hasErrors()){			 
-			return badRequest(aplogin.render(filledForm)); 
+			return redirect(routes.Application.aplogin());
 		}
-		else{
-			
-			Login login = filledForm.get();
-						
+		else{		
+			Login login = filledForm.get();					
 			session().clear();
-			session("username", login.getUsername());
-			
+			session("username", login.getUsername());		
 			return redirect(routes.Application.index());
 		}
 	}
@@ -215,7 +192,7 @@ public class Application extends Controller {
 			session("username", login.getUsername());
 			session("isAdmin", "yes");
 			
-			return redirect(routes.Application.apaddsong());
+			return redirect(routes.Application.index());
 		}
 	}
 	
@@ -257,12 +234,82 @@ public class Application extends Controller {
 	        
 	    return apaddsong();
 	  } else {
-	    flash("error", "Missing file");
 	    return redirect(routes.Application.index());    
 	  }
 	}
 	
+	public static Result songsByArtist(String artist){
+		Service service = Service.getInstance();
+	    
+        List<Artist> artists = service.getAllArtists();       
+        List<Song> songsList = service.getAllSongsByArtist(artist);
+        
+        return ok(songs.render(artists, songsList)); 
+	}
 	
+	public static Result songsBySearch(){
+		Service service = Service.getInstance();
+		
+		 DynamicForm requestData = Form.form().bindFromRequest();
+		 String search = requestData.get("search");
+			    
+        List<Artist> artists = service.getAllArtists();       
+        List<Song> songsList = service.getAllSongByContainsTitel(search);
+        
+        return ok(songs.render(artists, songsList)); 
+	}
+	
+	public static Result addToFavorites(int id){
+		Service service = Service.getInstance();
+		
+		int userId = service.getUsersIdByUsername(session().get("username"));	
+		if(userId == 0) return badRequest();
+		
+		service.createFavorite(id, userId);		            
+        return ok(); 
+	}
+	
+	public static Result getMySongs(){
+		Service service = Service.getInstance();
+		
+		int userId = service.getUsersIdByUsername(session().get("username"));	
+		if(userId == 0) return badRequest();
+		
+		ArrayList<Song> songs = service.getAllFavoriteSongs(userId);
+		List<Artist> artists = service.getAllArtists();
+		
+        return ok(favoriteSongs.render(artists, songs)); 
+	}
+	
+	public static WebSocket<String> searchResult() {
+		 WebSocket<String> ws = null;
+		 ws = new WebSocket<String>() {
+		 public void onReady(WebSocket.In<String> in, final WebSocket.Out<String> out) {
+		 in.onMessage(new Callback<String>() {
+		 public void invoke(String g) {
+			
+			 System.out.println(g);
+	     Service service = Service.getInstance();
+		 ArrayList<String> list = service.getAllSongTitelByContainsTitel(g);
+		 
+		 String returnable = "";
+		 
+		 for (String value : list) {
+			returnable += value + ";";
+		}
+		 
+		 System.out.println(returnable);
+		 
+		 out.write(returnable);
+		 }
+		 });
+		 in.onClose(new Callback0() {
+		 public void invoke() {
+		 }
+		 });
+		 }
+		 };
+		 return ws;
+		 }
 
-	
 }

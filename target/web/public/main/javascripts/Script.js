@@ -324,3 +324,22 @@ function playMusic(link, titel){
 	audio.load();
 	audio.play();
 }
+ 	
+function getSearchValue(){
+		return $("#search")-val();
+}
+
+function addToFavorites (url) {
+	var request = new XMLHttpRequest();
+	request.onreadystatechange = function() {
+		if(request.readyState == 4 && request.status == 200){		
+				return true;
+		}
+		else{
+			return false;
+		}
+	}
+
+	request.open("POST", url , false);
+	request.send();
+}

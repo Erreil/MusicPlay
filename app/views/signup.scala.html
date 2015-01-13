@@ -25,7 +25,7 @@
 						@helper.form(action = routes.Application.newUser(), 'id -> "userForm"){
 						
 						@helper.inputText(userForm("Username"))
-						@helper.inputText(userForm("Password"))
+						@helper.inputPassword(userForm("Password"))
 						@helper.inputText(userForm("Firstname"))
 						@helper.inputText(userForm("Lastname"))
 						@helper.inputText(userForm("Zip"))

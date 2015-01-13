@@ -1,6 +1,6 @@
 // @SOURCE:C:/FH2/Web_Projekt/musicplay/conf/routes
-// @HASH:849e0fd8a597ef4aceff73fb618ba22f8a91964c
-// @DATE:Sun Jan 11 22:38:39 CET 2015
+// @HASH:65a734f91af0f125ea26b642782e9b18f04f05c6
+// @DATE:Tue Jan 13 13:41:43 CET 2015
 
 
 import play.core._
@@ -214,13 +214,48 @@ controllers.Application.showTopTen(fakeValue[String]),
 HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "showTopTen", Seq(classOf[String]),"GET", """""", Routes.prefix + """topten/$country<[^/]+>"""))
         
 
+// @LINE:32
+private[this] lazy val controllers_Application_songsByArtist26_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("artist/"),DynamicPart("artist", """[^/]+""",true))))
+private[this] lazy val controllers_Application_songsByArtist26_invoker = createInvoker(
+controllers.Application.songsByArtist(fakeValue[String]),
+HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "songsByArtist", Seq(classOf[String]),"GET", """""", Routes.prefix + """artist/$artist<[^/]+>"""))
+        
+
+// @LINE:33
+private[this] lazy val controllers_Application_songsBySearch27_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("search"))))
+private[this] lazy val controllers_Application_songsBySearch27_invoker = createInvoker(
+controllers.Application.songsBySearch(),
+HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "songsBySearch", Nil,"GET", """""", Routes.prefix + """search"""))
+        
+
+// @LINE:34
+private[this] lazy val controllers_Application_searchResult28_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("searchResult"))))
+private[this] lazy val controllers_Application_searchResult28_invoker = createInvoker(
+controllers.Application.searchResult(),
+HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "searchResult", Nil,"GET", """""", Routes.prefix + """searchResult"""))
+        
+
+// @LINE:35
+private[this] lazy val controllers_Application_addToFavorites29_route = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("addToFavorites/"),DynamicPart("id", """[^/]+""",true))))
+private[this] lazy val controllers_Application_addToFavorites29_invoker = createInvoker(
+controllers.Application.addToFavorites(fakeValue[Integer]),
+HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "addToFavorites", Seq(classOf[Integer]),"POST", """""", Routes.prefix + """addToFavorites/$id<[^/]+>"""))
+        
+
 // @LINE:36
-private[this] lazy val controllers_Assets_at26_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
-private[this] lazy val controllers_Assets_at26_invoker = createInvoker(
+private[this] lazy val controllers_Application_getMySongs30_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("mySongs"))))
+private[this] lazy val controllers_Application_getMySongs30_invoker = createInvoker(
+controllers.Application.getMySongs(),
+HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "getMySongs", Nil,"GET", """""", Routes.prefix + """mySongs"""))
+        
+
+// @LINE:41
+private[this] lazy val controllers_Assets_at31_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+private[this] lazy val controllers_Assets_at31_invoker = createInvoker(
 controllers.Assets.at(fakeValue[String], fakeValue[String]),
 HandlerDef(this.getClass.getClassLoader, "", "controllers.Assets", "at", Seq(classOf[String], classOf[String]),"GET", """ Map static resources from the /public folder to the /assets URL path""", Routes.prefix + """assets/$file<.+>"""))
         
-def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """signup""","""controllers.Application.signup()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """signup/newUser""","""controllers.Application.newUser()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """admin""","""controllers.Application.adminpanel()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """aplogin""","""controllers.Application.aplogin()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """aplogin""","""controllers.Application.authenticateAdmin()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """aplogout""","""controllers.Application.logoutAdmin()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""","""controllers.Application.authenticateUser()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """logout""","""controllers.Application.logoutUser()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """apaddsong""","""controllers.Application.apaddsong()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """apaddsong/songs""","""controllers.Application.getSongs()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """apaddsong/newSong""","""controllers.Application.newSong()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """apaddsong/deleteSong/$id<[^/]+>""","""controllers.Application.deleteSong(id:Integer)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """apusermanagement""","""controllers.Application.apusermanagement()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """apusermanagement/users""","""controllers.Application.getUsers()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """apusermanagement/deleteUser/$id<[^/]+>""","""controllers.Application.deleteUser(id:Integer)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """apaddartist""","""controllers.Application.apaddartist()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """apaddartist/newArtist""","""controllers.Application.newArtist()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """apaddartist/artists""","""controllers.Application.getArtists()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """apaddartist/deleteArtist/$id<[^/]+>""","""controllers.Application.deleteArtist(id:Integer)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """aprankmanagement/$country<[^/]+>""","""controllers.Application.aprankmanagement(country:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """aprankmanagement/eu/updateRanking/$parameter<[^/]+>""","""controllers.Application.updateRankingEu(parameter:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """aprankmanagement/usa/updateRanking/$parameter<[^/]+>""","""controllers.Application.updateRankingUsa(parameter:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """aprankmanagement/uk/updateRanking/$parameter<[^/]+>""","""controllers.Application.updateRankingUk(parameter:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """aprankmanagement/songRankings/$country<[^/]+>""","""controllers.Application.getSongRankings(country:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """topten/$country<[^/]+>""","""controllers.Application.showTopTen(country:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """signup""","""controllers.Application.signup()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """signup/newUser""","""controllers.Application.newUser()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """admin""","""controllers.Application.adminpanel()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """aplogin""","""controllers.Application.aplogin()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """aplogin""","""controllers.Application.authenticateAdmin()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """aplogout""","""controllers.Application.logoutAdmin()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""","""controllers.Application.authenticateUser()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """logout""","""controllers.Application.logoutUser()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """apaddsong""","""controllers.Application.apaddsong()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """apaddsong/songs""","""controllers.Application.getSongs()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """apaddsong/newSong""","""controllers.Application.newSong()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """apaddsong/deleteSong/$id<[^/]+>""","""controllers.Application.deleteSong(id:Integer)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """apusermanagement""","""controllers.Application.apusermanagement()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """apusermanagement/users""","""controllers.Application.getUsers()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """apusermanagement/deleteUser/$id<[^/]+>""","""controllers.Application.deleteUser(id:Integer)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """apaddartist""","""controllers.Application.apaddartist()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """apaddartist/newArtist""","""controllers.Application.newArtist()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """apaddartist/artists""","""controllers.Application.getArtists()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """apaddartist/deleteArtist/$id<[^/]+>""","""controllers.Application.deleteArtist(id:Integer)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """aprankmanagement/$country<[^/]+>""","""controllers.Application.aprankmanagement(country:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """aprankmanagement/eu/updateRanking/$parameter<[^/]+>""","""controllers.Application.updateRankingEu(parameter:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """aprankmanagement/usa/updateRanking/$parameter<[^/]+>""","""controllers.Application.updateRankingUsa(parameter:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """aprankmanagement/uk/updateRanking/$parameter<[^/]+>""","""controllers.Application.updateRankingUk(parameter:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """aprankmanagement/songRankings/$country<[^/]+>""","""controllers.Application.getSongRankings(country:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """topten/$country<[^/]+>""","""controllers.Application.showTopTen(country:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """artist/$artist<[^/]+>""","""controllers.Application.songsByArtist(artist:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """search""","""controllers.Application.songsBySearch()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """searchResult""","""controllers.Application.searchResult()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """addToFavorites/$id<[^/]+>""","""controllers.Application.addToFavorites(id:Integer)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """mySongs""","""controllers.Application.getMySongs()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]]
 }}
@@ -436,10 +471,50 @@ case controllers_Application_showTopTen25_route(params) => {
 }
         
 
+// @LINE:32
+case controllers_Application_songsByArtist26_route(params) => {
+   call(params.fromPath[String]("artist", None)) { (artist) =>
+        controllers_Application_songsByArtist26_invoker.call(controllers.Application.songsByArtist(artist))
+   }
+}
+        
+
+// @LINE:33
+case controllers_Application_songsBySearch27_route(params) => {
+   call { 
+        controllers_Application_songsBySearch27_invoker.call(controllers.Application.songsBySearch())
+   }
+}
+        
+
+// @LINE:34
+case controllers_Application_searchResult28_route(params) => {
+   call { 
+        controllers_Application_searchResult28_invoker.call(controllers.Application.searchResult())
+   }
+}
+        
+
+// @LINE:35
+case controllers_Application_addToFavorites29_route(params) => {
+   call(params.fromPath[Integer]("id", None)) { (id) =>
+        controllers_Application_addToFavorites29_invoker.call(controllers.Application.addToFavorites(id))
+   }
+}
+        
+
 // @LINE:36
-case controllers_Assets_at26_route(params) => {
+case controllers_Application_getMySongs30_route(params) => {
+   call { 
+        controllers_Application_getMySongs30_invoker.call(controllers.Application.getMySongs())
+   }
+}
+        
+
+// @LINE:41
+case controllers_Assets_at31_route(params) => {
    call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
-        controllers_Assets_at26_invoker.call(controllers.Assets.at(path, file))
+        controllers_Assets_at31_invoker.call(controllers.Assets.at(path, file))
    }
 }
         

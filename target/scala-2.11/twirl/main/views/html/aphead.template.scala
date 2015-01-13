@@ -26,7 +26,7 @@ object aphead extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,For
   def apply():play.twirl.api.HtmlFormat.Appendable = {
       _display_ {
 
-Seq[Any](format.raw/*1.1*/("""<div class="row">
+Seq[Any](format.raw/*2.1*/("""<div class="row">
 	<div class="span12">
 		<div class="panel panel-default">
 			<div class="panel-body">
@@ -36,8 +36,8 @@ Seq[Any](format.raw/*1.1*/("""<div class="row">
 				<br/>
 				<div class="navbar-form">
 				<p>Angemeldeter Benutzer:</p>
-				<h3><span class="label label-info">"""),_display_(/*11.41*/session/*11.48*/.get("username")),format.raw/*11.64*/("""</span></h3>	
-				<button type="button" class="btn btn-primary"> <a href=""""),_display_(/*12.62*/routes/*12.68*/.Application.logoutAdmin()),format.raw/*12.94*/("""" style="color:white">Abmelden</a> </button>	
+				<h3><span class="label label-info">"""),_display_(/*12.41*/session/*12.48*/.get("username")),format.raw/*12.64*/("""</span></h3>	
+				<button type="button" class="btn btn-primary"> <a href=""""),_display_(/*13.62*/routes/*13.68*/.Application.logoutAdmin()),format.raw/*13.94*/("""" style="color:white">Abmelden</a> </button>	
 				</div>
 			</div>
 		</div>
@@ -54,11 +54,11 @@ Seq[Any](format.raw/*1.1*/("""<div class="row">
 }
               /*
                   -- GENERATED --
-                  DATE: Sun Jan 11 22:39:28 CET 2015
+                  DATE: Mon Jan 12 20:01:53 CET 2015
                   SOURCE: C:/FH2/Web_Projekt/musicplay/app/views/aphead.scala.html
-                  HASH: 7f9ec0937f48b2618b8e73a03433660fe87d07f0
-                  MATRIX: 799->0|1161->335|1177->342|1214->358|1317->434|1332->440|1379->466
-                  LINES: 29->1|39->11|39->11|39->11|40->12|40->12|40->12
+                  HASH: 8fbea4a6a1cf43193c9dc56b7f4b8378a8748346
+                  MATRIX: 799->3|1161->338|1177->345|1214->361|1317->437|1332->443|1379->469
+                  LINES: 29->2|39->12|39->12|39->12|40->13|40->13|40->13
                   -- GENERATED --
               */
           
