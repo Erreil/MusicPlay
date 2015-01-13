@@ -46,7 +46,9 @@ Im Nachhinein haben wir uns erste Schritte wie z.B. was unbedingt in das Projekt
 
 #### Architektur ####
 
-Die Seiten kann in folgende Bereich unterteilt werden:
+Darestellung:
+
+Die Seiten können in folgende Bereich unterteilt werden:
 
 Benutzerbereich:
 
@@ -69,7 +71,7 @@ Adminpanel:
 
 Das Adminpanel ist ähnlich dem Benutzerbereich aufgebaut. Hierbei erfolgt der Aufbau aus vier Teilen.
 
-Header-Definition: main.scala.html
+"Header"-Definition: main.scala.html
 Oberer "body"-Bereich: aphead.scala.html
 Linker "body"-Bereich: apleftcategory.scala.html
 
@@ -82,10 +84,15 @@ Inhalt:
 
 Sonstige Bereiche:
 
-Ausnahmebereiche, die anders aufgebaut werden, ist der Login- und Signupbereich.Diese 
+Ausnahmebereiche, die anders aufgebaut werden, ist der Login- und Signupbereich.Diese enthalten nur die "main.scala.html" für den "Head". Dies sind folgende Dateien:
 
+ - aplogin.scala.html
+ - signup.scala.html
+ 
+Logik:
 
-
+Der Aufbau der Logik ist im Klassendiagram gegeben.
+ 
 ##### verwendete Technologien #####
 
 Web:
