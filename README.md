@@ -39,7 +39,7 @@ non functional requirements:
 
 ### Die ersten Ideen ###
 
-Die ersten Ideen haben wir als Skizze auf ein Blatt Papier skizziert und Meinungen ausgetauscht.
+Die ersten Ideen haben wir stichpunktartig notiert und als Skizze auf ein Blatt Papier skizziert.
 Am Ende haben wir beschlossen eine Music-Load Seite zu implementieren.
 Im Nachhinein haben wir uns erste Schritte wie z.B. was unbedingt in das Projekt rein muss bzw. nicht fehlen darf notiert.
 
