@@ -53,28 +53,40 @@ Im Nachhinein haben wir uns erste Schritte wie z.B. was unbedingt in das Projekt
 Web:
 - JavaScript/JQuery
 
-Allen Html-Setein steht ein allgemeiner JavaScript zu verfügung. Dieser wird zu beginn in der main.scala.html eingebunden. Das Script unterstützt diese bei folgenden Funktionen:
+Allen Html-Seiten steht ein allgemeiner JavaScript zu verfügung. Dieser wird zu beginn in der main.scala.html eingebunden. Das Script unterstützt diese bei folgenden Funktionen:
 
- Abhandeln der AJAX Abfragen
- Aktualisieren der Progressladebalken
- Einblenden oder Ausblenden von Elementen
+ - Abhandeln der AJAX Abfragen
+ - Aktualisieren der Progressladebalken
+ - Einblenden oder Ausblenden von Elementen
+ - Kommunikation über WebSockets
  
+Desweiteren werden über JQuery die meisten übergaben von Werten zwischen den einzelnen Html-Tags gehändelt.
 
+Einsatz im Projekt:
+
+Im Projekt exisitiert eine selbstgeschriebe Script.js, welche wie bereits erwähnt in der main.scala.html eingebunden wird. Die Datei ist vordefiniertem Ordner von "PlayFramework"-"public/javascripts" hinterlegt. Diese enthält Funktion für folgende Aufgaben:
+
+
+ 
 - Scala
 
- Alle Parameter, die an die Html übergeben werden, werden durch Scala übergeben
- Dynamische Inhalte werden durch Scala bereitgestellt
+ Alle Parameter, die an die Html übergeben werden, werden durch Scala übergeben.
+ Dynamische Inhalte werden durch Scala bereitgestellt und z.B Tabellen erzeugt oder anderen Html-Elemente definiert.
 
 CSS:
 - bootstrap
 
-
+Im Projekt wird hauptsächlich der gegeben CSS-Design von "bootstrap" verwendet. Alle Elemente bauen darauf auf. Auch das Layout der Seite wird durch die gegebenen "columns" von "bootstrap" realisiert. Es existiert keine eigene CSS-Datei, da die gegebe CSS von "bootstrap" für diese Projekt ausreichend. In einzelnen Fällen wird das auf "Style-Attribut" zurückgegriffen um einzelnen Feinheiten anzupassen.
 
 Database:
 - SQLLite
 
+Als Datenbank wird SQLite verwendet. Dieses ist kein vollständiges Datenbanksystem, ist aber für das Projekt ausreichend. Alle notwendigen SQL-Abfragen konnte damit ausgeführt werden.
+
 Entwicklung:
 - Java
+
+Die gesamte Logik, serverseitig wird per Java-Code ausgeführt. Alle Interaktion mit der Datenbank und das Handling zwischen Server und Client wird auch per Java-Code durchgeführt. 
 
 Sonstige Technologien:
 - Websocket
