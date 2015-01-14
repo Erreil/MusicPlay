@@ -189,7 +189,7 @@ Durch dieses Projekt wurden viele neue Erkenntnise gewonnen. Web ist für unsere
 Wir hatten sehr viele Probleme bei diesem Projekt, ich will aber nur die wichtigsten aufzählen:
 
  - Anbindung des Projekts an Playframework
- -
+ 
  Leider konnte unsere Projekt nicht problemlos an *Play* angebunden werden. Unsere Inhalte wurden nicht angezeigt, sondern nur die Standardseite von *Play*. Fehlerlösung: Cache von *Play* musste gellert werden.
  
  - SQLlite Abfragen
