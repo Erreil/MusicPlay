@@ -176,10 +176,26 @@ JSON wurde in unserem Projekt für AJAX verwendet. Die übertragenen Daten an de
 
 - Playframework
 
-Das ganze Projekt 
+Das Entwickeln wurde über das Playframework durchgeführt.
 
 ###### Erfahrungen ######
 
+Das Entwickeln dieser Webanwendung war für uns neues Gebiet. Zwar hatte unser Team gute Java-Kenntnise, aber es fehlten jegliche Erfahrung mit den sonstigen eingesetzten Technologien. Somit war es ein schwieriger aber lernreicher Entwicklungsprozess.
+
+Durch dieses Projekt wurden viele neue Erkenntnise gewonnen. Web ist für unserer Team klarer geworden.
+
 ####### Probleme #######
 
+Wir hatten sehr viele Probleme bei diesem Projekt, ich will aber nur die wichtigsten aufzählen:
+
+ ######## Anbindung des Projekts an Playframework ########
+ 
+ Leider konnte unsere Projekt nicht problemlos an *Play* angebunden werden. Unsere Inhalte wurden nicht angezeigt, sondern nur die Standardseite von *Play*. Fehlerlösung: Cache von *Play* musste gellert werden.
+ 
+ ######## SQLlite Abfragen ########
+ 
+ Hier hatten wir das Problem, dass die SQLite-Datenbank ständig *locked* war. Nach einigen Recherchen konnte das Problem ermitteln. Fehlerursache war, dass nach jedem Kontakt mit der Datenbank jegliche eingesetzten Objekte für die Datenbank entladen werden mussten. Sprich nicht nur die *Connection* sondern auch die einzelnen *Statements*.
+
 ######## wichtige Codeschnipsel ########
+
+
