@@ -109,55 +109,65 @@ Desweiteren werden über JQuery die meisten übergaben von Werten zwischen den e
 
 Einsatz im Projekt:
 
-Im Projekt exisitiert eine selbstgeschriebe Script.js, welche wie bereits erwähnt in der main.scala.html eingebunden wird. Die Datei ist vordefiniertem Ordner von *PlayFramework*-*public/javascripts* hinterlegt. Diese enthält Funktion für folgende Aufgaben:
+Im Projekt exisitiert eine selbstgeschriebe *Script.js*, welche wie bereits erwähnt in der *main.scala.html* eingebunden wird. Die Datei ist vordefiniertem Ordner von *PlayFramework*-*public/javascripts* hinterlegt. Diese enthält Funktion für folgende Aufgaben:
 
-Funktion --> Aufgabe
-readSelectedUsers() -->
-readSelectedSongs()
-readSelectedArtists()
-readSongRanking()
+Funktion --> Aufgabe --> Datei
 
-deleteUser()
-deleteSong()
-deleteArtist()
+readSelectedUsers() --> Durchläuft die Tabelle und überprüft auf ausgewählte Einträge -->  *apusermanagement.sala.html*
+readSelectedSongs() --> Durchläuft die Tabelle und überprüft auf ausgewählte Einträge --> *apaddsong.sala.html*
+readSelectedArtists() --> Durchläuft die Tabelle und überprüft auf ausgewählte Einträge --> *apaddartist.scala.html*
+readSongRanking() --> Durchläuft die Tabelle und überprüft auf ausgewählte Einträge --> *aprankmanagement.sala.html*
 
-getUsers()
-getSongs()
-getArtists()
-getSongRankings()
+deleteUser() --> Löscht den übergebenen User anhand Id über AJAX -->  *apusermanagement.sala.html*
+deleteSong() --> Löscht den übergebenen Song anhand Id über AJAX --> *apaddsong.sala.html*
+deleteArtist() --> Löscht den übergebenen Artist anhand Id über AJAX --> *apaddartist.scala.html*
+updateSongRanking() --> Aktualisiert Ranking anhand gegebener Id --> *aprankmanagement.sala.html*
 
-updateSongRanking()
+getUsers() --> Lädt User in die Tabelle nach -->  *apusermanagement.sala.html*
+getSongs() --> Lädt Songs in die Tabelle nach --> *apaddsong.sala.html*
+getArtists() --> Lädt Artists in die Tabelle nach --> *apaddartist.scala.html*
+getSongRankings() --> Lädt Songs in die Tabelle nach --> *aprankmanagement.sala.html*
 
-playMusic()
+playMusic() --> Setzt den Source-Tag für den Mediaplayer --> *footerPlayer.scala.html*
 
-getSearchValue()
+getSearchValue() --> Liest den einegegben Wert im Suchfeld aus --> *aphead.scala.html*
 
-addToFavorites ()
+addToFavorites () --> Fügt über AJAX Favoriten hinzu --> *songs.scala.html*
 
  
 - Scala
 
  Alle Parameter, die an die Html übergeben werden, werden durch Scala übergeben.
- Dynamische Inhalte werden durch Scala bereitgestellt und z.B Tabellen erzeugt oder anderen Html-Elemente definiert.
+ Dynamische Inhalte werden durch Scala bereitgestellt und z.B Tabellen erzeugt oder andere Html-Elemente definiert.
 
 CSS:
 - bootstrap
 
-Im Projekt wird hauptsächlich der gegeben CSS-Design von *bootstrap* verwendet. Alle Elemente bauen darauf auf. Auch das Layout der Seite wird durch die gegebenen *columns* von *bootstrap* realisiert. Es existiert keine eigene CSS-Datei, da die gegebe CSS von *bootstrap* für diese Projekt ausreichend. In einzelnen Fällen wird das auf *Style-Attribut* zurückgegriffen um einzelnen Feinheiten anzupassen.
+Im Projekt wird hauptsächlich der gegeben CSS-Design von *bootstrap* verwendet. Alle Elemente bauen darauf auf. Auch das Layout der Seite wird durch die gegebenen *columns* von *bootstrap* realisiert. Es existiert keine eigene CSS-Datei, da die gegebe CSS von *bootstrap* für diese Projekt ausreichend ist. In einzelnen Fällen wird auf das *Style-Attribut* zurückgegriffen um einzelne Feinheiten anzupassen.
 
 Database:
 - SQLLite
 
-Als Datenbank wird SQLite verwendet. Dieses ist kein vollständiges Datenbanksystem, ist aber für das Projekt ausreichend. Alle notwendigen SQL-Abfragen konnte damit ausgeführt werden.
+Als Datenbank wird SQLite verwendet. Dieses ist kein vollständiges Datenbanksystem, ist aber für das Projekt ausreichend. Alle notwendigen SQL-Abfragen konnten damit ausgeführt werden.
 
 Entwicklung:
 - Java
 
-Die gesamte Logik, serverseitig wird per Java-Code ausgeführt. Alle Interaktion mit der Datenbank und das Handling zwischen Server und Client wird auch per Java-Code durchgeführt. 
+Die gesamte Logik, serverseitig, wird per Java-Code ausgeführt. Alle Interaktion mit der Datenbank und das Handling zwischen Server und Client wird auch per Java-Code durchgeführt. 
 
 Sonstige Technologien:
-- Websocket
+- WebSocket
+
+Um Seiten nich neuladen zu müssen und dennoch eine Kommunikation zwischen Client und Server zu ermöglichen werden WebSockets eingesetzt. Diese verbinden sich beim Aufbau der Html-Seiten und behalten die Verbindung aufrecht, solange die Html-Seite geöffnet ist.
+
+In unserem Projekt werden WebSockets während der Eingabe im Suchfeld für Songs eingesetzt. Dabei werden vom Server nach Eingabe erster Suchzeichen Vorschläge vom Server an Client geschickt und angezeigt.
+
 - AJAX
+
+Mit AJAX können Http-Anfragen, sowohl über GET als auch über POST an den Server geschickt werden. Dies wird über JavaScript durchgeführt und ein erneuter Seitenaufbau ist nicht notwendig. Somit können Inhalte der Seite ohne erneuten Aufbau der Seite realisiert werden.
+
+In
+
 - JSON
 - 
 
