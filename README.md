@@ -166,13 +166,17 @@ In unserem Projekt werden WebSockets während der Eingabe im Suchfeld für Songs
 
 Mit AJAX können Http-Anfragen, sowohl über GET als auch über POST an den Server geschickt werden. Dies wird über JavaScript durchgeführt und ein erneuter Seitenaufbau ist nicht notwendig. Somit können Inhalte der Seite ohne erneuten Aufbau der Seite realisiert werden.
 
-In
+In unserem Projekt wird die Technologie verwendet um im AdminPanel die Tabellen nach dem Löschen von von Einträgen zu aktualisieren.
 
 - JSON
-- 
+
+JSON ist ein komptaktes Datenformat in Textform zum Datenaustausch. 
+
+JSON wurde in unserem Projekt für AJAX verwendet. Die übertragenen Daten an den Client sind im JSON-Format.
 
 - Playframework
-- 
+
+Das ganze Projekt 
 
 ###### Erfahrungen ######
 
