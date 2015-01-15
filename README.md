@@ -106,30 +106,89 @@ Einsatz im Projekt:
 
 Im Projekt exisitiert eine selbstgeschriebe *Script.js*, welche wie bereits erwähnt in der *main.scala.html* eingebunden wird. Die Datei ist vordefiniertem Ordner von *PlayFramework*-*public/javascripts* hinterlegt. Diese enthält Funktion für folgende Aufgaben:
 
-Funktion --> Aufgabe --> Datei
+<table>
+    <tr>
+        <th>Funktion </th>
+        <th> Aufgabe </th>
+        <th> Datei </th>
+    </tr>
+    <tr>
+        <td> readSelectedUsers() </td>
+        <td> Durchläuft die Tabelle und überprüft auf ausgewählte Einträge </td>
+        <td> *apusermanagement.sala.html* </td>
+    </tr>
+    <tr>
+        <td> readSelectedSongs() </td>
+        <td> Durchläuft die Tabelle und überprüft auf ausgewählte Einträge </td>
+        <td> *apaddsong.sala.html* </td>
+    </tr>
+       <tr>
+        <td> readSelectedArtists() </td>
+        <td> Durchläuft die Tabelle und überprüft auf ausgewählte Einträge </td>
+        <td> *apaddartist.scala.html* </td>
+    </tr>
+    <tr>
+        <td> readSongRanking() </td>
+        <td> Durchläuft die Tabelle und überprüft auf ausgewählte Einträge </td>
+        <td> *aprankmanagement.sala.html* </td>
+    </tr>
+        <tr>
+        <td> deleteUser() </td>
+        <td> Löscht den übergebenen User anhand Id über AJAX </td>
+        <td> *apusermanagement.sala.html* </td>
+    </tr>
+        <tr>
+        <td> deleteSong() </td>
+        <td> Löscht den übergebenen Song anhand Id über AJAX </td>
+        <td> *apaddsong.sala.html* </td>
+    </tr>
+    <tr>
+        <td> deleteArtist() </td>
+        <td> Löscht den übergebenen Artist anhand Id über AJAX </td>
+        <td> *apaddartist.scala.html* </td>
+    </tr>
+    <tr>
+        <td> updateSongRanking() </td>
+        <td> Aktualisiert Ranking anhand gegebener Id </td>
+        <td> *aprankmanagement.sala.html* </td>
+    </tr>
+    <tr>
+        <td> getUsers() </td>
+        <td> Lädt User in die Tabelle nach </td>
+        <td> *apusermanagement.sala.html* </td>
+    </tr>
+    <tr>
+        <td> getSongs() </td>
+        <td> Lädt Songs in die Tabelle nach </td>
+        <td> *apaddsong.sala.html* </td>
+    </tr>
+    <tr>
+        <td> getArtists() </td>
+        <td> Lädt Artists in die Tabelle nach </td>
+        <td> *apaddartist.scala.html* </td>
+    </tr>
+    <tr>
+        <td> getSongRankings() </td>
+        <td> Lädt Songs in die Tabelle nach </td>
+        <td> *aprankmanagement.sala.html* </td>
+    </tr>
+    <tr>
+        <td> playMusic() </td>
+        <td> Setzt den Source-Tag für den Mediaplayer </td>
+        <td> *footerPlayer.scala.html* </td>
+    </tr>
+     <tr>
+        <td> getSearchValue() </td>
+        <td> Liest den einegegben Wert im Suchfeld aus </td>
+        <td> *aphead.scala.html* </td>
+    </tr>
+    <tr>
+        <td> addToFavorites() </td>
+        <td> Fügt über AJAX Favoriten hinz </td>
+        <td> *songs.scala.html* </td>
+    </tr>
+</table>
 
-readSelectedUsers() --> Durchläuft die Tabelle und überprüft auf ausgewählte Einträge -->  *apusermanagement.sala.html*
-readSelectedSongs() --> Durchläuft die Tabelle und überprüft auf ausgewählte Einträge --> *apaddsong.sala.html*
-readSelectedArtists() --> Durchläuft die Tabelle und überprüft auf ausgewählte Einträge --> *apaddartist.scala.html*
-readSongRanking() --> Durchläuft die Tabelle und überprüft auf ausgewählte Einträge --> *aprankmanagement.sala.html*
-
-deleteUser() --> Löscht den übergebenen User anhand Id über AJAX -->  *apusermanagement.sala.html*
-deleteSong() --> Löscht den übergebenen Song anhand Id über AJAX --> *apaddsong.sala.html*
-deleteArtist() --> Löscht den übergebenen Artist anhand Id über AJAX --> *apaddartist.scala.html*
-updateSongRanking() --> Aktualisiert Ranking anhand gegebener Id --> *aprankmanagement.sala.html*
-
-getUsers() --> Lädt User in die Tabelle nach -->  *apusermanagement.sala.html*
-getSongs() --> Lädt Songs in die Tabelle nach --> *apaddsong.sala.html*
-getArtists() --> Lädt Artists in die Tabelle nach --> *apaddartist.scala.html*
-getSongRankings() --> Lädt Songs in die Tabelle nach --> *aprankmanagement.sala.html*
-
-playMusic() --> Setzt den Source-Tag für den Mediaplayer --> *footerPlayer.scala.html*
-
-getSearchValue() --> Liest den einegegben Wert im Suchfeld aus --> *aphead.scala.html*
-
-addToFavorites () --> Fügt über AJAX Favoriten hinzu --> *songs.scala.html*
-
- 
 - Scala
 
  Alle Parameter, die an die Html übergeben werden, werden durch Scala übergeben.
