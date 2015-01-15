@@ -1,13 +1,7 @@
-MusicPlay
-=========
+#MusicPlay#
+***
 
-# Homepage to play music
-
-
-## Dokumentation:
-
-
-# Projektbeschreibung #
+## Projektbeschreibung ##
 
 Der Haupt-Fokus des Projektes ist für uns, eine optimale Music-Load Seite zu programmieren. 
 Die Kern-Idee ist es, dass die Benutzer Ihre Songs auswählen, speichern oder abspielen können. 
@@ -15,10 +9,18 @@ Dazu soll die Seite eine Vielfalt von Optionen zur Verfügung stellen, wie z.B. 
 Also steht der Nutzen des Projektes an erster Stelle. Ziel vom Projekt ist es am Ende eine erfolgreiche Anwendung zu haben.
 Ein Meilensteinplan zu haben ist sehr wichtig, um bei Fehlern nicht unter Druck zu geraten.
 Die Zielerreichung und Qualität der Ergebnisse wurden dann in den Übungen sichergestellt.
+***
+
+## Die ersten Ideen ##
+
+Die ersten Ideen haben wir stichpunktartig notiert und als Skizze auf ein Blatt Papier skizziert.
+Am Ende haben wir beschlossen eine Music-Load Seite zu implementieren.
+Im Nachhinein haben wir uns erste Schritte wie z.B. was unbedingt in das Projekt rein muss bzw. nicht fehlen darf notiert.
+***
 
 ## Anforderungsanalyse ##
 
-functional requirements:
+###functional requirements:###
 
 - Ein Benutzerkonto kann erstellt werden.
 - Nach Artist oder Songs kann gesucht werden
@@ -27,7 +29,7 @@ functional requirements:
 - Es wird möglich sein, die Top 10 der USA, Europa  und UK als Übersicht aufzurufen
 - Der Benutzer kann sich eine Playlist erstellen
 
-non functional requirements:
+###non functional requirements:###
 
 - Song muss nach Auswahl sofort abgespielt werden, ohne warten
 - Der Benutzer soll bis zu 20 Playlists anlegen können
@@ -35,25 +37,17 @@ non functional requirements:
 - Seite muss 7/24 verfügbar sein
 - Es dürfen keine Benutzer mit demselben Namen existieren
 - Passwörter bei der Benutzeranmeldung müssen verschlüsselt übertragen werden
+***
 
+## Architektur ##
 
-### Die ersten Ideen ###
-
-Die ersten Ideen haben wir stichpunktartig notiert und als Skizze auf ein Blatt Papier skizziert.
-Am Ende haben wir beschlossen eine Music-Load Seite zu implementieren.
-Im Nachhinein haben wir uns erste Schritte wie z.B. was unbedingt in das Projekt rein muss bzw. nicht fehlen darf notiert.
-
-
-#### Architektur ####
-
-Darestellung:
+###Darstellung:###
 
 Die Seiten können in folgende Bereich unterteilt werden:
 
-Benutzerbereich:
+ - ###Benutzerbereich###
 
 Die Ansicht in Browser wird durch fünf Html-Datein bereitgestellt. Um redundanten Code zu vermeiden wurde diese Aufteilung durchgeführt.
-
 Dabei wird durch *main.scala.html* der Header der Seite definiert.
 Den oberen bereich des *body*-Tags ist in der *headlogin.scala.html* angegeben.
 Der linke Bereich in der *leftCategory.scala.html*.
@@ -61,13 +55,13 @@ Der unter Bereich ist definiert durch die *footerPlayer.scala.html*.
 
 Diese Teile werden bei jedem Seitenaufbau eingebunden.
 
-Der wechselnde Inhalt ist in der vierten Html-Datei definiert. Dies könnten folgende Dateien sein:
+Der wechselnde Inhalt ist in der fünften Html-Datei definiert. Dies könnten folgende Dateien sein:
 
  - *favoriteSongs.scala.html*
  - *index.scala.html*
  - *songs.scala.html*
 
-Adminpanel:
+ - ###Adminpanel###
 
 Das Adminpanel ist ähnlich dem Benutzerbereich aufgebaut. Hierbei erfolgt der Aufbau aus vier Teilen.
 
@@ -82,7 +76,7 @@ Inhalt:
  - *aprankmanagement.sala.html*
  - *apusermanagement.sala.html*
 
-Sonstige Bereiche:
+ - ###Sonstige Bereiche###
 
 Ausnahmebereiche, die anders aufgebaut werden, ist der Login- und Signupbereich.Diese enthalten nur die *main.scala.html* für den *Head*. Dies sind folgende Dateien:
 
@@ -92,8 +86,8 @@ Ausnahmebereiche, die anders aufgebaut werden, ist der Login- und Signupbereich.
 Logik:
 
 Der Aufbau der Logik ist im Klassendiagram gegeben.
- 
-##### verwendete Technologien #####
+ ***
+## verwendete Technologien ##
 
 Web:
 - JavaScript/JQuery
@@ -177,14 +171,15 @@ JSON wurde in unserem Projekt für AJAX verwendet. Die übertragenen Daten an de
 - Playframework
 
 Das Entwickeln wurde über das Playframework durchgeführt.
+***
 
-###### Erfahrungen ######
+## Erfahrungen ##
 
 Das Entwickeln dieser Webanwendung war für uns neues Gebiet. Zwar hatte unser Team gute Java-Kenntnise, aber es fehlten jegliche Erfahrung mit den sonstigen eingesetzten Technologien. Somit war es ein schwieriger aber lernreicher Entwicklungsprozess.
 
 Durch dieses Projekt wurden viele neue Erkenntnise gewonnen. Web ist für unserer Team klarer geworden.
-
-####### Probleme #######
+***
+## Probleme ##
 
 Wir hatten sehr viele Probleme bei diesem Projekt, ich will aber nur die wichtigsten aufzählen:
 
@@ -196,9 +191,9 @@ Wir hatten sehr viele Probleme bei diesem Projekt, ich will aber nur die wichtig
  
  Hier hatten wir das Problem, dass die SQLite-Datenbank ständig *locked* war. Nach einigen Recherchen konnte das Problem ermitteln. Fehlerursache war, dass nach jedem Kontakt mit der Datenbank jegliche eingesetzten Objekte für die Datenbank entladen werden mussten. Sprich nicht nur die *Connection* sondern auch die einzelnen *Statements*.
 
-######## wichtige Codeschnipsel ########
+## wichtige Codeschnipsel ##
 
-´function deleteSong(id){
+function deleteSong(id){
 	var request = new XMLHttpRequest();
 	request.onreadystatechange = function() {
 		if(request.readyState == 4 && request.status == 200){		
@@ -212,5 +207,5 @@ Wir hatten sehr viele Probleme bei diesem Projekt, ich will aber nur die wichtig
 	var url = window.location.href;
 	request.open("POST", url + "/deleteSong/" + id, false);
 	request.send();
-}´
+}
 
