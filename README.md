@@ -37,6 +37,7 @@ Im Nachhinein haben wir uns erste Schritte wie z.B. was unbedingt in das Projekt
 - Seite muss 7/24 verfügbar sein
 - Es dürfen keine Benutzer mit demselben Namen existieren
 - Passwörter bei der Benutzeranmeldung müssen verschlüsselt übertragen werden
+
 ***
 
 ## Architektur ##
