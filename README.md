@@ -241,7 +241,7 @@ Durch dieses Projekt wurden viele neue Erkenntnise gewonnen. Web ist für unsere
 ***
 ## Probleme ##
 
-Wir hatten sehr viele Probleme bei diesem Projekt, ich will aber nur die wichtigsten aufzählen:
+Wir hatten sehr viele Probleme bei diesem Projekt, wir wollen aber nur die wichtigsten aufzählen:
 
  - Anbindung des Projekts an Playframework
  
