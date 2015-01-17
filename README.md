@@ -13,7 +13,7 @@ Die Zielerreichung und Qualität der Ergebnisse wurden dann in den Übungen sich
 
 ## Die ersten Ideen ##
 
-![Mockup]( "Mockup")
+![Mockup](/public/images/Mockup.png "Mockup")
 
 Die ersten Ideen haben wir stichpunktartig notiert und als Skizze auf ein Blatt Papier skizziert.
 Am Ende haben wir beschlossen eine Music-Load Seite zu implementieren.
