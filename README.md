@@ -3,6 +3,7 @@
 
 ## Projektbeschreibung ##
 
+
 Der Haupt-Fokus des Projektes ist für uns, eine optimale Music-Load Seite zu programmieren. 
 Die Benutzer sollen mit der Seite viele Funktionalitäten zur Auswahl haben. Die Kern Idee ist es, dass wir den Nutzer es ermöglichen,sich Lieder aus der ganzen Welt anzuhören. Die Nutzer werden sich zusätzlich Playlists bzw. Favoriten erstellen können.
 Dazu soll die Seite eine Vielfalt von Optionen zur Verfügung stellen, wie z.B. eine Registrierung oder auch eigene Playlist. 
@@ -10,6 +11,7 @@ Für uns steht die Benutzerfreundlichkeit an erster Stelle. Natürlich wollen wi
 Ziel von unserem Projekt ist es am Ende eine erfolgreiche Anwendung zu haben.
 Für uns war es wichtig, dass Projekt mit Meilensteinen zu setzen, da es immer wieder zu Problemen kam und es sonst nicht Zeitlich gereicht hätte, Sie dann rechtzeitig zu beheben.
 Die Zielerreichung und Qualität der Ergebnisse wurden dann immer in den Übungen sichergestellt.
+
 
 ***
 
