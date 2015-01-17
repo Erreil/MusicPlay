@@ -5,7 +5,9 @@
 
 
 Der Haupt-Fokus des Projektes ist für uns, eine optimale Music-Load Seite zu programmieren. 
-Die Benutzer sollen mit der Seite viele Funktionalitäten zur Auswahl haben. Die Kern Idee ist es, dass wir den Nutzer es ermöglichen,sich Lieder aus der ganzen Welt anzuhören. Die Nutzer werden sich zusätzlich Playlists bzw. Favoriten erstellen können.
+Die Benutzer sollen mit der Seite viele Funktionalitäten zur Auswahl haben.
+Die Kern Idee ist es, dass wir den Nutzer es ermöglichen,sich Lieder aus der ganzen Welt anzuhören.
+Die Nutzer werden sich zusätzlich Playlists bzw. Favoriten erstellen können.
 Dazu soll die Seite eine Vielfalt von Optionen zur Verfügung stellen, wie z.B. eine Registrierung oder auch eigene Playlist. 
 Für uns steht die Benutzerfreundlichkeit an erster Stelle. Natürlich wollen wir auch, dass alles optimal läuft.
 Ziel von unserem Projekt ist es am Ende eine erfolgreiche Anwendung zu haben.
@@ -19,7 +21,8 @@ Die Zielerreichung und Qualität der Ergebnisse wurden dann immer in den Übunge
 
 Unsere erste Idee , die wir dann auch übernommen haben war eine Music-Play Seite zum implementieren.
 Als nächsten Schritt haben wir uns in der Gruppe überlegt, was wir alles in das Projekt einbauen möchten.
-Vorallem war es wichtig, immer den Aufwand einzukalkulieren. Zusätzlich müssten wir uns bewusst sein, dass unser Projekt (Music-Play) gewisse Funktionalitäten haben muss.
+Vorallem war es wichtig, immer den Aufwand einzukalkulieren. 
+Zusätzlich müssten wir uns bewusst sein, dass unser Projekt (Music-Play) gewisse Funktionalitäten haben muss.
 
 ![Mockup](/public/images/Mockup.png "Mockup")
 
