@@ -4,20 +4,25 @@
 ## Projektbeschreibung ##
 
 Der Haupt-Fokus des Projektes ist für uns, eine optimale Music-Load Seite zu programmieren. 
-Die Kern-Idee ist es, dass die Benutzer Ihre Songs auswählen, speichern oder abspielen können. 
+Die Benutzer sollen mit der Seite viele Funktionalitäten zur Auswahl haben. Die Kern Idee ist es, dass wir den Nutzer es ermöglichen,sich Lieder aus der ganzen Welt anzuhören. Die Nutzer werden sich zusätzlich Playlists bzw. Favoriten erstellen können.
 Dazu soll die Seite eine Vielfalt von Optionen zur Verfügung stellen, wie z.B. eine Registrierung oder auch eigene Playlist. 
-Also steht der Nutzen des Projektes an erster Stelle. Ziel vom Projekt ist es am Ende eine erfolgreiche Anwendung zu haben.
-Ein Meilensteinplan zu haben ist sehr wichtig, um bei Fehlern nicht unter Druck zu geraten.
-Die Zielerreichung und Qualität der Ergebnisse wurden dann in den Übungen sichergestellt.
+Für uns steht die Benutzerfreundlichkeit an erster Stelle. Natürlich wollen wir auch, dass alles optimal läuft.
+Ziel von unserem Projekt ist es am Ende eine erfolgreiche Anwendung zu haben.
+Für uns war es wichtig, dass Projekt mit Meilensteinen zu setzen, da es immer wieder zu Problemen kam und es sonst nicht Zeitlich gereicht hätte, Sie dann rechtzeitig zu beheben.
+Die Zielerreichung und Qualität der Ergebnisse wurden dann immer in den Übungen sichergestellt.
+
 ***
 
 ## Die ersten Ideen ##
 
+Unsere erste Idee , die wir dann auch übernommen haben war eine Music-Play Seite zum implementieren.
+Als nächsten Schritt haben wir uns in der Gruppe überlegt, was wir alles in das Projekt einbauen möchten.
+Vorallem war es wichtig, immer den Aufwand einzukalkulieren. Zusätzlich müssten wir uns bewusst sein, dass unser Projekt (Music-Play) gewisse Funktionalitäten haben muss.
+
 ![Mockup](/public/images/Mockup.png "Mockup")
 
-Die ersten Ideen haben wir stichpunktartig notiert und als Skizze auf ein Blatt Papier skizziert.
-Am Ende haben wir beschlossen eine Music-Load Seite zu implementieren.
-Im Nachhinein haben wir uns erste Schritte wie z.B. was unbedingt in das Projekt rein muss bzw. nicht fehlen darf notiert.
+Wie man in unserem Mockup schon sehen kann, hatten wir uns zuerst alle Funktionalitäten die wir mit in das Projekt einbauen wollten notiert und aufgezeichnet.
+
 ***
 
 ## Anforderungsanalyse ##
