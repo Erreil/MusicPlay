@@ -24,7 +24,7 @@ Als nächsten Schritt haben wir uns in der Gruppe überlegt, was wir alles in da
 Vorallem war es wichtig, immer den Aufwand einzukalkulieren. 
 Zusätzlich müssten wir uns bewusst sein, dass unser Projekt (Music-Play) gewisse Funktionalitäten haben muss.
 
-![Mockup](/public/images/Mockup.png "Mockup")
+![Mockup](C:\Users\Inan\Desktop)
 
 Wie man in unserem Mockup schon sehen kann, hatten wir uns zuerst alle Funktionalitäten die wir mit in das Projekt einbauen wollten notiert und aufgezeichnet.
 
