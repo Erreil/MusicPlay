@@ -38,7 +38,7 @@ Seq[Any](format.raw/*1.26*/("""
 					"""),_display_(/*10.7*/helper/*10.13*/.form(routes.Application.authenticateAdmin, 'class -> "navbar-form navbar-left")/*10.93*/ {_display_(Seq[Any](format.raw/*10.95*/("""
 						"""),format.raw/*11.7*/("""<div class="form-group">
 						<input type="text" class="form-control" placeholder="Benutzer" name="Username" id="Username" value=""""),_display_(/*12.108*/loginForm("username")/*12.129*/.value),format.raw/*12.135*/("""" />
-						<input type="text" class="form-control" placeholder="Passwort" name="Password" id="Password" />
+						<input type="password" class="form-control" placeholder="Passwort" name="Password" id="Password" />
 						<button type="submit" class="btn btn-primary">Anmelden</button>
 						
 						"""),_display_(/*16.8*/if(loginForm.hasGlobalErrors)/*16.37*/ {_display_(Seq[Any](format.raw/*16.39*/("""
@@ -63,10 +63,10 @@ Seq[Any](format.raw/*1.26*/("""
 }
               /*
                   -- GENERATED --
-                  DATE: Tue Jan 13 12:32:13 CET 2015
+                  DATE: Thu Jan 15 20:38:03 CET 2015
                   SOURCE: C:/FH2/Web_Projekt/musicplay/app/views/aplogin.scala.html
-                  HASH: f3fde0f78b3293a739dfb42ec21024d989c840ff
-                  MATRIX: 730->1|842->25|872->30|893->43|931->44|960->47|1109->170|1124->176|1213->256|1253->258|1288->266|1449->399|1480->420|1508->426|1729->621|1767->650|1807->652|1846->663|1896->686|1914->695|1955->715|1998->728|2033->736|2077->750|2132->778
+                  HASH: 920e555faea8a7a68fbbcade2ef5e4a9715388ec
+                  MATRIX: 730->1|842->25|872->30|893->43|931->44|960->47|1109->170|1124->176|1213->256|1253->258|1288->266|1449->399|1480->420|1508->426|1733->625|1771->654|1811->656|1850->667|1900->690|1918->699|1959->719|2002->732|2037->740|2081->754|2136->782
                   LINES: 26->1|29->1|31->3|31->3|31->3|32->4|38->10|38->10|38->10|38->10|39->11|40->12|40->12|40->12|44->16|44->16|44->16|45->17|45->17|45->17|45->17|46->18|47->19|48->20|52->24
                   -- GENERATED --
               */

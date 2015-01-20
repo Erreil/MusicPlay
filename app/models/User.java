@@ -1,27 +1,17 @@
 package models;
 
-import play.data.validation.Constraints.Required;
-
 public class User{
 	private int Id;
-	@Required
 	private String Username;
-	@Required
 	private String Password;
-	@Required
 	private String Firstname;
-	@Required  
 	private String Lastname;
-	@Required
 	private String Zip;
-	@Required
 	private String Location;
-	@Required
 	private String Street;
-	@Required
 	private String StreetNumber;
-	@Required
 	private String Mail;
+	private boolean IsAdmin;
 	
 	public int getId() {
 		return Id;
@@ -101,5 +91,13 @@ public class User{
 
 	public void setMail(String mail) {
 		Mail = mail;
+	}
+	
+	public boolean getIsAdmin() {
+		return IsAdmin;
+	}
+
+	public void setIsAdmin(boolean isAdmin) {
+		IsAdmin = isAdmin;
 	}
 }

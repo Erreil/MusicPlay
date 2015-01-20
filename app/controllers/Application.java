@@ -23,7 +23,7 @@ public class Application extends Controller {
 	final static Form<Login> loginForm = Form.form(Login.class);
 		
     public static Result index() {
-    	return redirect(routes.Application.showTopTen("europe"));
+    	return redirect(routes.Application.showTopTen("eu"));
     }
     	    
     public static Result logoutUser() {
@@ -49,6 +49,9 @@ public class Application extends Controller {
 	
 	public static Result adminpanel() {
 		if(session().get("username") == null) return redirect(routes.Application.aplogin());
+		if(session().get("isAdmin") == null) return redirect(routes.Application.aplogin());
+		if(session().get("isAdmin").equals("yes") == false) return redirect(routes.Application.aplogin());
+		
 		return redirect(routes.Application.apaddsong());
 	}
 	
@@ -59,10 +62,15 @@ public class Application extends Controller {
 	public static Result newUser(){
 		Form<User> filledForm = userForm.bindFromRequest();	
 		User created = filledForm.get();
+		created.setIsAdmin(false);
 		
 		Service service = Service.getInstance();		
-		if(service.createUser(created)) return index();
-		else return badRequest();
+		if(service.createUser(created)){
+			session().clear();
+			session("username", created.getUsername());	
+			return index();
+		}
+		else return badRequest("Es gab leider einen unerwarteten Fehler!");
 	}
 	
 	public static Result newArtist(){
@@ -110,9 +118,11 @@ public class Application extends Controller {
 		return ok();
 	}
 	
-	@Security.Authenticated(Secured.class)
 	public static Result apaddsong() {
 		if(session().get("username") == null) return redirect(routes.Application.aplogin());
+		if(session().get("isAdmin") == null) return redirect(routes.Application.aplogin());
+		if(session().get("isAdmin").equals("yes") == false) return redirect(routes.Application.aplogin());
+				
 		Service service = Service.getInstance();
 		
 		List<Song> songs = service.getAllSongs();
@@ -121,6 +131,9 @@ public class Application extends Controller {
 	
 	public static Result apusermanagement() {
 		if(session().get("username") == null) return redirect(routes.Application.aplogin());
+		if(session().get("isAdmin") == null) return redirect(routes.Application.aplogin());
+		if(session().get("isAdmin").equals("yes") == false) return redirect(routes.Application.aplogin());
+		
 		Service service = Service.getInstance();
 		
 		ArrayList<User> users = service.getAllUsers();		
@@ -129,6 +142,9 @@ public class Application extends Controller {
 		
 	public static Result aprankmanagement(String country) {
 		if(session().get("username") == null) return redirect(routes.Application.aplogin());
+		if(session().get("isAdmin") == null) return redirect(routes.Application.aplogin());
+		if(session().get("isAdmin").equals("yes") == false) return redirect(routes.Application.aplogin());
+		
 		Service service = Service.getInstance();
 		
 		ArrayList<Song> songs = service.getSongsWithRanking(country);		
@@ -149,13 +165,10 @@ public class Application extends Controller {
 		
 	public static Result updateRanking(String parameter, String country) {
 		Service service = Service.getInstance();
-		
 		String[] parameters = parameter.split(";");
-		
 		Song song = new Song();
 		song.setId(Integer.parseInt(parameters[0]));
 		song.setRank(Integer.parseInt(parameters[1]));
-		
 		service.createRank(song, country);		
 		return ok();
 	}
@@ -171,9 +184,20 @@ public class Application extends Controller {
 			return redirect(routes.Application.aplogin());
 		}
 		else{		
-			Login login = filledForm.get();					
+			Login login = filledForm.get();
+			Service service = Service.getInstance();
+			boolean isAdmin = service.checkIfUserIsAdminByUsername(login.getUsername());
+			
 			session().clear();
-			session("username", login.getUsername());		
+			session("username", login.getUsername());
+			
+			System.out.println("1:" + isAdmin);
+			
+			if(isAdmin){
+				System.out.println("11:" + isAdmin);
+				session("isAdmin", "yes");
+			}
+			
 			return redirect(routes.Application.index());
 		}
 	}
@@ -185,13 +209,20 @@ public class Application extends Controller {
 			return badRequest(aplogin.render(filledForm)); 
 		}
 		else{
-			
 			Login login = filledForm.get();
-						
+			Service service = Service.getInstance();
+			boolean isAdmin = service.checkIfUserIsAdminByUsername(login.getUsername());
+			
 			session().clear();
 			session("username", login.getUsername());
-			session("isAdmin", "yes");
 			
+			System.out.println("2:" + isAdmin);
+			
+			if(isAdmin){
+				System.out.println("22:" + isAdmin);
+				session("isAdmin", "yes");
+			}
+								
 			return redirect(routes.Application.index());
 		}
 	}
@@ -205,6 +236,9 @@ public class Application extends Controller {
 	
 	public static Result apaddartist() {
 		if(session().get("username") == null) return redirect(routes.Application.aplogin());
+		if(session().get("isAdmin") == null) return redirect(routes.Application.aplogin());
+		if(session().get("isAdmin").equals("yes") == false) return redirect(routes.Application.aplogin());
+		
 		Service service = Service.getInstance();
 		
 		List<Artist> artists = service.getAllArtists();

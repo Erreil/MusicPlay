@@ -19,20 +19,20 @@
 							<!-- tabs -->
 							<ul class="nav nav-tabs" role="tablist">
 							
-							@if(country == "europe"){
+							@if(country == "eu"){
 								<li role="presentation" class="active"><a href="@routes.Application.showTopTen("eu")">TOP 10 Europe</a></li>
 								<li role="presentation"><a href="@routes.Application.showTopTen("usa")">TOP 10 USA</a></li>
 								<li role="presentation"><a href="@routes.Application.showTopTen("uk")">TOP 10 UK</a></li>
 							}
 							
 							@if(country == "usa"){
-								<li role="presentation"><a href="@routes.Application.showTopTen("europe")">TOP 10 Europe</a></li>
+								<li role="presentation"><a href="@routes.Application.showTopTen("eu")">TOP 10 Europe</a></li>
 								<li role="presentation" class="active"><a href="@routes.Application.showTopTen("usa")">TOP 10 USA</a></li>
 								<li role="presentation"><a href="@routes.Application.showTopTen("uk")">TOP 10 UK</a></li>
 							}
 							
 							@if(country == "uk"){
-								<li role="presentation"><a href="@routes.Application.showTopTen("europe")">TOP 10 Europe</a></li>
+								<li role="presentation"><a href="@routes.Application.showTopTen("eu")">TOP 10 Europe</a></li>
 								<li role="presentation"><a href="@routes.Application.showTopTen("usa")">TOP 10 USA</a></li>
 								<li role="presentation" class="active"><a href="@routes.Application.showTopTen("uk")">TOP 10 UK</a></li>
 							}

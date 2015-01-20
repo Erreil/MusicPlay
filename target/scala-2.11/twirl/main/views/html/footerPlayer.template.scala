@@ -26,7 +26,8 @@ object footerPlayer extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendab
   def apply():play.twirl.api.HtmlFormat.Appendable = {
       _display_ {
 
-Seq[Any](format.raw/*2.2*/("""<script type="text/javascript">
+Seq[Any](format.raw/*1.1*/("""﻿
+	<script type="text/javascript">
 	
 		$(document).ready(function()"""),format.raw/*4.31*/("""{"""),format.raw/*4.32*/("""
 		
@@ -75,11 +76,11 @@ Seq[Any](format.raw/*2.2*/("""<script type="text/javascript">
 }
               /*
                   -- GENERATED --
-                  DATE: Mon Jan 12 22:10:59 CET 2015
+                  DATE: Thu Jan 15 20:26:54 CET 2015
                   SOURCE: C:/FH2/Web_Projekt/musicplay/app/views/footerPlayer.scala.html
-                  HASH: fbfa927ec1f876c05eb1dd89bab3af3b9049aa3a
-                  MATRIX: 805->3|898->69|926->70|961->79|1019->110|1047->111|1083->121|1179->190|1207->191|1241->198|1336->266|1364->267|1396->271|1425->272|1459->279|1556->349|1584->350|1618->357|1646->358|1681->366|1709->367
-                  LINES: 29->2|31->4|31->4|33->6|33->6|33->6|34->7|36->9|36->9|37->10|39->12|39->12|39->12|39->12|40->13|42->15|42->15|44->17|44->17|46->19|46->19
+                  HASH: 9eb6b15b401736a12e37696952e9240be92c1094
+                  MATRIX: 805->0|902->70|930->71|965->80|1023->111|1051->112|1087->122|1183->191|1211->192|1245->199|1340->267|1368->268|1400->272|1429->273|1463->280|1560->350|1588->351|1622->358|1650->359|1685->367|1713->368
+                  LINES: 29->1|32->4|32->4|34->6|34->6|34->6|35->7|37->9|37->9|38->10|40->12|40->12|40->12|40->12|41->13|43->15|43->15|45->17|45->17|47->19|47->19
                   -- GENERATED --
               */
           

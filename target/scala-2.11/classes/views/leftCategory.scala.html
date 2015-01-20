@@ -10,7 +10,7 @@
 					<div class="list-group" id="artistGroup">
 						
 						@if(session.get("username") != null){	
-						<a href="#" class="list-group-item">Meine Songs</a>
+						<a href="@routes.Application.getMySongs()" class="list-group-item">Meine Songs</a>
 						}
 															
 					@if(artists.size() <= 0){
