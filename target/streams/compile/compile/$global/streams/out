@@ -1,4 +1,4 @@
-[0m[[0mdebug[0m] [0mInvalidating C:\FH2\Web_Projekt\Master\MusicPlay\target\scala-2.11\classes\controllers\Application.class: stamp changed from lastModified(1421752325270) to lastModified(1421752392229)[0m
+[0m[[0mdebug[0m] [0mInvalidating C:\FH2\Web_Projekt\Master\MusicPlay\target\scala-2.11\classes\controllers\Application.class: stamp changed from lastModified(1421752395103) to lastModified(1421757377228)[0m
 [0m[[0mdebug[0m] [0m[0m
 [0m[[0mdebug[0m] [0mInitial source changes: [0m
 [0m[[0mdebug[0m] [0m	removed:Set()[0m
@@ -17,10 +17,10 @@
 [0m[[0minfo[0m] [0mCompiling 1 Java source to C:\FH2\Web_Projekt\Master\MusicPlay\target\scala-2.11\classes...[0m
 [0m[[0mdebug[0m] [0mAttempting to call javac directly...[0m
 [0m[[0mdebug[0m] [0mcom.sun.tools.javac.Main not found with appropriate method signature; forking javac instead[0m
-[0m[[0mdebug[0m] [0mForking javac: javac @C:/Users/ERIKR_~1/AppData/Local/Temp/sbt_ee324dcd/argfile[0m
+[0m[[0mdebug[0m] [0mForking javac: javac @C:/Users/ERIKR_~1/AppData/Local/Temp/sbt_5b33e9ee/argfile[0m
 [0m[[0mdebug[0m] [0mjavac returned exit code: 0[0m
-[0m[[0mdebug[0m] [0mJava compilation took 1.246135819 s[0m
-[0m[[0mdebug[0m] [0mJava analysis took 0.037720429 s[0m
+[0m[[0mdebug[0m] [0mJava compilation took 1.373548273 s[0m
+[0m[[0mdebug[0m] [0mJava analysis took 0.041295195 s[0m
 [0m[[0mdebug[0m] [0mNew invalidations:[0m
 [0m[[0mdebug[0m] [0m	Set()[0m
 [0m[[0mdebug[0m] [0mInitial set of included nodes: Set()[0m
