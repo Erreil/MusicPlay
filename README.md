@@ -52,13 +52,13 @@ Wie man in unserem Mockup schon sehen kann, hatten wir uns zuerst alle Funktiona
 - Passwörter bei der Benutzeranmeldung müssen verschlüsselt übertragen werden
 
 
-![UseCase-Diagramm](/public/images/Home.png)
+![UseCase-Diagramm](/public/images/UseCase-Diagramm.png)
 
 ***
 
 ## Architektur ##
 
-![Klassen-Diagramm](/public/images/Home.png)
+![Klassen-Diagramm](/public/images/Klassendiagramm.png)
 
 ###Darstellung:###
 
