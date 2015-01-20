@@ -30,18 +30,60 @@ public class Service {
 	}
 	
 	public void Initialize(){
-		System.out.println("2");
 		InitializeCountry();
-		System.out.println("3");
 		InitializeUser();
-		System.out.println("4");
 		InitializeArtist();
-		System.out.println("5");
 		InitializeSong();
-		System.out.println("6");
 		InitializeSongRanking();
-		System.out.println("7");
+		InitializeFavorites();
 	}
+	
+	private void InitializeFavorites(){	
+
+		Connection connection = null;
+		PreparedStatement statement = null;
+		ResultSet rs = null;
+
+		 try {
+
+			 connection = DB.getConnection();
+			 
+			String statementString = " SELECT name FROM sqlite_master WHERE name='Favorites'";
+			statement = connection.prepareStatement(statementString);
+			rs = statement.executeQuery();
+			
+			String name = "";
+					
+			while(rs.next()){				
+				name = rs.getString("name");
+			}
+			
+			if(name.equals("") == false) return;
+			
+			closeConnection(connection, statement, rs);
+			 
+			connection = DB.getConnection();
+			
+			statementString = "CREATE TABLE [Favorites] ("
+					+ "[SongId] INTEGER  NOT NULL"
+					+ ",[UserId] INTEGER  NOT NULL"
+					+ ",PRIMARY KEY ([SongId],[UserId])"
+					+ ",FOREIGN KEY(SongId) REFERENCES Song(Id)"
+					+ ",FOREIGN KEY(UserId) REFERENCES User(Id))";
+		
+			statement = connection.prepareStatement(statementString);
+			statement.executeUpdate();
+			
+			closeConnection(connection, statement, rs);
+					
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+			finally{
+				closeConnection(connection, statement);
+			}
+	}
+	
 	
 	private void InitializeSongRanking(){	
 
