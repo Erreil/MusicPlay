@@ -26,6 +26,7 @@ Zusätzlich müssten wir uns bewusst sein, dass unser Projekt (Music-Play) gewis
 
 ![Mockup](/public/images/Home.png)
 
+
 Wie man in unserem Mockup schon sehen kann, hatten wir uns zuerst alle Funktionalitäten die wir mit in das Projekt einbauen wollten notiert und aufgezeichnet.
 
 ***
@@ -50,9 +51,14 @@ Wie man in unserem Mockup schon sehen kann, hatten wir uns zuerst alle Funktiona
 - Es dürfen keine Benutzer mit demselben Namen existieren
 - Passwörter bei der Benutzeranmeldung müssen verschlüsselt übertragen werden
 
+
+![UseCase-Diagramm](/public/images/Home.png)
+
 ***
 
 ## Architektur ##
+
+![Klassen-Diagramm](/public/images/Home.png)
 
 ###Darstellung:###
 
