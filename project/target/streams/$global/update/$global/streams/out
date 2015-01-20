@@ -1,4 +1,4 @@
-[0m[[0minfo[0m] [0mUpdating {file:/C:/FH2/Web_Projekt/musicplay/project/}musicplay-build...[0m
+[0m[[0minfo[0m] [0mUpdating {file:/C:/FH2/Web_Projekt/Master/MusicPlay/project/}musicplay-build...[0m
 [0m[[0mdebug[0m] [0m:: resolving dependencies :: default#musicplay-build;0.1-SNAPSHOT[0m
 [0m[[0mdebug[0m] [0m	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool][0m
 [0m[[0mdebug[0m] [0m	validate = true[0m
@@ -12843,19 +12843,19 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.5!apply-macro.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.4!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 4860ms :: artifacts dl 187ms[0m
-[0m[[0mdebug[0m] [0m	report for default#musicplay-build;0.1-SNAPSHOT compile produced in C:\FH2\Web_Projekt\musicplay\project\target\resolution-cache\reports\default-musicplay-build-compile.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#musicplay-build;0.1-SNAPSHOT runtime produced in C:\FH2\Web_Projekt\musicplay\project\target\resolution-cache\reports\default-musicplay-build-runtime.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#musicplay-build;0.1-SNAPSHOT test produced in C:\FH2\Web_Projekt\musicplay\project\target\resolution-cache\reports\default-musicplay-build-test.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#musicplay-build;0.1-SNAPSHOT provided produced in C:\FH2\Web_Projekt\musicplay\project\target\resolution-cache\reports\default-musicplay-build-provided.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#musicplay-build;0.1-SNAPSHOT optional produced in C:\FH2\Web_Projekt\musicplay\project\target\resolution-cache\reports\default-musicplay-build-optional.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#musicplay-build;0.1-SNAPSHOT compile-internal produced in C:\FH2\Web_Projekt\musicplay\project\target\resolution-cache\reports\default-musicplay-build-compile-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#musicplay-build;0.1-SNAPSHOT runtime-internal produced in C:\FH2\Web_Projekt\musicplay\project\target\resolution-cache\reports\default-musicplay-build-runtime-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#musicplay-build;0.1-SNAPSHOT test-internal produced in C:\FH2\Web_Projekt\musicplay\project\target\resolution-cache\reports\default-musicplay-build-test-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#musicplay-build;0.1-SNAPSHOT plugin produced in C:\FH2\Web_Projekt\musicplay\project\target\resolution-cache\reports\default-musicplay-build-plugin.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#musicplay-build;0.1-SNAPSHOT sources produced in C:\FH2\Web_Projekt\musicplay\project\target\resolution-cache\reports\default-musicplay-build-sources.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#musicplay-build;0.1-SNAPSHOT docs produced in C:\FH2\Web_Projekt\musicplay\project\target\resolution-cache\reports\default-musicplay-build-docs.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#musicplay-build;0.1-SNAPSHOT pom produced in C:\FH2\Web_Projekt\musicplay\project\target\resolution-cache\reports\default-musicplay-build-pom.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#musicplay-build;0.1-SNAPSHOT scala-tool produced in C:\FH2\Web_Projekt\musicplay\project\target\resolution-cache\reports\default-musicplay-build-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (4860ms resolve - 187ms download)[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 6387ms :: artifacts dl 219ms[0m
+[0m[[0mdebug[0m] [0m	report for default#musicplay-build;0.1-SNAPSHOT compile produced in C:\FH2\Web_Projekt\Master\MusicPlay\project\target\resolution-cache\reports\default-musicplay-build-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#musicplay-build;0.1-SNAPSHOT runtime produced in C:\FH2\Web_Projekt\Master\MusicPlay\project\target\resolution-cache\reports\default-musicplay-build-runtime.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#musicplay-build;0.1-SNAPSHOT test produced in C:\FH2\Web_Projekt\Master\MusicPlay\project\target\resolution-cache\reports\default-musicplay-build-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#musicplay-build;0.1-SNAPSHOT provided produced in C:\FH2\Web_Projekt\Master\MusicPlay\project\target\resolution-cache\reports\default-musicplay-build-provided.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#musicplay-build;0.1-SNAPSHOT optional produced in C:\FH2\Web_Projekt\Master\MusicPlay\project\target\resolution-cache\reports\default-musicplay-build-optional.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#musicplay-build;0.1-SNAPSHOT compile-internal produced in C:\FH2\Web_Projekt\Master\MusicPlay\project\target\resolution-cache\reports\default-musicplay-build-compile-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#musicplay-build;0.1-SNAPSHOT runtime-internal produced in C:\FH2\Web_Projekt\Master\MusicPlay\project\target\resolution-cache\reports\default-musicplay-build-runtime-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#musicplay-build;0.1-SNAPSHOT test-internal produced in C:\FH2\Web_Projekt\Master\MusicPlay\project\target\resolution-cache\reports\default-musicplay-build-test-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#musicplay-build;0.1-SNAPSHOT plugin produced in C:\FH2\Web_Projekt\Master\MusicPlay\project\target\resolution-cache\reports\default-musicplay-build-plugin.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#musicplay-build;0.1-SNAPSHOT sources produced in C:\FH2\Web_Projekt\Master\MusicPlay\project\target\resolution-cache\reports\default-musicplay-build-sources.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#musicplay-build;0.1-SNAPSHOT docs produced in C:\FH2\Web_Projekt\Master\MusicPlay\project\target\resolution-cache\reports\default-musicplay-build-docs.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#musicplay-build;0.1-SNAPSHOT pom produced in C:\FH2\Web_Projekt\Master\MusicPlay\project\target\resolution-cache\reports\default-musicplay-build-pom.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#musicplay-build;0.1-SNAPSHOT scala-tool produced in C:\FH2\Web_Projekt\Master\MusicPlay\project\target\resolution-cache\reports\default-musicplay-build-scala-tool.xml[0m
+[0m[[0mdebug[0m] [0m	resolve done (6387ms resolve - 219ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
