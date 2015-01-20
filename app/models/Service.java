@@ -19,8 +19,428 @@ public class Service {
 	private Service(){}
 	
 	public static Service getInstance() {
-		if(instance == null) instance = new Service();
+		
+		System.out.println("0");
+		
+		if(instance == null){
+			instance = new Service();
+			instance.Initialize();
+		}
 		return instance;
+	}
+	
+	public void Initialize(){
+		System.out.println("2");
+		InitializeCountry();
+		System.out.println("3");
+		InitializeUser();
+		System.out.println("4");
+		InitializeArtist();
+		System.out.println("5");
+		InitializeSong();
+		System.out.println("6");
+		InitializeSongRanking();
+		System.out.println("7");
+	}
+	
+	private void InitializeSongRanking(){	
+
+		Connection connection = null;
+		PreparedStatement statement = null;
+		ResultSet rs = null;
+
+		 try {
+
+			 connection = DB.getConnection();
+			 
+			String statementString = " SELECT name FROM sqlite_master WHERE name='SongRanking'";
+			statement = connection.prepareStatement(statementString);
+			rs = statement.executeQuery();
+			
+			String name = "";
+					
+			while(rs.next()){				
+				name = rs.getString("name");
+			}
+			
+			if(name.equals("") == false) return;
+			
+			closeConnection(connection, statement, rs);
+			 
+			connection = DB.getConnection();
+			
+			statementString = "CREATE TABLE [SongRanking] ("
+					+ "[SongId] INTEGER  NOT NULL"
+					+ ",[Rank] INTEGER  NOT NULL"
+					+ ",[CountryId] INTEGER  NOT NULL"
+					+ ",PRIMARY KEY ([SongId],[Rank],[CountryId])"
+					+ ",FOREIGN KEY(SongId) REFERENCES Song(Id)"
+					+ ",FOREIGN KEY(CountryId) REFERENCES Country(Id)"
+					+ ")";
+			
+			statement = connection.prepareStatement(statementString);
+			statement.executeUpdate();
+			
+			closeConnection(connection, statement);
+			
+			Song song = new Song();
+			song.setId(1);
+			song.setRank(1);
+			
+			createRank(song, "eu");
+			
+			song = new Song();
+			song.setId(2);
+			song.setRank(2);
+			
+			createRank(song, "eu");
+			
+			song = new Song();
+			song.setId(3);
+			song.setRank(3);
+			
+			createRank(song, "eu");
+			
+			song = new Song();
+			song.setId(4);
+			song.setRank(4);
+			
+			createRank(song, "eu");
+			
+			song = new Song();
+			song.setId(1);
+			song.setRank(4);
+			
+			createRank(song, "usa");
+			
+			song = new Song();
+			song.setId(2);
+			song.setRank(3);
+			
+			createRank(song, "eu");
+			
+			song = new Song();
+			song.setId(3);
+			song.setRank(2);
+			
+			createRank(song, "eu");
+			
+			song = new Song();
+			song.setId(4);
+			song.setRank(1);
+			
+			createRank(song, "eu");
+					
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+			finally{
+				closeConnection(connection, statement);
+			}
+	}
+	
+	private void InitializeSong(){		
+		Connection connection = null;
+		PreparedStatement statement = null;
+		ResultSet rs = null;
+		
+		 try {
+			 
+			 connection = DB.getConnection();
+			 
+			String statementString = " SELECT name FROM sqlite_master WHERE name='Song'";
+			statement = connection.prepareStatement(statementString);
+			rs = statement.executeQuery();	
+			
+			String name = "";	
+			while(rs.next()){
+					
+				name = rs.getString("name");
+			}
+			
+			if(name.equals("") == false) return;
+			
+			closeConnection(connection, statement, rs);
+			 
+			connection = DB.getConnection();
+			
+			statementString = "CREATE TABLE [Song] ("
+					+ "[Id] INTEGER  PRIMARY KEY AUTOINCREMENT NOT NULL"
+					+ ",[Titel] NVARCHAR(128)  NOT NULL"
+					+ ",[ArtistId] INTEGER  NOT NULL"
+					+ ",[FilePath] NVARCHAR(512)  NOT NULL"
+					+ ",[State] INTEGER  NOT NULL"
+					+ ", FOREIGN KEY(ArtistId) REFERENCES Artist(Id)"
+					+ ")";
+			
+			statement = connection.prepareStatement(statementString);
+			statement.executeUpdate();
+			
+			closeConnection(connection, statement);
+			
+			Song song = new Song();
+			song.setTitel("Sunshine");
+			song.setArtistId(1);
+			song.setFilePath("C:\\FH2\\Web_Projekt\\musicplay\\public\\music\\Psycho Metal - Sunshine.mp3");
+			
+			createSong(song);
+			
+			song = new Song();
+			song.setTitel("Freestyle Skills");
+			song.setArtistId(1);
+			song.setFilePath("C:\\FH2\\Web_Projekt\\musicplay\\public\\music\\Psycho Metal - Freestyle Skills.mp3");
+			
+			createSong(song);
+			
+			song = new Song();
+			song.setTitel("La Isla Bonita");
+			song.setArtistId(3);
+			song.setFilePath("C:\\FH2\\Web_Projekt\\musicplay\\public\\music\\madonna-la isla bonita.mp3");
+			
+			createSong(song);
+			
+			song = new Song();
+			song.setTitel("Cry me a river");
+			song.setArtistId(4);
+			song.setFilePath("C:\\FH2\\Web_Projekt\\musicplay\\public\\music\\Justin Timberlake feat 50 cent - Cry me a river.mp3");
+			
+			createSong(song);
+					
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+			finally{
+				closeConnection(connection, statement);
+			}
+	}
+	
+	private void InitializeArtist(){		
+		Connection connection = null;
+		PreparedStatement statement = null;
+		ResultSet rs = null;
+		
+		 try {
+			 
+			 connection = DB.getConnection();
+			 
+			String statementString = " SELECT name FROM sqlite_master WHERE name='Artist'";
+			statement = connection.prepareStatement(statementString);
+			rs = statement.executeQuery();
+			
+			String name = "";
+			while(rs.next()){
+					
+				name = rs.getString("name");
+			}
+			
+			if(name.equals("") == false) return;
+			
+			closeConnection(connection, statement, rs);
+			 
+			connection = DB.getConnection();
+			
+			statementString = "CREATE TABLE IF NOT EXISTS [Artist] ("
+					+ "[Id] INTEGER  PRIMARY KEY AUTOINCREMENT NOT NULL"
+					+ ",[Firstname] NVARCHAR(128)  NOT NULL"
+					+ ",[Lastname] NVARCHAR(128)  NOT NULL"
+					+ ",[Alias] NVARCHAR(128)  NOT NULL"
+					+ ",[CountryId] INTEGER  NOT NULL"
+					+ ",[State] INTEGER  NOT NULL)";
+			
+			statement = connection.prepareStatement(statementString);
+			statement.executeUpdate();
+			
+			closeConnection(connection, statement);
+			
+			Artist artist = new Artist();
+			artist.setFirstname("Marshall");
+			artist.setLastname("Mathers");
+			artist.setAlias("EMINEM");
+			artist.setCountryId(2);
+			
+			createArtist(artist);
+			
+			artist = new Artist();
+			artist.setFirstname("Curtis James");
+			artist.setLastname("Jackson III");
+			artist.setAlias("50 Cent");
+			artist.setCountryId(2);
+			
+			createArtist(artist);
+			
+			artist = new Artist();
+			artist.setFirstname("Madonna Louise");
+			artist.setLastname("Ciccone");
+			artist.setAlias("Madonna");
+			artist.setCountryId(2);
+			
+			createArtist(artist);
+			
+			artist = new Artist();
+			artist.setFirstname("Justin");
+			artist.setLastname("Timberlake");
+			artist.setAlias("Justin Timberlake");
+			artist.setCountryId(2);
+			
+			createArtist(artist);
+		
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+			finally{
+				closeConnection(connection, statement);
+			}
+	}
+	
+	
+	
+	private void InitializeUser(){		
+		Connection connection = null;
+		PreparedStatement statement = null;
+		ResultSet rs = null;
+		
+		 try {
+			 
+			 connection = DB.getConnection();
+			 
+			String statementString = " SELECT name FROM sqlite_master WHERE name='User'";
+			statement = connection.prepareStatement(statementString);
+			rs = statement.executeQuery();
+			
+			String name = "";
+			while(rs.next()){
+					
+				name = rs.getString("name");
+			}
+			
+			if(name.equals("") == false) return;
+			
+			closeConnection(connection, statement, rs);
+			 
+			connection = DB.getConnection();
+			
+			statementString = "CREATE TABLE IF NOT EXISTS [User] ("
+					+ "[Id] INTEGER  PRIMARY KEY AUTOINCREMENT NOT NULL"
+					+ ",[Username] NVARCHAR(128)  NOT NULL"
+					+ ",[Password] NVARCHAR(128)  NOT NULL"
+					+ ",[Firstname] NVARCHAR(128)  NOT NULL"
+					+ ",[Lastname] NVARCHAR(128)  NOT NULL"
+					+ ",[Zip] NVARCHAR(128)  NOT NULL"
+					+ ",[Location] NVARCHAR(128)  NOT NULL"
+					+ ",[Street] NVARCHAR(128)  NOT NULL"
+					+ ",[StreetNumber] NVARCHAR(128)  NOT NULL"
+					+ ",[Mail] NVARCHAR(128)  NOT NULL"
+					+ ",[State] INTEGER  NOT NULL"
+					+ ",[IsAdmin] BOOLEAN  NOT NULL)";
+			
+			statement = connection.prepareStatement(statementString);
+			statement.executeUpdate();
+			
+			closeConnection(connection, statement);
+						
+			User user = new User();
+			user.setFirstname("Admin");
+			user.setLastname("Admin");
+			user.setLocation("Berlin");
+			user.setMail("info@admin.de");
+			user.setPassword(encryptPassword("1"));
+			user.setStreet("Berlinerstreet");
+			user.setStreetNumber("1");
+			user.setUsername("Admin");
+			user.setZip("1000");
+			user.setIsAdmin(true);
+			
+			createUser(user);
+		
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+			finally{
+				closeConnection(connection, statement);
+			}
+	}
+	
+	private void InitializeCountry(){		
+		Connection connection = null;
+		PreparedStatement statement = null;
+		ResultSet rs = null;
+
+		 try {
+			 
+			connection = DB.getConnection();
+			String statementString = "SELECT name FROM sqlite_master WHERE name='Country'";
+			statement = connection.prepareStatement(statementString);
+			rs = statement.executeQuery();
+
+			String name = "";
+				
+			while(rs.next()){				
+				name = rs.getString("name");
+			}
+			
+			if(name.equals("") == false) return;
+			
+			closeConnection(connection, statement, rs);
+			 
+			connection = DB.getConnection();
+			
+			statementString = "CREATE TABLE IF NOT EXISTS [Country] ("
+					+ "[Id] INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT"
+					+ ",[Shortcut] NVARCHAR(5)  NOT NULL"
+					+ ",[Name] NVARCHAR(256)  NOT NULL"
+					+ ",[State] INTEGER  NOT NULL)";
+			
+			statement = connection.prepareStatement(statementString);
+			statement.executeUpdate();
+			
+			closeConnection(connection, statement);
+			
+			connection = DB.getConnection();
+			
+			statementString = "INSERT INTO Country (Shortcut, Name, State)"
+					+ " VALUES (?, ?, ?)";
+			
+			statement = connection.prepareStatement(statementString);
+			statement.setString(1, "eu");
+			statement.setString(2, "Europa");
+			statement.setLong(3, SqlState.Active.getValue());
+			
+			statement.executeUpdate();
+			
+			closeConnection(connection, statement);
+			
+			connection = DB.getConnection();
+			
+			statementString = "INSERT INTO Country (Shortcut, Name, State)"
+					+ " VALUES (?, ?, ?)";
+			
+			statement = connection.prepareStatement(statementString);
+			statement.setString(1, "usa");
+			statement.setString(2, "Amerika");
+			statement.setLong(3, SqlState.Active.getValue());
+			
+			statement.executeUpdate();
+			
+			closeConnection(connection, statement);
+			
+			connection = DB.getConnection();
+			
+			statementString = "INSERT INTO Country (Shortcut, Name, State)"
+					+ " VALUES (?, ?, ?)";
+			
+			statement = connection.prepareStatement(statementString);
+			statement.setString(1, "uk");
+			statement.setString(2, "England");
+			statement.setLong(3, SqlState.Active.getValue());
+			
+			statement.executeUpdate();
+
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+			finally{
+				closeConnection(connection, statement);
+			}
 	}
 		
 	public ArrayList<Artist> getAllArtists(){	
@@ -178,14 +598,17 @@ public class Service {
 				artist.setAlias(rs.getString("Alias"));
 				entity.setArtist(artist);
 				
+				
 				entities.add(entity);
 			}
-			
+						
 			closeConnection(connection, statement, rs);
 			
+			connection = DB.getConnection();
+						
 			statementString = "SELECT"
-								+ " SongId"
-								+ ", Rank"
+								+ " SongRanking.SongId"
+								+ ", SongRanking.Rank"
 								+ " FROM SongRanking"
 								+ " INNER JOIN Country ON SongRanking.CountryId=Country.Id"
 								+ " WHERE Country.Shortcut = ?;";
@@ -202,7 +625,6 @@ public class Service {
 			
 			for (Song song : entities) {	
 				song.setRank(rankings.getOrDefault(song.getId(), 0));
-				System.out.println("Rank: " + song.getTitel() + "---" + song.getRank());
 			}
 			
 			return entities;
@@ -469,20 +891,30 @@ public class Service {
 		Connection connection = null;
 		PreparedStatement statement = null;
 		ResultSet rs = null;
-		 		
 		 try {
-			connection = DB.getConnection();	
-						
-			String statementString = "SELECT Id FROM Country WHERE Shortcut = ?";
+			connection = DB.getConnection();							
+			String statementString = "SELECT * FROM Country";
 			statement = connection.prepareStatement(statementString);
-			statement.setString(1, shortcut);
 			
 			rs = statement.executeQuery();
 			
+			ArrayList<Country> countries = new ArrayList<Country>();
 			while(rs.next()){
-				return rs.getInt("Id");
+				Country country = new Country();
 				
-			}			
+				country.setId(rs.getInt("Id"));
+				country.setName(rs.getString("Name"));
+				country.setShortcut(rs.getString("Shortcut"));
+				
+				countries.add(country);
+			}
+						
+			for (Country country : countries) {
+				if(country.getShortcut().equals(shortcut)) {
+					return country.getId();
+				}
+			}
+						
 			return 0;
 			} catch (SQLException e) {
 				System.out.println(e.getMessage());
@@ -560,6 +992,35 @@ public class Service {
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 			return 0;
+		}
+		finally{
+			closeConnection(connection, statement, rs);
+		}
+	}
+	
+	public boolean checkIfUserIsAdminByUsername(String username){	
+		
+		Connection connection = null;
+		PreparedStatement statement = null;
+		ResultSet rs = null;
+		
+		try {
+			connection = DB.getConnection();
+			
+			String statementString = "SELECT IsAdmin FROM User WHERE State <> ? AND Username = ? limit 1;";
+			
+			statement = connection.prepareStatement(statementString);
+			statement.setLong(1, SqlState.Deleted.getValue());
+			statement.setString(2, username);
+			rs = statement.executeQuery();
+						
+			while(rs.next()){
+				return rs.getBoolean("IsAdmin");
+			}
+			return false;		
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			return false;
 		}
 		finally{
 			closeConnection(connection, statement, rs);
@@ -731,27 +1192,29 @@ public class Service {
 		PreparedStatement statement = null;
 
 		 try {
-			
 			int countryId = getCountryIdByShortcut(country);	
+			
+			System.out.println(countryId);
 			
 			connection = DB.getConnection();
 			
-			String statementString = "DELETE FROM SongRanking ("
+			String statementString = "DELETE FROM SongRanking "
 					+ "WHERE SongId = ? AND CountryId = ?;";
 			
 			statement = connection.prepareStatement(statementString);
 			statement.setLong(1, song.getId());
 			statement.setLong(2, countryId);
-			
+				
 			statement.executeUpdate();
 			
 			closeConnection(connection, statement);
 			
+			connection = DB.getConnection();
 			statementString = "INSERT INTO SongRanking (SongId, Rank, CountryId)"
 					+ " VALUES("
 					+ "?"
 					+ ", ?"
-					+ ", ?";
+					+ ", ?)";
 			
 			statement = connection.prepareStatement(statementString);
 			statement.setLong(1, song.getId());
@@ -867,9 +1330,11 @@ public class Service {
 					+ ", StreetNumber"
 					+ ", Mail"
 					+ ", State"
+					+ ", IsAdmin"					
 					+ ")"
 					+ " VALUES("
 					+ "?"
+					+ ", ?"
 					+ ", ?"
 					+ ", ?"
 					+ ", ?"
@@ -891,6 +1356,7 @@ public class Service {
 			statement.setString(8, user.getStreetNumber());
 			statement.setString(9,  user.getMail());
 			statement.setLong(10,  SqlState.Active.getValue());
+			statement.setBoolean(11, user.getIsAdmin());			
 			
 			statement.executeUpdate();
 						

@@ -287,32 +287,8 @@ function updateSongRanking(id, rank){
 	request.send();
 }
 
-function getSongRankings(){
-	
-	$("#songRankingTable > tbody").html("");
-	
-	var request = new XMLHttpRequest();
-	request.onreadystatechange = function() {
-		if(request.readyState == 4 && request.status == 200){							
-				var json = $.parseJSON(request.responseText);
-				
-				for (var i = 0; i < json.length; i++){
-					
-					var row = "<tr>";
-					row += "<td>" + json[i]["id"] + "</td>";
-					row += "<td>" + json[i]["artist"]["alias"] + "</td>";
-					row += "<td>" + json[i]["titel"] + "</td>";
-					row += "<td><input id=\"input" + json[i]["id"] + "\"   type=\"number\" min=\"0\" max=\"10\" value=" + json[i]["rank"] + "></td>";
-					row += "</tr>"
-					
-					$("#songRankingTable tbody").append(row);
-				}
-		}
-	}
-	
-	var url = window.location.href;
-	request.open("GET", url + "/songRankings", true);
-	request.send();
+function getSongRankings(){	
+	location.reload();
 }
 
 function playMusic(link, titel){
@@ -342,4 +318,65 @@ function addToFavorites (url) {
 
 	request.open("POST", url , false);
 	request.send();
+}
+
+function chkFormular () {
+  if (document.Formular.Username.value == "") {
+    alert("Bitte Ihren Benutzernamen eingeben!");
+    document.Formular.Username.focus();
+    return false;
+  }
+  if (document.Formular.Password.value == "") {
+    alert("Bitte Ihr Passwort eingeben!");
+    document.Formular.Password.focus();
+    return false;
+  }
+  
+  if (document.Formular.Firstname.value == "") {
+    alert("Bitte Ihren Vornamen eingeben!");
+    document.Formular.Firstname.focus();
+    return false;
+  }
+  
+  if (document.Formular.Lastname.value == "") {
+    alert("Bitte Ihren Nachnamen eingeben!");
+    document.Formular.Lastname.focus();
+    return false;
+  }
+  
+  if (document.Formular.Zip.value == "") {
+    alert("Bitte Ihre Postleitzahl eingeben!");
+    document.Formular.Zip.focus();
+    return false;
+  }
+  
+  if (document.Formular.Location.value == "") {
+    alert("Bitte Ihren Ort eingeben!");
+    document.Formular.Location.focus();
+    return false;
+  }
+  
+  if (document.Formular.Street.value == "") {
+    alert("Bitte Ihre Strasse eingeben!");
+    document.Formular.Street.focus();
+    return false;
+  }
+  
+  if (document.Formular.StreetNumber.value == "") {
+    alert("Bitte Ihre Strassennummer eingeben!");
+    document.Formular.StreetNumber.focus();
+    return false;
+  }
+  
+  if (document.Formular.Mail.value == "") {
+    alert("Bitte Ihre E-Mail eingeben!");
+    document.Formular.Mail.focus();
+    return false;
+  }
+  
+  if (document.Formular.Mail.value.indexOf('@') == -1){
+    alert("Bitte geben Sie Ihre richtige E-Mail-Adresse ein!");
+    document.Formular.Mail.focus();
+    return false;
+  }
 }

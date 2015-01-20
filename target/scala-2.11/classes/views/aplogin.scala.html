@@ -10,7 +10,7 @@
 					@helper.form(routes.Application.authenticateAdmin, 'class -> "navbar-form navbar-left") {
 						<div class="form-group">
 						<input type="text" class="form-control" placeholder="Benutzer" name="Username" id="Username" value="@loginForm("username").value" />
-						<input type="text" class="form-control" placeholder="Passwort" name="Password" id="Password" />
+						<input type="password" class="form-control" placeholder="Passwort" name="Password" id="Password" />
 						<button type="submit" class="btn btn-primary">Anmelden</button>
 						
 						@if(loginForm.hasGlobalErrors) {

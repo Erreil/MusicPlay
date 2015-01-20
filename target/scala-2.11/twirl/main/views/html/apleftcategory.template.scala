@@ -26,7 +26,7 @@ object apleftcategory extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Append
   def apply():play.twirl.api.HtmlFormat.Appendable = {
       _display_ {
 
-Seq[Any](format.raw/*1.1*/("""<div class="span4">
+Seq[Any](format.raw/*1.1*/("""﻿<div class="span4">
 	<div class="navbar-left">
 		<nav class="navbar navbar-default" role="navigation">			
 			<div class="panel panel-default">
@@ -56,10 +56,10 @@ Seq[Any](format.raw/*1.1*/("""<div class="span4">
 }
               /*
                   -- GENERATED --
-                  DATE: Sun Jan 11 11:44:02 CET 2015
+                  DATE: Thu Jan 15 20:26:54 CET 2015
                   SOURCE: C:/FH2/Web_Projekt/musicplay/app/views/apleftcategory.scala.html
-                  HASH: 59473386519378053209afbf1cc761b03299052d
-                  MATRIX: 807->0|1202->368|1217->374|1262->398|1358->467|1373->473|1420->499|1515->567|1530->573|1582->604|1683->678|1698->684|1754->719
+                  HASH: 48da538c0e0022c92a5866c2d9786e32bcbfec19
+                  MATRIX: 807->0|1203->369|1218->375|1263->399|1359->468|1374->474|1421->500|1516->568|1531->574|1583->605|1684->679|1699->685|1755->720
                   LINES: 29->1|38->10|38->10|38->10|39->11|39->11|39->11|40->12|40->12|40->12|41->13|41->13|41->13
                   -- GENERATED --
               */

@@ -22,7 +22,7 @@
 				<div class="panel panel-success">
 					<div class="panel-heading">Bitte geben Sie folgenden Daten ein:</div>
 					<div class="panel-body">
-						@helper.form(action = routes.Application.newUser(), 'id -> "userForm"){
+						@helper.form(action = routes.Application.newUser(), 'name -> "Formular", 'id -> "userForm", 'onsubmit -> "return chkFormular()"){
 						
 						@helper.inputText(userForm("Username"))
 						@helper.inputPassword(userForm("Password"))

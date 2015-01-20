@@ -26,7 +26,8 @@ object aphead extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,For
   def apply():play.twirl.api.HtmlFormat.Appendable = {
       _display_ {
 
-Seq[Any](format.raw/*2.1*/("""<div class="row">
+Seq[Any](format.raw/*1.1*/("""﻿ 
+<div class="row">
 	<div class="span12">
 		<div class="panel panel-default">
 			<div class="panel-body">
@@ -54,11 +55,11 @@ Seq[Any](format.raw/*2.1*/("""<div class="row">
 }
               /*
                   -- GENERATED --
-                  DATE: Mon Jan 12 20:01:53 CET 2015
+                  DATE: Thu Jan 15 20:26:54 CET 2015
                   SOURCE: C:/FH2/Web_Projekt/musicplay/app/views/aphead.scala.html
-                  HASH: 8fbea4a6a1cf43193c9dc56b7f4b8378a8748346
-                  MATRIX: 799->3|1161->338|1177->345|1214->361|1317->437|1332->443|1379->469
-                  LINES: 29->2|39->12|39->12|39->12|40->13|40->13|40->13
+                  HASH: 971add295b67339d3de0e5ef54a4b319c91882c4
+                  MATRIX: 799->0|1165->339|1181->346|1218->362|1321->438|1336->444|1383->470
+                  LINES: 29->1|40->12|40->12|40->12|41->13|41->13|41->13
                   -- GENERATED --
               */
           

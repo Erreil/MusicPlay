@@ -9,7 +9,7 @@
 				<div class="panel-body">	
 					<div class="list-group" id="artistGroup">
 						
-						@if(session.get("username") == null){	
+						@if(session.get("username") != null){	
 						<a href="#" class="list-group-item">Meine Songs</a>
 						}
 															
