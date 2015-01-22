@@ -6,7 +6,7 @@
  - Heroku-Link: http://musicplayerio.herokuapp.com  
  - **Wichtig** kein HTTPS verwenden, es kann zu Problem kommen. (z.B bei Websockets)  
  - Browser: Google Chrome  
- - Admin-Login: Benutzer: Admin Passwort: 1  
+ - Admin-Login: **Benutzer:** *Admin* **Passwort:** *1*  
  - **Wichtig** Groß- und Kleinschreibung beachten  
  - Zugriff auf das Admin-Panel: http://musicplayerio.herokuapp.com/admin  
 
