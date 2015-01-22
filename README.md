@@ -4,14 +4,14 @@
 ## Projektbeschreibung ##
 
 
-Der Haupt-Fokus des Projektes ist für uns, eine optimale Music-Load Seite zu programmieren. 
+Der Hauptfokus des Projektes ist es eine optimale Music-Load Seite zu programmieren. 
 Die Benutzer sollen mit der Seite viele Funktionalitäten zur Auswahl haben.
-Die Kern Idee ist es, dass wir den Nutzer es ermöglichen,sich Lieder aus der ganzen Welt anzuhören.
+Die Kernidee ist es, dass wir den Nutzer ermöglichen sich Lieder aus der ganzen Welt anzuhören.
 Die Nutzer werden sich zusätzlich Playlists bzw. Favoriten erstellen können.
-Dazu soll die Seite eine Vielfalt von Optionen zur Verfügung stellen, wie z.B. eine Registrierung oder auch eigene Playlist. 
+Dazu soll die Seite eine Vielfalt von Optionen zur Verfügung stellen, wie z.B. eine Registrierung oder auch eigene Playlisten. 
 Für uns steht die Benutzerfreundlichkeit an erster Stelle. Natürlich wollen wir auch, dass alles optimal läuft.
 Ziel von unserem Projekt ist es am Ende eine erfolgreiche Anwendung zu haben.
-Für uns war es wichtig, dass Projekt mit Meilensteinen zu setzen, da es immer wieder zu Problemen kam und es sonst nicht Zeitlich gereicht hätte, Sie dann rechtzeitig zu beheben.
+Für uns war es wichtig das Projekt mit Meilensteinen zu setzen, da es immer wieder zu Problemen kam und es sonst nicht zeitlich gereicht hätte die Fehler dann rechtzeitig zu beheben.
 Die Zielerreichung und Qualität der Ergebnisse wurden dann immer in den Übungen sichergestellt.
 
 
@@ -19,15 +19,15 @@ Die Zielerreichung und Qualität der Ergebnisse wurden dann immer in den Übunge
 
 ## Die ersten Ideen ##
 
-Unsere erste Idee , die wir dann auch übernommen haben war eine Music-Play Seite zum implementieren.
+Unsere erste Idee , die wir dann auch übernommen haben war eine Music-Play Seite zu implementieren.
 Als nächsten Schritt haben wir uns in der Gruppe überlegt, was wir alles in das Projekt einbauen möchten.
 Vorallem war es wichtig, immer den Aufwand einzukalkulieren. 
-Zusätzlich müssten wir uns bewusst sein, dass unser Projekt (Music-Play) gewisse Funktionalitäten haben muss.
+Zusätzlich mussten wir uns bewusst sein, dass unser Projekt (Music-Play) gewisse Funktionalitäten haben muss.
 
 ![Mockup](/public/images/Home.png)
 
 
-Wie man in unserem Mockup schon sehen kann, hatten wir uns zuerst alle Funktionalitäten die wir mit in das Projekt einbauen wollten notiert und aufgezeichnet.
+Wie man in unserem Mockup schon sehen kann, hatten wir uns zuerst alle Funktionalitäten, die wir mit in das Projekt einbauen wollten notiert und aufgezeichnet.
 
 ***
 
@@ -52,13 +52,13 @@ Wie man in unserem Mockup schon sehen kann, hatten wir uns zuerst alle Funktiona
 - Passwörter bei der Benutzeranmeldung müssen verschlüsselt übertragen werden
 
 
-![UseCase-Diagramm](/public/images/Home.png)
+![UseCase-Diagramm](/public/images/UseCase-Diagramm.png)
 
 ***
 
 ## Architektur ##
 
-![Klassen-Diagramm](/public/images/Home.png)
+![Klassen-Diagramm](/public/images/Klassendiagramm.png)
 
 ###Darstellung:###
 
