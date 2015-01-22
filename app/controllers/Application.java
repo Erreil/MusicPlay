@@ -68,7 +68,7 @@ public class Application extends Controller {
 		if(service.createUser(created)){
 			session().clear();
 			session("username", created.getUsername());	
-			return index();
+			return redirect(routes.Application.index());
 		}
 		else return badRequest("Es gab leider einen unerwarteten Fehler!");
 	}
@@ -76,9 +76,9 @@ public class Application extends Controller {
 	public static Result newArtist(){
 		Form<Artist> filledForm = artistForm.bindFromRequest();	
 		Artist created = filledForm.get();
-		
 		Service service = Service.getInstance();		
-		if(service.createArtist(created)) return apaddartist();
+	
+		if(service.createArtist(created)) return redirect(routes.Application.apaddartist());	
 		else return badRequest();
 	}
 	
@@ -190,11 +190,8 @@ public class Application extends Controller {
 			
 			session().clear();
 			session("username", login.getUsername());
-			
-			System.out.println("1:" + isAdmin);
-			
+						
 			if(isAdmin){
-				System.out.println("11:" + isAdmin);
 				session("isAdmin", "yes");
 			}
 			
@@ -216,10 +213,7 @@ public class Application extends Controller {
 			session().clear();
 			session("username", login.getUsername());
 			
-			System.out.println("2:" + isAdmin);
-			
 			if(isAdmin){
-				System.out.println("22:" + isAdmin);
 				session("isAdmin", "yes");
 			}
 								
@@ -266,9 +260,9 @@ public class Application extends Controller {
 	    
 	    service.createSong(song);
 	        
-	    return apaddsong();
+	    return redirect(routes.Application.apaddsong());
 	  } else {
-	    return redirect(routes.Application.index());    
+	    return badRequest();    
 	  }
 	}
 	
@@ -322,7 +316,6 @@ public class Application extends Controller {
 		 in.onMessage(new Callback<String>() {
 		 public void invoke(String g) {
 			
-			 System.out.println(g);
 	     Service service = Service.getInstance();
 		 ArrayList<String> list = service.getAllSongTitelByContainsTitel(g);
 		 
@@ -331,9 +324,7 @@ public class Application extends Controller {
 		 for (String value : list) {
 			returnable += value + ";";
 		}
-		 
-		 System.out.println(returnable);
-		 
+		 		 
 		 out.write(returnable);
 		 }
 		 });

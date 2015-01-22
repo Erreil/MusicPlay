@@ -225,7 +225,7 @@ function getArtists(){
 					
 					var row = "<tr>";
 					row += "<td>" + json[i]["id"] + "</td>";
-					row += "<td>" + json[i]["alias"]["alias"] + "</td>";
+					row += "<td>" + json[i]["alias"] + "</td>";
 					row += "<td>" + json[i]["firstname"] + "</td>";
 					row += "<td>" + json[i]["lastname"] + "</td>";
 					row += "<td>" + json[i]["country"]["name"] + "</td>";
@@ -387,4 +387,57 @@ function chkFormular () {
     document.Formular.Mail.focus();
     return false;
   }
+}
+
+function chkFormularSong() {
+  if (document.Formular.titel.value == "") {
+    alert("Bitte Titel eingeben!");
+    document.Formular.titel.focus();
+    return false;
+  }
+  
+   if (document.Formular.artistId.value == "") {
+    alert("Bitte ArtistId eingeben!");
+    document.Formular.artistId.focus();
+    return false;
+  }
+  
+  if (document.Formular.songFile.value == "") {
+    alert("Bitte wählen Sie ein Datei aus!");
+    document.Formular.songFile.focus();
+    return false;
+  }
+}
+
+function chkFormularArtist() {
+  if (document.Formular.Firstname.value == "") {
+    alert("Bitte Vorname eingeben!");
+    document.Formular.Firstname.focus();
+    return false;
+  }
+  
+   if (document.Formular.Lastname.value == "") {
+    alert("Bitte Nachnamen eingeben!");
+    document.Formular.Lastname.focus();
+    return false;
+  }
+  
+  if (document.Formular.Alias.value == "") {
+    alert("Bitte Alias eingeben!");
+    document.Formular.Alias.focus();
+    return false;
+  }
+  
+   if (document.Formular.CountryId.value == "") {
+    alert("Bitte CountryId eingeben!");
+    document.Formular.CountryId.focus();
+    return false;
+  }
+  
+   if (document.Formular.CountryId.value != "1" && document.Formular.CountryId.value != "2" && document.Formular.CountryId.value && "3" ) {
+    alert("Die CountryId muss zwischen 1 und 3 liegen!");
+    document.Formular.CountryId.focus();
+    return false;
+  }
+  
 }

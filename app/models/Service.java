@@ -19,9 +19,7 @@ public class Service {
 	private Service(){}
 	
 	public static Service getInstance() {
-		
-		System.out.println("0");
-		
+				
 		if(instance == null){
 			instance = new Service();
 			instance.Initialize();
@@ -1235,8 +1233,6 @@ public class Service {
 
 		 try {
 			int countryId = getCountryIdByShortcut(country);	
-			
-			System.out.println(countryId);
 			
 			connection = DB.getConnection();
 			

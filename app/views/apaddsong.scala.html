@@ -16,10 +16,10 @@
 						<div class="panel panel-success">
 							<div class="panel-heading">Erstellen</div>
 							<div class="panel-body">
-								@helper.form(action = routes.Application.newSong, 'enctype -> "multipart/form-data") {
-										<p>Titel: <input type="text" name="titel"></p>
-										<p>ArtistId: <input type="text" name="artistId"></p>
-										<input type="file" name="songFile">
+								@helper.form(action = routes.Application.newSong, 'enctype -> "multipart/form-data", 'onsubmit -> "return chkFormularSong()", 'name -> "Formular" ) {
+										<p>Titel: <input type="text" name="titel" id="titel"></p>
+										<p>ArtistId: <input type="text" name="artistId" id="artistId"></p>
+										<input type="file" name="songFile" id="songFile">
 										<input type="submit" value="Anlegen">
 								}
 							</div>

@@ -1,6 +1,6 @@
 // @SOURCE:C:/FH2/Web_Projekt/Master/MusicPlay/conf/routes
-// @HASH:6463c33b048981dbe53196ee4a4c6dc4fb063518
-// @DATE:Thu Jan 22 20:11:32 CET 2015
+// @HASH:671619afd0e8e5c51cfe95dab75d929e67d5dbaf
+// @DATE:Thu Jan 22 20:42:34 CET 2015
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -310,7 +310,7 @@ def deleteUser(id:Integer): Call = {
 // @LINE:23
 def newArtist(): Call = {
    import ReverseRouteContext.empty
-   Call("GET", _prefix + { _defaultPrefix } + "apaddartist/newArtist")
+   Call("POST", _prefix + { _defaultPrefix } + "apaddartist/newArtist")
 }
                         
 
@@ -742,7 +742,7 @@ def newArtist : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Application.newArtist",
    """
       function() {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "apaddartist/newArtist"})
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "apaddartist/newArtist"})
       }
    """
 )
@@ -1018,7 +1018,7 @@ def deleteUser(id:Integer): play.api.mvc.HandlerRef[_] = new play.api.mvc.Handle
 
 // @LINE:23
 def newArtist(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Application.newArtist(), HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "newArtist", Seq(), "GET", """""", _prefix + """apaddartist/newArtist""")
+   controllers.Application.newArtist(), HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "newArtist", Seq(), "POST", """""", _prefix + """apaddartist/newArtist""")
 )
                       
 

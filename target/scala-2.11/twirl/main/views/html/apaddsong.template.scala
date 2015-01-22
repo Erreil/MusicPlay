@@ -44,10 +44,10 @@ Seq[Any](format.raw/*1.46*/("""
 						<div class="panel panel-success">
 							<div class="panel-heading">Erstellen</div>
 							<div class="panel-body">
-								"""),_display_(/*19.10*/helper/*19.16*/.form(action = routes.Application.newSong, 'enctype -> "multipart/form-data")/*19.93*/ {_display_(Seq[Any](format.raw/*19.95*/("""
-										"""),format.raw/*20.11*/("""<p>Titel: <input type="text" name="titel"></p>
-										<p>ArtistId: <input type="text" name="artistId"></p>
-										<input type="file" name="songFile">
+								"""),_display_(/*19.10*/helper/*19.16*/.form(action = routes.Application.newSong, 'enctype -> "multipart/form-data", 'onsubmit -> "return chkFormularSong()", 'name -> "Formular" )/*19.156*/ {_display_(Seq[Any](format.raw/*19.158*/("""
+										"""),format.raw/*20.11*/("""<p>Titel: <input type="text" name="titel" id="titel"></p>
+										<p>ArtistId: <input type="text" name="artistId" id="artistId"></p>
+										<input type="file" name="songFile" id="songFile">
 										<input type="submit" value="Anlegen">
 								""")))}),format.raw/*24.10*/("""
 							"""),format.raw/*25.8*/("""</div>
@@ -117,10 +117,10 @@ Seq[Any](format.raw/*1.46*/("""
 }
               /*
                   -- GENERATED --
-                  DATE: Thu Jan 22 20:11:34 CET 2015
+                  DATE: Thu Jan 22 21:32:12 CET 2015
                   SOURCE: C:/FH2/Web_Projekt/Master/MusicPlay/app/views/apaddsong.scala.html
-                  HASH: 187cf18b71d0b481549b4f3da406dec929bb7733
-                  MATRIX: 742->1|874->45|904->50|935->73|973->74|1003->79|1031->87|1060->90|1107->112|1143->128|1174->133|1521->453|1536->459|1622->536|1662->538|1702->550|1950->767|1986->776|2794->1557|2831->1578|2870->1579|2912->1593|2963->1617|2976->1621|3005->1629|3057->1654|3070->1658|3114->1681|3166->1706|3179->1710|3211->1721|3358->1837|3398->1849
+                  HASH: f1ad7bf915cd9cf41ac87f8e7351c70d812da41a
+                  MATRIX: 742->1|874->45|904->50|935->73|973->74|1003->79|1031->87|1060->90|1107->112|1143->128|1174->133|1521->453|1536->459|1686->599|1727->601|1767->613|2054->869|2090->878|2898->1659|2935->1680|2974->1681|3016->1695|3067->1719|3080->1723|3109->1731|3161->1756|3174->1760|3218->1783|3270->1808|3283->1812|3315->1823|3462->1939|3502->1951
                   LINES: 26->1|29->1|31->3|31->3|31->3|33->5|33->5|34->6|35->7|35->7|36->8|47->19|47->19|47->19|47->19|48->20|52->24|53->25|80->52|80->52|80->52|81->53|82->54|82->54|82->54|83->55|83->55|83->55|84->56|84->56|84->56|89->61|90->62
                   -- GENERATED --
               */
