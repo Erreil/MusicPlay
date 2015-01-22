@@ -3,13 +3,13 @@
 
 ## Projektbeschreibung ##
 
-Der Hauptfokus des Projekts lag auf der Programmierung einer optimalen Music-Seite. Dem Benuntzer sollen durch die Seite ein gewisse Anzahl an Funktionalitäten geboten werden. Die Kernidee des Projekts ist das anhören verschiedener Lieder aus der ganzen Welt. Zusätzlich sollen dem Nutzer weitere Möglichkeiten geboten werden, wie z.B. das Verwalten von eigenen Playlisten oder Favoriten. Die Seite soll Benutzer- und Bedienfreundlich sein.
+Der Hauptfokus des Projekts lag auf der Programmierung einer optimalen Music-Seite. Dem Benutzer sollen durch die Seite ein gewisse Anzahl an Funktionalitäten geboten werden. Die Kernidee des Projekts ist das anhören verschiedener Lieder aus der ganzen Welt. Zusätzlich sollen dem Nutzer weitere Möglichkeiten geboten werden, wie z.B. das Verwalten von eigenen Playlisten oder Favoriten. Die Seite soll Benutzer- und Bedienfreundlich sein.
 
 ***
 
 ## Die ersten Ideen ##
 
-Vom Beginn an war unser Team sich einig eine Music-Seite zu programmieren. Zuerst wurden erste Ideen gesammelt, schließlich ein Mockup erstellt. Jede Funktionalität der Seite wurde mit vorsicht betrachtet und der Aufwand mit einkalkuliert.
+Vom Beginn an war unser Team sich einig eine Music-Seite zu programmieren. Zuerst wurden erste Ideen gesammelt, schließlich ein Mockup erstellt. Jede Funktionalität der Seite wurde mit Vorsicht betrachtet und der Aufwand mit einkalkuliert.
 
 ![Mockup](/public/images/Home.png)
 
@@ -32,7 +32,7 @@ Wie man in unserem Mockup schon sehen kann, hatten wir uns zuerst alle Funktiona
 ###non functional requirements:###
 
 - Song muss nach Auswahl sofort abgespielt werden, ohne warten
-- Der Benutzer soll bis zu 20 Playlists anlegen können
+- Der Benutzer soll bis zu 20 Play Lists anlegen können
 - Verwendbarkeit sollte einwandfrei laufen
 - Seite muss 7/24 verfügbar sein
 - Es dürfen keine Benutzer mit demselben Namen existieren
@@ -51,11 +51,11 @@ Wie man in unserem Mockup schon sehen kann, hatten wir uns zuerst alle Funktiona
 
 Die Seiten können in folgende Bereich unterteilt werden:
 
- - ###Adminpanel###
+ - ###Benutzerbereich###
 
-Die Ansicht in Browser wird durch fünf Html-Datein bereitgestellt. Um redundanten Code zu vermeiden wurde diese Aufteilung durchgeführt.
+Die Ansicht im Browser wird durch fünf Html-Dateien bereitgestellt. Um redundanten Code zu vermeiden wurde diese Aufteilung durchgeführt.
 Dabei wird durch *main.scala.html* der Header der Seite definiert.
-Den oberen bereich des *body*-Tags ist in der *headlogin.scala.html* angegeben.
+Den oberen Bereich des *Body*-Tags ist in der *headlogin.scala.html* angegeben.
 Der linke Bereich in der *leftCategory.scala.html*.
 Der unter Bereich ist definiert durch die *footerPlayer.scala.html*.
 
@@ -72,8 +72,8 @@ Der wechselnde Inhalt ist in der fünften Html-Datei definiert. Dies könnten fo
 Das Adminpanel ist ähnlich dem Benutzerbereich aufgebaut. Hierbei erfolgt der Aufbau aus vier Teilen.
 
 *Header*-Definition: *main.scala.html*
-Oberer *body*-Bereich: *aphead.scala.html*
-Linker *body*-Bereich: *apleftcategory.scala.html*
+Oberer *Body*-Bereich: *aphead.scala.html*
+Linker *Body*-Bereich: *apleftcategory.scala.html*
 
 Inhalt:
 
@@ -84,7 +84,7 @@ Inhalt:
 
  - ###Sonstige Bereiche###
 
-Ausnahmebereiche, die anders aufgebaut werden, ist der Login- und Signupbereich.Diese enthalten nur die *main.scala.html* für den *Head*. Dies sind folgende Dateien:
+Ausnahmebereiche, die anders aufgebaut werden, ist der Login- und Signupbereich. Diese enthalten nur die *main.scala.html* für den *Head*. Dies sind folgende Dateien:
 
  - *aplogin.scala.html*
  - *signup.scala.html*
@@ -98,18 +98,18 @@ Der Aufbau der Logik ist im Klassendiagram gegeben.
 Web:
 - JavaScript/JQuery
 
-Allen Html-Seiten steht ein allgemeiner JavaScript zu verfügung. Dieser wird zu beginn in der main.scala.html eingebunden. Das Script unterstützt diese bei folgenden Funktionen:
+Allen Html-Seiten steht ein allgemeiner JavaScript zu Verfügung. Dieser wird zu Beginn in der main.scala.html eingebunden. Das Script unterstützt diese bei folgenden Funktionen:
 
  - Abhandeln der AJAX Abfragen
  - Aktualisieren der Progressladebalken
  - Einblenden oder Ausblenden von Elementen
  - Kommunikation über WebSockets
  
-Desweiteren werden über JQuery die meisten übergaben von Werten zwischen den einzelnen Html-Tags gehändelt.
+Des Weiteren werden über JQuery die meisten übergaben von Werten zwischen den einzelnen Html-Tags gehändelt.
 
 Einsatz im Projekt:
 
-Im Projekt exisitiert eine selbstgeschriebe *Script.js*, welche wie bereits erwähnt in der *main.scala.html* eingebunden wird. Die Datei ist vordefiniertem Ordner von *PlayFramework*-*public/javascripts* hinterlegt. Diese enthält Funktion für folgende Aufgaben:
+Im Projekt existiert eine selbstgeschriebene *Script.js*, welche wie bereits erwähnt in der *main.scala.html* eingebunden wird. Die Datei ist vordefiniertem Ordner von *Play Framework*-*public/javascripts* hinterlegt. Diese enthält Funktion für folgende Aufgaben:
 
 <table>
     <tr>
@@ -184,7 +184,7 @@ Im Projekt exisitiert eine selbstgeschriebe *Script.js*, welche wie bereits erw�
     </tr>
      <tr>
         <td> getSearchValue() </td>
-        <td> Liest den einegegben Wert im Suchfeld aus </td>
+        <td> Liest den eingegebenen Wert im Suchfeld aus </td>
         <td> *aphead.scala.html* </td>
     </tr>
     <tr>
@@ -202,7 +202,7 @@ Im Projekt exisitiert eine selbstgeschriebe *Script.js*, welche wie bereits erw�
 CSS:
 - bootstrap
 
-Im Projekt wird hauptsächlich der gegeben CSS-Design von *bootstrap* verwendet. Alle Elemente bauen darauf auf. Auch das Layout der Seite wird durch die gegebenen *columns* von *bootstrap* realisiert. Es existiert keine eigene CSS-Datei, da die gegebe CSS von *bootstrap* für diese Projekt ausreichend ist. In einzelnen Fällen wird auf das *Style-Attribut* zurückgegriffen um einzelne Feinheiten anzupassen.
+Im Projekt wird hauptsächlich der gegeben CSS-Design von *bootstrap* verwendet. Alle Elemente bauen darauf auf. Auch das Layout der Seite wird durch die gegebenen *columns* von *bootstrap* realisiert. Es existiert keine eigene CSS-Datei, da die gegeben CSS von *bootstrap* für diese Projekt ausreichend ist. In einzelnen Fällen wird auf das *Style-Attribut* zurückgegriffen um einzelne Feinheiten anzupassen.
 
 Database:
 - SQLLite
@@ -212,12 +212,12 @@ Als Datenbank wird SQLite verwendet. Dieses ist kein vollständiges Datenbanksys
 Entwicklung:
 - Java
 
-Die gesamte Logik, serverseitig, wird per Java-Code ausgeführt. Alle Interaktion mit der Datenbank und das Handling zwischen Server und Client wird auch per Java-Code durchgeführt. 
+Die gesamte Logik, serverseitig, wird per Java-Code ausgeführt. Alle Interaktion mit der Datenbank und das Handling zwischen Server und Client werden auch per Java-Code durchgeführt. 
 
 Sonstige Technologien:
 - WebSocket
 
-Um Seiten nich neuladen zu müssen und dennoch eine Kommunikation zwischen Client und Server zu ermöglichen werden WebSockets eingesetzt. Diese verbinden sich beim Aufbau der Html-Seiten und behalten die Verbindung aufrecht, solange die Html-Seite geöffnet ist.
+Um Seiten nicht neu Laden zu müssen und dennoch eine Kommunikation zwischen Client und Server zu ermöglichen werden WebSockets eingesetzt. Diese verbinden sich beim Aufbau der Html-Seiten und behalten die Verbindung aufrecht, solange die Html-Seite geöffnet ist.
 
 In unserem Projekt werden WebSockets während der Eingabe im Suchfeld für Songs eingesetzt. Dabei werden vom Server nach Eingabe erster Suchzeichen Vorschläge vom Server an Client geschickt und angezeigt.
 
@@ -225,11 +225,11 @@ In unserem Projekt werden WebSockets während der Eingabe im Suchfeld für Songs
 
 Mit AJAX können Http-Anfragen, sowohl über GET als auch über POST an den Server geschickt werden. Dies wird über JavaScript durchgeführt und ein erneuter Seitenaufbau ist nicht notwendig. Somit können Inhalte der Seite ohne erneuten Aufbau der Seite realisiert werden.
 
-In unserem Projekt wird die Technologie verwendet um im AdminPanel die Tabellen nach dem Löschen von von Einträgen zu aktualisieren.
+In unserem Projekt wird die Technologie verwendet um im AdminPanel die Tabellen nach dem Löschen von Einträgen zu aktualisieren.
 
 - JSON
 
-JSON ist ein komptaktes Datenformat in Textform zum Datenaustausch. 
+JSON ist ein kompaktes Datenformat in Textform zum Datenaustausch. 
 
 JSON wurde in unserem Projekt für AJAX verwendet. Die übertragenen Daten an den Client sind im JSON-Format.
 
@@ -240,9 +240,9 @@ Das Entwickeln wurde über das Playframework durchgeführt.
 
 ## Erfahrungen ##
 
-Das Entwickeln dieser Webanwendung war für uns neues Gebiet. Zwar hatte unser Team gute Java-Kenntnise, aber es fehlten jegliche Erfahrung mit den sonstigen eingesetzten Technologien. Somit war es ein schwieriger aber lernreicher Entwicklungsprozess.
+Das Entwickeln dieser Webanwendung war für uns neues Gebiet. Zwar hatte unser Team gute Java-Kenntnisse, aber es fehlte jegliche Erfahrung mit den sonstigen eingesetzten Technologien. Somit war es ein schwieriger aber lernreicher Entwicklungsprozess.
 
-Durch dieses Projekt wurden viele neue Erkenntnise gewonnen. Web ist für unserer Team klarer geworden.
+Durch dieses Projekt wurden viele neue Erkenntnisse gewonnen. Web ist für unser Team klarer geworden.
 ***
 ## Probleme ##
 
@@ -250,7 +250,7 @@ Wir hatten sehr viele Probleme bei diesem Projekt, wir wollen aber nur die wicht
 
  - Anbindung des Projekts an Playframework
  
- Leider konnte unsere Projekt nicht problemlos an *Play* angebunden werden. Unsere Inhalte wurden nicht angezeigt, sondern nur die Standardseite von *Play*. Fehlerlösung: Cache von *Play* musste gellert werden.
+ Leider konnte unsere Projekt nicht problemlos an *Play* angebunden werden. Unsere Inhalte wurden nicht angezeigt, sondern nur die Standardseite von *Play*. Fehlerlösung: Cache von *Play* musste geleert werden.
  
  - SQLlite Abfragen
  
