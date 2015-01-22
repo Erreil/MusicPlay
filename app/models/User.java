@@ -1,6 +1,8 @@
 package models;
 
-public class User{
+import java.util.Observable;
+
+public class User extends Observable{
 	private int Id;
 	private String Username;
 	private String Password;
@@ -13,12 +15,18 @@ public class User{
 	private String Mail;
 	private boolean IsAdmin;
 	
+	public User(){
+		super();
+	}
+	
 	public int getId() {
 		return Id;
 	}
 
 	public void setId(int id) {
 		Id = id;
+		super.setChanged();
+		super.notifyObservers();
 	}
 
 	public String getUsername() {
@@ -27,6 +35,8 @@ public class User{
 
 	public void setUsername(String username) {
 		Username = username;
+		super.setChanged();
+		super.notifyObservers();
 	}
 
 	public String getPassword() {
@@ -35,6 +45,8 @@ public class User{
 
 	public void setPassword(String password) {
 		Password = password;
+		super.setChanged();
+		super.notifyObservers();
 	}
 
 	public String getFirstname() {
@@ -43,6 +55,8 @@ public class User{
 
 	public void setFirstname(String firstname) {
 		Firstname = firstname;
+		super.setChanged();
+		super.notifyObservers();
 	}
 
 	public String getLastname() {
@@ -51,6 +65,8 @@ public class User{
 
 	public void setLastname(String lastname) {
 		Lastname = lastname;
+		super.setChanged();
+		super.notifyObservers();
 	}
 
 	public String getZip() {
@@ -59,6 +75,8 @@ public class User{
 
 	public void setZip(String zip) {
 		Zip = zip;
+		super.setChanged();
+		super.notifyObservers();
 	}
 
 	public String getLocation() {
@@ -67,6 +85,8 @@ public class User{
 
 	public void setLocation(String location) {
 		Location = location;
+		super.setChanged();
+		super.notifyObservers();
 	}
 
 	public String getStreet() {
@@ -75,6 +95,8 @@ public class User{
 
 	public void setStreet(String street) {
 		Street = street;
+		super.setChanged();
+		super.notifyObservers();
 	}
 
 	public String getStreetNumber() {
@@ -83,6 +105,8 @@ public class User{
 
 	public void setStreetNumber(String streetNumber) {
 		StreetNumber = streetNumber;
+		super.setChanged();
+		super.notifyObservers();
 	}
 
 	public String getMail() {
@@ -91,6 +115,8 @@ public class User{
 
 	public void setMail(String mail) {
 		Mail = mail;
+		super.setChanged();
+		super.notifyObservers();
 	}
 	
 	public boolean getIsAdmin() {
@@ -99,5 +125,7 @@ public class User{
 
 	public void setIsAdmin(boolean isAdmin) {
 		IsAdmin = isAdmin;
+		super.setChanged();
+		super.notifyObservers();
 	}
 }

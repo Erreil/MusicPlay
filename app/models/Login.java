@@ -2,26 +2,35 @@ package models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
 
 import play.data.validation.ValidationError;
 
 
-public class Login {
+public class Login extends Observable {
 	
 	private String username;
 	private String password;
+	
+	public Login(){
+		super();
+	}
 	
 	public String getUsername() {
 		return username;
 	}
 	public void setUsername(String username) {
 		this.username = username;
+		super.setChanged();
+		super.notifyObservers();
 	}
 	public String getPassword() {
 		return password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
+		super.setChanged();
+		super.notifyObservers();
 	}
 	
 	public List<ValidationError> validate(){
