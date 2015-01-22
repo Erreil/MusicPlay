@@ -9,10 +9,7 @@ Der Hauptfokus des Projekts lag auf der Programmierung einer optimalen Music-Sei
 
 ## Die ersten Ideen ##
 
-Unsere erste Idee , die wir dann auch übernommen haben war eine Music-Play Seite zu implementieren.
-Als nächsten Schritt haben wir uns in der Gruppe überlegt, was wir alles in das Projekt einbauen möchten.
-Vorallem war es wichtig, immer den Aufwand einzukalkulieren. 
-Zusätzlich mussten wir uns bewusst sein, dass unser Projekt (Music-Play) gewisse Funktionalitäten haben muss.
+Vom Beginn an war unser Team sich einig eine Music-Seite zu programmieren. Zuerst wurden erste Ideen gesammelt, schließlich ein Mockup erstellt. Jede Funktionalität der Seite wurde mit vorsicht betrachtet und der Aufwand mit einkalkuliert.
 
 ![Mockup](/public/images/Home.png)
 
@@ -54,7 +51,7 @@ Wie man in unserem Mockup schon sehen kann, hatten wir uns zuerst alle Funktiona
 
 Die Seiten können in folgende Bereich unterteilt werden:
 
- - ###Benutzerbereich###
+ - ###Adminpanel###
 
 Die Ansicht in Browser wird durch fünf Html-Datein bereitgestellt. Um redundanten Code zu vermeiden wurde diese Aufteilung durchgeführt.
 Dabei wird durch *main.scala.html* der Header der Seite definiert.
