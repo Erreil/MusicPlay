@@ -22,7 +22,7 @@
 							<div class="panel-heading">Erstellen</div>
 							<div class="panel-body">
 			
-										@helper.form(action = routes.Application.newArtist(), 'id -> "artistForm"){
+										@helper.form(action = routes.Application.newArtist(), 'id -> "artistForm", 'onsubmit -> "return chkFormularArtist()", 'name -> "Formular"){
 											@helper.inputText(artistForm("Firstname"))
 											@helper.inputText(artistForm("Lastname"))
 											@helper.inputText(artistForm("Alias"))
