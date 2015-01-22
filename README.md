@@ -1,4 +1,13 @@
 #MusicPlay#
+
+***
+
+## Wichtige Informationen ##
+ Heroku-Link: http://musicplayerio.herokuapp.com/topten/eu
+ 'Wichtig' kein HTTPS verwenden, es kann zu Problem kommen. (z.B bei Websockets)
+ 
+ Browser: Google Chrome
+
 ***
 
 ## Projektbeschreibung ##
