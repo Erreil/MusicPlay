@@ -32,6 +32,7 @@ function readSelectedUsers(){
 	getUsers(); 
 }
 
+//AJAX
 function deleteUser(id){
 	var request = new XMLHttpRequest();
 	request.onreadystatechange = function() {
@@ -48,6 +49,7 @@ function deleteUser(id){
 	request.send();
 }
 
+//AJAX
 function getUsers(){
 	
 	$("#userTable > tbody").html("");
@@ -112,6 +114,7 @@ function readSelectedSongs(){
 	getSongs(); 
 }
 
+//AJAX
 function deleteSong(id){
 	var request = new XMLHttpRequest();
 	request.onreadystatechange = function() {
@@ -128,6 +131,7 @@ function deleteSong(id){
 	request.send();
 }
 
+//AJAX
 function getSongs(){
 	
 	$("#songTable > tbody").html("");
@@ -190,6 +194,7 @@ function readSelectedArtists(){
 	getArtists(); 
 }
 
+//AJAX
 function deleteArtist(id){
 	var request = new XMLHttpRequest();
 	request.onreadystatechange = function() {
@@ -206,6 +211,7 @@ function deleteArtist(id){
 	request.send();
 }
 
+//AJAX
 function getArtists(){
 	
 	$("#artistTable > tbody").html("");
@@ -271,6 +277,7 @@ function readSongRanking(){
 	getSongRankings(); 
 }
 
+//AJAX
 function updateSongRanking(id, rank){
 	var request = new XMLHttpRequest();
 	request.onreadystatechange = function() {
@@ -305,6 +312,7 @@ function getSearchValue(){
 		return $("#search")-val();
 }
 
+//AJAX
 function addToFavorites (url) {
 	var request = new XMLHttpRequest();
 	request.onreadystatechange = function() {
