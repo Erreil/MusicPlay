@@ -210,7 +210,7 @@ public class Service {
 					+ "[Id] INTEGER  PRIMARY KEY AUTOINCREMENT NOT NULL"
 					+ ",[Titel] NVARCHAR(128)  NOT NULL"
 					+ ",[ArtistId] INTEGER  NOT NULL"
-					+ ",[FilePath] NVARCHAR(512)  NOT NULL"
+					+ ",[FileName] NVARCHAR(512)  NOT NULL"
 					+ ",[State] INTEGER  NOT NULL"
 					+ ", FOREIGN KEY(ArtistId) REFERENCES Artist(Id)"
 					+ ")";
@@ -223,28 +223,28 @@ public class Service {
 			Song song = new Song();
 			song.setTitel("Sunshine");
 			song.setArtistId(1);
-			song.setFilePath("C:\\FH2\\Web_Projekt\\musicplay\\public\\music\\Psycho Metal - Sunshine.mp3");
+			song.setFileName("Psycho Metal - Sunshine.mp3");
 			
 			createSong(song);
 			
 			song = new Song();
 			song.setTitel("Freestyle Skills");
 			song.setArtistId(1);
-			song.setFilePath("C:\\FH2\\Web_Projekt\\musicplay\\public\\music\\Psycho Metal - Freestyle Skills.mp3");
+			song.setFileName("Psycho Metal - Freestyle Skills.mp3");
 			
 			createSong(song);
 			
 			song = new Song();
 			song.setTitel("La Isla Bonita");
 			song.setArtistId(3);
-			song.setFilePath("C:\\FH2\\Web_Projekt\\musicplay\\public\\music\\madonna-la isla bonita.mp3");
+			song.setFileName("madonna-la isla bonita.mp3");
 			
 			createSong(song);
 			
 			song = new Song();
 			song.setTitel("Cry me a river");
 			song.setArtistId(4);
-			song.setFilePath("C:\\FH2\\Web_Projekt\\musicplay\\public\\music\\Justin Timberlake feat 50 cent - Cry me a river.mp3");
+			song.setFileName("Justin Timberlake feat 50 cent - Cry me a river.mp3");
 			
 			createSong(song);
 					
@@ -553,7 +553,7 @@ public class Service {
 			String statementString = "SELECT"
 					+ " Song.Id AS SongId"
 					+ ", Song.Titel"
-					+ ", Song.FilePath"
+					+ ", Song.FileName"
 					+ ", Song.State"
 					+ ", SongRanking.Rank"
 					+ ", Artist.Id AS ArtistId"
@@ -581,7 +581,7 @@ public class Service {
 				
 				entity.setId(rs.getInt("SongId"));
 				entity.setTitel(rs.getString("Titel"));
-				entity.setFilePath(rs.getString("FilePath"));
+				entity.setFileName(rs.getString("FileName"));
 				entity.setRank(rs.getInt("Rank"));
 				
 				Artist artist = new Artist();
@@ -615,7 +615,7 @@ public class Service {
 			String statementString = "SELECT"
 					+ " Song.Id AS SongId"
 					+ ", Song.Titel"
-					+ ", Song.FilePath"
+					+ ", Song.FileName"
 					+ ", Artist.Id AS ArtistId"
 					+ ", Artist.Alias"
 					+ " FROM Song"
@@ -633,7 +633,7 @@ public class Service {
 				
 				entity.setId(rs.getInt("SongId"));
 				entity.setTitel(rs.getString("Titel"));
-				entity.setFilePath(rs.getString("FilePath"));
+				entity.setFileName(rs.getString("FileName"));
 				
 				Artist artist = new Artist();
 				artist.setId(rs.getInt("ArtistId"));			
@@ -692,7 +692,7 @@ public class Service {
 			String statementString = "SELECT"
 					+ " Song.Id AS SongId"
 					+ ", Song.Titel"
-					+ ", Song.FilePath"
+					+ ", Song.FileName"
 					+ ", Artist.Id AS ArtistId"
 					+ ", Artist.Alias"
 					+ " FROM Song"
@@ -712,7 +712,7 @@ public class Service {
 				
 				entity.setId(rs.getInt("SongId"));
 				entity.setTitel(rs.getString("Titel"));
-				entity.setFilePath(rs.getString("FilePath"));
+				entity.setFileName(rs.getString("FileName"));
 				
 				Artist artist = new Artist();
 				artist.setId(rs.getInt("ArtistId"));			
@@ -782,7 +782,7 @@ public class Service {
 			String statementString = "SELECT"
 					+ " Song.Id AS SongId"
 					+ ", Song.Titel"
-					+ ", Song.FilePath"
+					+ ", Song.FileName"
 					+ ", Song.State"
 					+ ", Artist.Id AS ArtistId"
 					+ ", Artist.Alias"
@@ -803,7 +803,7 @@ public class Service {
 				
 				entity.setId(rs.getInt("SongId"));
 				entity.setTitel(rs.getString("Titel"));
-				entity.setFilePath(rs.getString("FilePath"));
+				entity.setFileName(rs.getString("FileName"));
 				
 				Artist artist = new Artist();
 				artist.setId(rs.getInt("ArtistId"));			
@@ -836,7 +836,7 @@ public class Service {
 			String statementString = "SELECT"
 					+ " Song.Id AS SongId"
 					+ ", Song.Titel"
-					+ ", Song.FilePath"
+					+ ", Song.FileName"
 					+ ", Artist.Id AS ArtistId"
 					+ ", Artist.Alias"
 					+ " FROM Song"
@@ -857,7 +857,7 @@ public class Service {
 				
 				entity.setId(rs.getInt("SongId"));
 				entity.setTitel(rs.getString("Titel"));
-				entity.setFilePath(rs.getString("FilePath"));
+				entity.setFileName(rs.getString("FileName"));
 				
 				Artist artist = new Artist();
 				artist.setId(rs.getInt("ArtistId"));			
@@ -890,7 +890,7 @@ public class Service {
 			String statementString = "SELECT"
 					+ " Song.Id AS SongId"
 					+ ", Song.Titel"
-					+ ", Song.FilePath"
+					+ ", Song.FileName"
 					+ ", Artist.Id AS ArtistId"
 					+ ", Artist.Alias"
 					+ " FROM Song"
@@ -908,7 +908,7 @@ public class Service {
 				
 				entity.setId(rs.getInt("SongId"));
 				entity.setTitel(rs.getString("Titel"));
-				entity.setFilePath(rs.getString("FilePath"));
+				entity.setFileName(rs.getString("FileName"));
 				
 				Artist artist = new Artist();
 				artist.setId(rs.getInt("ArtistId"));			
@@ -1286,7 +1286,7 @@ public class Service {
 			String statementString = "INSERT INTO Song ("
 					+ "Titel"
 					+ ", ArtistId"
-					+ ", FilePath"
+					+ ", FileName"
 					+ ", State"
 					+ ")"
 					+ " VALUES("
@@ -1298,7 +1298,7 @@ public class Service {
 			statement = connection.prepareStatement(statementString);
 			statement.setString(1, song.getTitel());
 			statement.setLong(2, song.getArtistId());
-			statement.setString(3, song.getFilePath());			
+			statement.setString(3, song.getFileName());			
 			statement.setLong(4,  SqlState.Active.getValue());
 			
 			statement.executeUpdate();

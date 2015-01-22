@@ -9,8 +9,8 @@ public class Song extends Observable{
 	private int Rank;
 	private Artist Artist;
 	private String Titel; 
-	private String FilePath;
 	private String FileName;
+
 	private int ArtistId;
 	
 	public Song(){
@@ -49,14 +49,6 @@ public class Song extends Observable{
 		super.setChanged();
 		super.notifyObservers();
 	}
-	public String getFilePath() {
-		return FilePath;
-	}
-	public void setFilePath(String filePath) {
-		FilePath = filePath;
-		super.setChanged();
-		super.notifyObservers();
-	}
 	
 	public int getArtistId() {
 		if(Artist != null) return getArtist().getId();
@@ -69,10 +61,11 @@ public class Song extends Observable{
 	}
 	
 	public String getFileName() {
-		Path p = Paths.get(getFilePath());
-		return p.getFileName().toString();
+		return FileName;
 	}
 
-	
-       
+	public void setFileName(String fileName) {
+		FileName = fileName;
+	}
+	       
 }

@@ -52,23 +52,26 @@
 								</thead>
 								<tbody>
 									
-									@if(topSongsList.size() <= 0){
-										<tr>
-											<td>Es sind keine Songs vorhanden!</td>
-										</tr>
-									}else{
-										@for(topSong <- topSongsList){
+									@if(topSongsList != null){
+										@if(topSongsList.size() <= 0){
 											<tr>
-												<td>@topSong.getRank()</td>
-												<td>@topSong.getArtist().getAlias()</td>
-												<td>@topSong.getTitel()</td>
-												
-												@defining("music/") { path =>												
-												<td><button type="button" class="btn btn-primary" onclick="playMusic('@routes.Assets.at(path + topSong.getFileName())', '@topSong.getTitel()');"> Play </button>	</td>
-												 }
+												<td>Es sind keine Songs vorhanden!</td>
 											</tr>
+										}else{
+											@for(topSong <- topSongsList){
+												<tr>
+													<td>@topSong.getRank()</td>
+													<td>@topSong.getArtist().getAlias()</td>
+													<td>@topSong.getTitel()</td>
+													
+													@defining("music/") { path =>												
+													<td><button type="button" class="btn btn-primary" onclick="playMusic('@routes.Assets.at(path + topSong.getFileName())', '@topSong.getTitel()');"> Play </button>	</td>
+													 }
+												</tr>
+											}
 										}
 									}
+
 								</tbody>
 							</table>
 							<!-- table -->

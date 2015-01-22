@@ -8,7 +8,7 @@ public class Country  extends Observable {
 	private String Name;
 	
 	public Country(){
-		super;
+		super();
 	}
 	
 	public int getId() {

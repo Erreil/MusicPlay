@@ -262,7 +262,7 @@ public class Application extends Controller {
 	    Song song = new Song();
 	    song.setArtistId(Integer.parseInt(values.get("artistId")[0]));
 	    song.setTitel(values.get("titel")[0]);
-	    song.setFilePath(System.getProperty("user.dir") + "\\public\\music\\" + fileName);	
+	    song.setFileName(fileName);	
 	    
 	    service.createSong(song);
 	        
