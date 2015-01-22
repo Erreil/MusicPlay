@@ -4,7 +4,7 @@
 
 ## Wichtige Informationen ##
  - Heroku-Link: http://musicplayerio.herokuapp.com
- - *Wichtig* kein HTTPS verwenden, es kann zu Problem kommen. (z.B bei Websockets)
+ - **Wichtig** kein HTTPS verwenden, es kann zu Problem kommen. (z.B bei Websockets)
  
  - Browser: Google Chrome
 
