@@ -271,6 +271,8 @@ Wir hatten sehr viele Probleme bei diesem Projekt, wir wollen aber nur die wicht
 
 ## wichtige Codeschnipsel ##
 
+###AJAX Implementierung###
+
 `function deleteSong(id){`  
 `	var request = new XMLHttpRequest();`  
 `	request.onreadystatechange = function() {`  
@@ -286,4 +288,31 @@ Wir hatten sehr viele Probleme bei diesem Projekt, wir wollen aber nur die wicht
 `	request.open("POST", url + "/deleteSong/" + id, false);`  
 `	request.send();`  
 }
+
+###Websocket Implementierung###
+
+`<script type="text/javascript">`  
+` var webSocket;`  
+`  $(function() {`  
+` var WS = window["MozWebSocket"] ? MozWebSocket : WebSocket;`  
+` webSocket = new WS('@routes.Application.searchResult().webSocketURL()');`  
+` webSocket.onmessage = receiveEvent;`  
+` })`  
+
+`  function sendSearch() {`  
+`  	$("#Liste").html("");`  
+` var g = $("#search").val();`  
+` webSocket.send(g);`
+` };`  
+ 
+` function receiveEvent(event) {`  
+`		var lines = event.data.split(';');`  
+`		$("#Liste").html("");`  
+		
+`		$.each( lines, function( index, value ){`  
+`   	$("#Liste").append("<option>" + value + "</option>");`  
+`		});`	  	
+` };`  
+ 
+ `</script>`  
 
