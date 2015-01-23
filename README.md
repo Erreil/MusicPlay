@@ -3,6 +3,11 @@
 ***
 
 ## Wichtige Informationen ##
+
+Gruppe A, Team 4:
+Erik Reil, Matrikelnummer: 289031
+Inan Ödünc, Matrikelnummer: 288944
+
  - Heroku-Link: http://musicplayerio.herokuapp.com  
  - **Wichtig** kein HTTPS verwenden, es kann zu Problem kommen. (z.B bei Websockets)  
  - Browser: Google Chrome  
